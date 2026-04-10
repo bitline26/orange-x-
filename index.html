@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OrangeX Korea | Professional Digital Asset Exchange</title>
+<meta name="description" content="OrangeX Korea - Official Korean partner of global digital asset exchange OrangeX. Trade with top-tier liquidity and security.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F5F5F7;color:#1D1D1F;line-height:1.5;overflow-x:hidden}
+body.lang-ko{font-family:'Noto Sans KR','Inter',sans-serif}
+body.lang-ja{font-family:'Noto Sans JP','Inter',sans-serif}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+ul{list-style:none}
+
+:root{
+  --org:#FFA500;
+  --org-d:#B27300;
+  --org-h:#cc8400;
+  --org-l:rgba(255,165,0,0.12);
+  --org-s:rgba(255,165,0,0.06);
+  --bg:#F5F5F7;
+  --white:#fff;
+  --text:#1D1D1F;
+  --t2:#3A3A3C;
+  --tm:#6E6E73;
+  --tl:#9999A1;
+  --grn:#1BB273;
+  --grn-b:rgba(27,178,115,0.12);
+  --red:#F2495E;
+  --red-b:rgba(242,73,94,0.12);
+  --bdr:#E8E8ED;
+  --hov:#F2F2F7;
+  --s1:0 2px 8px rgba(0,0,0,0.06);
+  --s2:0 8px 24px rgba(0,0,0,0.09);
+  --s3:0 20px 60px rgba(0,0,0,0.14);
+  --r4:4px;--r6:6px;--r10:10px;--r16:16px;--r24:24px;
+  --nh:60px;
+  --tb:32px;
+  --tr:0.22s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* ── CONTAINER ── */
+.c{max-width:1240px;margin:0 auto;padding:0 16px}
+@media(min-width:768px){.c{padding:0 24px}}
+@media(min-width:1240px){.c{padding:0 40px}}
+
+/* ── TOP BAR (language switcher) ── */
+.top-bar{
+  height:var(--tb);background:#111;
+  display:flex;align-items:center;justify-content:flex-end;
+  padding:0 24px;gap:4px;
+  position:fixed;top:0;left:0;right:0;z-index:1100;
+}
+.lang-btn{
+  padding:4px 10px;font-size:11px;font-weight:600;
+  color:rgba(255,255,255,0.5);border-radius:4px;
+  transition:color var(--tr),background var(--tr);letter-spacing:0.5px;
+}
+.lang-btn.active,.lang-btn:hover{color:#fff;background:rgba(255,255,255,0.12)}
+.lang-btn.active{color:var(--org)}
+.top-bar-divider{color:rgba(255,255,255,0.2);font-size:11px}
+
+/* ── NAVBAR ── */
+.navbar{
+  position:fixed;top:var(--tb);left:0;right:0;z-index:1000;
+  height:var(--nh);
+  background:rgba(255,255,255,0.97);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--bdr);
+  transition:box-shadow var(--tr);
+}
+.navbar.scrolled{box-shadow:var(--s1)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:100%;gap:8px}
+
+/* Logo */
+.nav-logo{display:inline-flex;align-items:center;flex-shrink:0;position:relative;text-decoration:none}
+.nav-logo svg{display:block}
+.kr-badge{
+  position:absolute;top:-7px;right:-4px;
+  background:var(--org);color:#fff;
+  font-size:8px;font-weight:800;
+  padding:1px 5px;border-radius:3px;letter-spacing:0.3px;
+  white-space:nowrap;
+}
+
+/* Desktop nav links */
+.nav-links{display:none;align-items:center;gap:2px;flex:1;padding:0 12px}
+@media(min-width:1024px){.nav-links{display:flex}}
+.nav-links a{
+  padding:7px 12px;font-size:13.5px;font-weight:500;color:var(--tm);
+  border-radius:var(--r4);transition:color var(--tr),background var(--tr);white-space:nowrap;
+}
+.nav-links a:hover{color:var(--org);background:var(--org-s)}
+
+/* Nav buttons */
+.nav-acts{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.btn-out{
+  padding:7px 16px;font-size:13px;font-weight:600;
+  color:var(--org);border:1.5px solid var(--org);border-radius:var(--r4);
+  transition:all var(--tr);white-space:nowrap;
+}
+.btn-out:hover{background:var(--org-l)}
+.btn-fill{
+  padding:7px 18px;font-size:13px;font-weight:600;
+  color:#fff;background:var(--org);border:1.5px solid var(--org);border-radius:var(--r4);
+  transition:all var(--tr);white-space:nowrap;
+}
+.btn-fill:hover{background:var(--org-h);border-color:var(--org-h)}
+
+/* Hamburger */
+.hbg{display:flex;flex-direction:column;gap:5px;padding:6px;background:none;border:none;cursor:pointer}
+@media(min-width:1024px){.hbg{display:none}}
+.hbg span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:all 0.3s}
+.hbg.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hbg.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.hbg.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* Mobile menu */
+.mob-nav{
+  display:none;position:fixed;
+  top:calc(var(--tb) + var(--nh));left:0;right:0;bottom:0;
+  background:#fff;z-index:999;overflow-y:auto;padding:12px 16px 100px;flex-direction:column;
+}
+.mob-nav.open{display:flex}
+.mob-nav a{display:block;padding:14px 16px;font-size:15px;font-weight:500;color:var(--text);border-bottom:1px solid var(--bdr);transition:color var(--tr),background var(--tr);border-radius:var(--r4)}
+.mob-nav a:hover{color:var(--org);background:var(--org-s)}
+.mob-nav-btns{display:flex;flex-direction:column;gap:10px;margin-top:24px;padding-top:24px;border-top:1px solid var(--bdr)}
+.mob-nav-btns button{width:100%;padding:15px;font-size:15px;font-weight:600;border-radius:var(--r10)}
+
+/* ── HERO ── */
+.hero{
+  padding-top:calc(var(--tb) + var(--nh));
+  background:var(--bg);min-height:100svh;
+  display:flex;align-items:center;position:relative;overflow:hidden;
+}
+.hero-orb{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none}
+.orb1{width:480px;height:480px;background:radial-gradient(circle,rgba(255,165,0,0.2) 0%,transparent 70%);top:-100px;right:-60px}
+.orb2{width:320px;height:320px;background:radial-gradient(circle,rgba(255,165,0,0.13) 0%,transparent 70%);bottom:0;left:8%}
+@media(max-width:767px){.orb1{width:260px;height:260px;right:-50px;top:60px}.orb2{width:180px;height:180px}}
+
+.hero-in{display:flex;align-items:center;justify-content:space-between;gap:48px;padding:72px 0 80px;width:100%;position:relative}
+@media(max-width:960px){.hero-in{flex-direction:column;text-align:center;padding:48px 0 60px;gap:36px}}
+
+.hero-txt{flex:1;max-width:560px}
+@media(max-width:960px){.hero-txt{max-width:100%}}
+
+.hero-badge{
+  display:inline-flex;align-items:center;gap:7px;
+  background:var(--org-l);color:var(--org);
+  font-size:11.5px;font-weight:600;padding:6px 13px;border-radius:20px;
+  margin-bottom:22px;border:1px solid rgba(255,165,0,0.2);
+}
+.badge-dot{width:7px;height:7px;background:var(--org);border-radius:50%;animation:blink 1.4s ease-in-out infinite}
+@keyframes blink{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(0.6);opacity:0.4}}
+
+.hero-h1{font-size:46px;font-weight:800;line-height:1.2;color:var(--text);margin-bottom:18px;letter-spacing:-0.8px}
+.hero-h1 .hl{color:var(--org)}
+@media(max-width:960px){.hero-h1{font-size:30px}}
+@media(min-width:961px)and(max-width:1100px){.hero-h1{font-size:38px}}
+
+.hero-p{font-size:16px;color:var(--tm);margin-bottom:36px;line-height:1.75}
+@media(max-width:960px){.hero-p{font-size:14px;margin-bottom:28px}}
+
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+@media(max-width:960px){.hero-btns{justify-content:center}}
+.btn-hpri{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--org);color:#fff;font-size:15px;font-weight:700;
+  padding:14px 34px;border-radius:var(--r4);
+  transition:all var(--tr);border:none;
+}
+.btn-hpri:hover{background:var(--org-h);transform:translateY(-1px);box-shadow:0 6px 20px rgba(255,165,0,0.35)}
+.btn-hsec{
+  display:inline-flex;align-items:center;gap:8px;
+  background:transparent;color:var(--org);font-size:15px;font-weight:700;
+  padding:14px 34px;border-radius:var(--r4);border:1.5px solid var(--org);
+  transition:all var(--tr);
+}
+.btn-hsec:hover{background:var(--org-l)}
+@media(max-width:960px){.btn-hpri,.btn-hsec{width:100%;padding:15px;justify-content:center;font-size:16px}}
+
+.hero-stats{display:flex;gap:36px;margin-top:44px;flex-wrap:wrap}
+@media(max-width:960px){.hero-stats{justify-content:center;gap:24px;margin-top:32px}}
+.hs-val{font-size:24px;font-weight:800;color:var(--text);line-height:1}
+@media(max-width:960px){.hs-val{font-size:20px}}
+.hs-lbl{font-size:12px;color:var(--tm);margin-top:4px}
+
+/* ── HERO VISUAL (trading terminal) ── */
+.hero-vis{flex-shrink:0;width:460px;position:relative}
+@media(max-width:960px){.hero-vis{width:100%;max-width:420px}}
+@media(max-width:480px){.hero-vis{max-width:340px}}
+
+.terminal{
+  background:#18181B;border-radius:var(--r16);
+  overflow:hidden;box-shadow:var(--s3);
+  border:1px solid rgba(255,255,255,0.07);
+}
+
+/* Terminal header */
+.term-header{
+  background:#111;padding:14px 18px;
+  display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+}
+.term-dots{display:flex;gap:6px}
+.term-dot{width:10px;height:10px;border-radius:50%}
+.td1{background:#FF5F57}.td2{background:#FFBD2E}.td3{background:#28CA41}
+.term-title{font-size:12px;color:rgba(255,255,255,0.4);font-weight:500}
+.term-live{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--grn);font-weight:600}
+.live-dot{width:6px;height:6px;background:var(--grn);border-radius:50%;animation:blink 1.2s ease-in-out infinite}
+
+/* Price area */
+.term-price-row{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 18px 0;
+}
+.term-pair{display:flex;align-items:center;gap:10px}
+.pair-icon{
+  width:34px;height:34px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:800;color:#fff;flex-shrink:0;
+}
+.pair-name{font-size:13px;font-weight:700;color:#fff}
+.pair-type{font-size:10px;color:rgba(255,255,255,0.4);margin-top:1px}
+.term-chg{
+  background:var(--grn-b);color:var(--grn);
+  font-size:12px;font-weight:700;padding:4px 10px;border-radius:20px;
+}
+.term-price{padding:8px 18px 14px}
+.term-price-big{font-size:28px;font-weight:800;color:#fff;line-height:1}
+.term-price-usd{font-size:11px;color:rgba(255,255,255,0.35);margin-top:3px}
+
+/* Candlestick chart area */
+.term-chart{background:#111;padding:12px 18px;position:relative}
+.chart-labels{display:flex;justify-content:space-between;margin-bottom:6px}
+.chart-label{font-size:10px;color:rgba(255,255,255,0.25);font-weight:500}
+.candle-svg{display:block;width:100%}
+.chart-timeframes{
+  display:flex;gap:2px;margin-top:8px;
+}
+.tf-btn{
+  padding:3px 8px;font-size:10px;font-weight:600;
+  color:rgba(255,255,255,0.35);border-radius:3px;
+  transition:all var(--tr);border:none;background:none;font-family:inherit;cursor:pointer;
+}
+.tf-btn.active,.tf-btn:hover{background:rgba(255,255,255,0.1);color:#fff}
+.tf-btn.active{color:var(--org)}
+
+/* Mini ticker row */
+.term-tickers{
+  display:flex;gap:0;border-top:1px solid rgba(255,255,255,0.06);
+}
+.mini-tick{
+  flex:1;padding:10px 12px;
+  border-right:1px solid rgba(255,255,255,0.06);
+}
+.mini-tick:last-child{border-right:none}
+.mt-sym{font-size:10px;font-weight:700;color:rgba(255,255,255,0.5);margin-bottom:3px}
+.mt-price{font-size:12px;font-weight:700;color:#fff}
+.mt-chg{font-size:10px;font-weight:600;margin-top:1px}
+.mt-chg.up{color:var(--grn)}.mt-chg.dn{color:var(--red)}
+
+/* Buy/Sell buttons */
+.term-actions{display:flex;gap:0;}
+.btn-buy,.btn-sell{
+  flex:1;padding:13px;font-size:13px;font-weight:700;
+  border:none;cursor:pointer;transition:opacity var(--tr);
+}
+.btn-buy{background:var(--grn);color:#fff}
+.btn-sell{background:var(--red);color:#fff}
+.btn-buy:hover,.btn-sell:hover{opacity:0.85}
+
+/* ── ANNOUNCE BAR ── */
+.ann-bar{background:#fff;border-bottom:1px solid var(--bdr);padding:9px 0;overflow:hidden}
+.ann-in{display:flex;align-items:center;gap:12px}
+.ann-tag{
+  flex-shrink:0;background:var(--org-l);color:var(--org);
+  font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;
+}
+.ann-scroll{flex:1;overflow:hidden}
+.ann-track{display:flex;gap:48px;animation:scrollL 35s linear infinite;width:max-content}
+.ann-track:hover{animation-play-state:paused}
+@keyframes scrollL{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.ann-item{font-size:13px;color:var(--tm);white-space:nowrap;cursor:pointer;transition:color var(--tr)}
+.ann-item:hover{color:var(--org)}
+
+/* ── TICKER BAR ── */
+.tick-bar{background:#1D1D1F;padding:8px 0;overflow:hidden}
+.tick-track{display:flex;animation:scrollL 22s linear infinite;width:max-content}
+.tick-track:hover{animation-play-state:paused}
+.tick-item{display:flex;align-items:center;gap:8px;padding:0 20px;border-right:1px solid rgba(255,255,255,0.08);flex-shrink:0}
+.ti-ico{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:800;color:#fff;flex-shrink:0}
+.ti-s{font-size:13px;font-weight:600;color:#fff}
+.ti-p{font-size:12.5px;color:rgba(255,255,255,0.6)}
+.ti-c{font-size:12px;font-weight:700}
+.ti-c.up{color:#34C759}.ti-c.dn{color:#FF453A}
+
+/* ── SECTIONS ── */
+section{padding:72px 0}
+@media(max-width:767px){section{padding:48px 0}}
+.sec-lbl{display:inline-block;font-size:11.5px;font-weight:700;color:var(--org);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px}
+.sec-h{font-size:34px;font-weight:800;color:var(--text);line-height:1.25;letter-spacing:-0.4px;margin-bottom:16px}
+@media(max-width:767px){.sec-h{font-size:24px}}
+.sec-p{font-size:15px;color:var(--tm);line-height:1.75;max-width:580px}
+@media(max-width:767px){.sec-p{font-size:14px}}
+.sec-hc{text-align:center;margin-bottom:52px}
+.sec-hc .sec-p{margin:0 auto}
+@media(max-width:767px){.sec-hc{margin-bottom:36px}}
+
+/* ── MARKET ── */
+.mkt-sec{background:#fff;padding:60px 0}
+.mkt-top{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:0}
+.mkt-tabs{display:flex;border-bottom:2px solid var(--bdr);overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.mkt-tabs::-webkit-scrollbar{display:none}
+.m-tab{
+  padding:11px 20px;font-size:13.5px;font-weight:500;color:var(--tm);
+  background:none;border:none;border-bottom:2.5px solid transparent;margin-bottom:-2px;
+  white-space:nowrap;cursor:pointer;transition:color var(--tr),border-color var(--tr),font-weight var(--tr);font-family:inherit;
+}
+.m-tab.active{color:var(--org);border-bottom-color:var(--org);font-weight:700}
+.m-tab:hover:not(.active){color:var(--text)}
+.srch-wrap{position:relative}
+.srch-ico{position:absolute;left:11px;top:50%;transform:translateY(-50%);color:var(--tm);font-size:14px;pointer-events:none}
+.srch{height:38px;padding:0 14px 0 36px;border:1.5px solid var(--bdr);border-radius:var(--r4);font-size:13px;color:var(--text);background:var(--hov);outline:none;width:200px;font-family:inherit;transition:border-color var(--tr),background var(--tr)}
+.srch:focus{border-color:var(--org);background:#fff}
+@media(max-width:767px){.srch{width:160px;font-size:16px}}
+.tbl-wrap{overflow-x:auto}
+.mkt-tbl{width:100%;border-collapse:collapse;min-width:480px}
+.mkt-tbl thead th{padding:14px 16px;text-align:left;font-size:12px;font-weight:600;color:var(--tm);border-bottom:1px solid var(--bdr);white-space:nowrap;background:var(--hov)}
+.mkt-tbl thead th:not(:first-child){text-align:right}
+.mkt-tbl tbody td{padding:15px 16px;font-size:14px;border-bottom:1px solid var(--bdr);transition:background var(--tr)}
+.mkt-tbl tbody tr:hover td{background:var(--hov)}
+.mkt-tbl tbody td:not(:first-child){text-align:right}
+@media(max-width:767px){.mkt-tbl thead th,.mkt-tbl tbody td{padding:12px 10px;font-size:13px}}
+.cv{display:none}@media(min-width:768px){.cv{display:table-cell}}
+.cm{display:none}@media(min-width:992px){.cm{display:table-cell}}
+.sym-cell{display:flex;align-items:center;gap:10px}
+.sym-ico{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:#fff;flex-shrink:0}
+@media(max-width:767px){.sym-ico{width:28px;height:28px;font-size:9px}}
+.sym-n{font-size:14px;font-weight:600;color:var(--text)}
+.sym-s{font-size:11px;color:var(--tm);margin-top:1px}
+.pv{font-weight:600;color:var(--text)}
+.cv2{font-weight:700}.cv2.up{color:var(--grn)}.cv2.dn{color:var(--red)}
+.vv{color:var(--tm);font-size:13px}
+.mkt-more{display:flex;justify-content:center;padding:18px 0;border-top:1px solid var(--bdr);margin-top:4px}
+.mkt-more-btn{display:inline-flex;align-items:center;gap:5px;font-size:13.5px;font-weight:600;color:var(--org);background:none;border:none;cursor:pointer;transition:opacity var(--tr)}
+.mkt-more-btn:hover{opacity:0.7}
+
+/* ── PRODUCTS ── */
+.prod-sec{background:var(--bg)}
+.prod-grid{display:grid;grid-template-columns:1fr;gap:20px}
+@media(min-width:768px){.prod-grid{grid-template-columns:repeat(3,1fr)}}
+.prod-card{background:#fff;border-radius:var(--r16);padding:32px 28px;border:1.5px solid var(--bdr);box-shadow:0 1px 4px rgba(0,0,0,0.05);transition:transform var(--tr),box-shadow var(--tr),border-color var(--tr);position:relative;overflow:hidden}
+.prod-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--org);transform:scaleX(0);transform-origin:left;transition:transform var(--tr)}
+.prod-card:hover{transform:translateY(-5px);box-shadow:var(--s2);border-color:rgba(255,165,0,0.3)}
+.prod-card:hover::before{transform:scaleX(1)}
+.prod-ico{width:52px;height:52px;background:var(--org-l);border-radius:var(--r10);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:20px}
+.prod-h{font-size:20px;font-weight:700;color:var(--text);margin-bottom:12px}
+.prod-feats{margin-bottom:18px;display:flex;flex-direction:column;gap:7px}
+.prod-feat{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--tm)}
+.prod-feat::before{content:'✓';color:var(--grn);font-weight:800;font-size:12px}
+.prod-p{font-size:14px;color:var(--tm);line-height:1.7;margin-bottom:22px}
+.prod-lnk{display:inline-flex;align-items:center;gap:5px;font-size:14px;font-weight:600;color:var(--org);transition:gap var(--tr)}
+.prod-lnk:hover{gap:10px}
+
+/* ── STEPS ── */
+.steps-sec{background:#fff}
+.steps-grid{display:grid;grid-template-columns:1fr;gap:32px}
+@media(min-width:768px){.steps-grid{grid-template-columns:repeat(3,1fr);gap:28px;position:relative}}
+@media(min-width:768px){.steps-grid::before{content:'';position:absolute;top:27px;left:calc(16.67% + 14px);right:calc(16.67% + 14px);height:2px;background:var(--bdr);z-index:0}}
+.step{text-align:center;position:relative;z-index:1}
+.step-n{width:54px;height:54px;border-radius:50%;background:var(--org);color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;margin:0 auto 20px;box-shadow:0 4px 16px rgba(255,165,0,0.35)}
+.step-h{font-size:17px;font-weight:700;color:var(--text);margin-bottom:10px}
+.step-p{font-size:14px;color:var(--tm);line-height:1.7}
+.steps-cta{text-align:center;margin-top:48px}
+
+/* ── STATS ── */
+.stats-sec{background:var(--org);padding:52px 0}
+.stats-g{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;text-align:center}
+@media(min-width:768px){.stats-g{grid-template-columns:repeat(4,1fr)}}
+.st-v{font-size:34px;font-weight:800;color:#fff;line-height:1;margin-bottom:8px}
+@media(max-width:767px){.st-v{font-size:26px}}
+.st-l{font-size:13px;color:rgba(255,255,255,0.75)}
+
+/* ── APP ── */
+.app-sec{background:#18181B}
+.app-in{display:flex;align-items:center;gap:60px;flex-wrap:wrap}
+@media(max-width:767px){.app-in{flex-direction:column;text-align:center;gap:36px}}
+.app-cnt{flex:1;min-width:260px}
+.app-sec .sec-lbl{color:var(--org)}
+.app-h{font-size:34px;font-weight:800;color:#fff;line-height:1.3;margin-bottom:16px;letter-spacing:-0.4px}
+@media(max-width:767px){.app-h{font-size:26px}}
+.app-p{font-size:15px;color:rgba(255,255,255,0.5);line-height:1.75;margin-bottom:32px}
+.app-btns{display:flex;gap:12px;flex-wrap:wrap}
+@media(max-width:767px){.app-btns{justify-content:center}}
+.app-btn{display:flex;align-items:center;gap:11px;background:rgba(255,255,255,0.08);border:1.5px solid rgba(255,255,255,0.15);color:#fff;padding:12px 20px;border-radius:var(--r10);transition:background var(--tr)}
+.app-btn:hover{background:rgba(255,255,255,0.14)}
+.app-btn-ico{font-size:26px}
+.app-btn-sub{font-size:10px;color:rgba(255,255,255,0.5)}
+.app-btn-name{font-size:15px;font-weight:700}
+.app-vis{display:flex;align-items:flex-end;gap:28px;flex-shrink:0}
+@media(max-width:767px){.app-vis{justify-content:center;align-items:center}}
+.qr-box{background:#fff;border-radius:var(--r10);padding:16px;display:flex;flex-direction:column;align-items:center;gap:8px}
+.qr-lbl{font-size:11px;color:var(--tm);font-weight:500}
+.phone-mock{width:130px;background:#27272A;border-radius:26px;padding:10px;border:2px solid rgba(255,255,255,0.1);box-shadow:0 24px 60px rgba(0,0,0,0.6)}
+@media(max-width:480px){.phone-mock{display:none}}
+.ph-scr{background:var(--bg);border-radius:18px;overflow:hidden;aspect-ratio:9/18;padding:10px}
+.ph-bar{height:30px;background:var(--org);border-radius:8px 8px 0 0;margin:-10px -10px 10px;display:flex;align-items:center;padding:0 12px;justify-content:space-between}
+.ph-bar-t{font-size:8px;color:#fff;font-weight:700}
+.ph-chart{height:70px;margin-bottom:10px}
+.ph-row{height:18px;background:var(--bdr);border-radius:4px;margin-bottom:8px}
+.ph-row:nth-child(1){width:90%}
+.ph-row:nth-child(2){width:70%;background:rgba(255,165,0,0.2)}
+.ph-row:nth-child(3){width:85%}
+.ph-row:nth-child(4){width:60%;background:rgba(27,178,115,0.2)}
+.ph-row:nth-child(5){width:80%}
+
+/* ── TRUST ── */
+.trust-sec{background:var(--bg)}
+.trust-g{display:grid;grid-template-columns:1fr;gap:18px}
+@media(min-width:600px){.trust-g{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:992px){.trust-g{grid-template-columns:repeat(4,1fr)}}
+.trust-card{background:#fff;border-radius:var(--r16);padding:28px 24px;text-align:center;border:1.5px solid var(--bdr);box-shadow:0 1px 4px rgba(0,0,0,0.05);transition:transform var(--tr),box-shadow var(--tr)}
+.trust-card:hover{transform:translateY(-4px);box-shadow:var(--s2)}
+.trust-ico{font-size:38px;margin-bottom:16px}
+.trust-h{font-size:15px;font-weight:700;color:var(--text);margin-bottom:8px}
+.trust-p{font-size:13px;color:var(--tm);line-height:1.65}
+
+/* ── SUPPORT ── */
+.sup-sec{background:#fff}
+.sup-g{display:grid;grid-template-columns:1fr;gap:18px}
+@media(min-width:768px){.sup-g{grid-template-columns:repeat(3,1fr)}}
+.sup-card{background:var(--hov);border-radius:var(--r16);padding:28px 24px;display:flex;align-items:flex-start;gap:16px;border:1.5px solid var(--bdr);transition:transform var(--tr),border-color var(--tr)}
+.sup-card:hover{transform:translateX(5px);border-color:rgba(255,165,0,0.4)}
+.sup-ico{width:50px;height:50px;border-radius:var(--r10);background:var(--org-l);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.sup-h{font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px}
+.sup-p{font-size:13px;color:var(--tm);line-height:1.65}
+.sup-lnk{display:inline-flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:var(--org);margin-top:12px;transition:gap var(--tr)}
+.sup-lnk:hover{gap:8px}
+
+/* ── CTA BANNER ── */
+.cta-ban{background:linear-gradient(135deg,var(--org) 0%,#FF8C00 100%);padding:60px 0}
+.cta-in{display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
+@media(max-width:767px){.cta-in{flex-direction:column;text-align:center}}
+.cta-h{font-size:30px;font-weight:800;color:#fff;margin-bottom:10px;line-height:1.3}
+@media(max-width:767px){.cta-h{font-size:22px}}
+.cta-p{font-size:15px;color:rgba(255,255,255,0.8)}
+.btn-wht{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--org);font-size:15px;font-weight:800;padding:14px 36px;border-radius:var(--r4);border:none;white-space:nowrap;flex-shrink:0;transition:all var(--tr);box-shadow:var(--s2)}
+.btn-wht:hover{transform:translateY(-2px);box-shadow:var(--s3)}
+@media(max-width:767px){.btn-wht{width:100%;justify-content:center;padding:16px}}
+
+/* ── FOOTER ── */
+footer{background:#111;color:#fff;padding:64px 0 28px}
+.ft-g{display:grid;grid-template-columns:1fr;gap:36px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.07)}
+@media(min-width:768px){.ft-g{grid-template-columns:2.2fr 1fr 1fr 1fr 1fr;gap:32px}}
+.ft-brand{}
+.ft-logo{display:flex;align-items:center;gap:8px;margin-bottom:14px;position:relative;display:inline-flex}
+.ft-logo img{height:20px;width:auto;filter:brightness(0) invert(1)}
+.ft-logo-fallback{display:flex;align-items:center;gap:6px}
+.ft-logo-kr{position:absolute;top:-7px;right:-4px;background:var(--org);color:#fff;font-size:7px;font-weight:800;padding:1px 4px;border-radius:3px}
+.ft-desc{font-size:13px;color:rgba(255,255,255,0.4);line-height:1.75;margin-bottom:24px}
+.ft-socs{display:flex;gap:10px}
+.ft-soc{width:36px;height:36px;background:rgba(255,255,255,0.08);border-radius:var(--r4);display:flex;align-items:center;justify-content:center;font-size:15px;color:#fff;transition:background var(--tr),transform var(--tr)}
+.ft-soc:hover{background:var(--org);transform:translateY(-3px)}
+.ft-col-h{font-size:13.5px;font-weight:700;color:#fff;margin-bottom:16px}
+@media(max-width:767px){
+  .ft-col-h{cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:14px 0;margin-bottom:0;border-bottom:1px solid rgba(255,255,255,0.07)}
+  .ft-acc{font-size:18px;transition:transform 0.3s}
+  .ft-col.open .ft-acc{transform:rotate(45deg)}
+  .ft-list{display:none;padding:12px 0}
+  .ft-col.open .ft-list{display:flex}
+}
+.ft-list{display:flex;flex-direction:column;gap:10px}
+.ft-list a{font-size:13px;color:rgba(255,255,255,0.4);transition:color var(--tr)}
+.ft-list a:hover{color:var(--org)}
+.ft-bot{padding-top:22px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.ft-copy{font-size:12px;color:rgba(255,255,255,0.3)}
+.ft-legal{display:flex;gap:16px}
+.ft-legal a{font-size:12px;color:rgba(255,255,255,0.3);transition:color var(--tr)}
+.ft-legal a:hover{color:var(--org)}
+
+/* ── MOBILE CTA BAR ── */
+.mob-cta{display:none;position:fixed;bottom:0;left:0;right:0;background:#fff;padding:12px 16px;border-top:1px solid var(--bdr);gap:10px;z-index:800;box-shadow:0 -4px 16px rgba(0,0,0,0.08)}
+@media(max-width:1023px){.mob-cta{display:flex}}
+.mob-cta button{flex:1;padding:13px;font-size:14px;font-weight:700;border-radius:var(--r4);border:none}
+.mc-login{background:var(--hov);color:var(--text);border:1.5px solid var(--bdr)!important}
+.mc-reg{background:var(--org);color:#fff}
+
+/* ── SCROLL TOP ── */
+.scr-top{position:fixed;bottom:80px;right:20px;width:44px;height:44px;border-radius:50%;background:var(--org);color:#fff;border:none;font-size:18px;cursor:pointer;box-shadow:var(--s2);z-index:700;display:none;align-items:center;justify-content:center;transition:all var(--tr)}
+.scr-top.show{display:flex}
+.scr-top:hover{background:var(--org-h);transform:translateY(-2px)}
+@media(min-width:1024px){.scr-top{bottom:28px;right:28px}}
+
+/* ── ANIMATIONS ── */
+.fu{opacity:0;transform:translateY(24px);transition:opacity 0.65s ease,transform 0.65s ease}
+.fu.vis{opacity:1;transform:translateY(0)}
+.fu:nth-child(2){transition-delay:0.1s}
+.fu:nth-child(3){transition-delay:0.2s}
+
+/* Candle animation */
+@keyframes candleIn{from{transform:scaleY(0);opacity:0}to{transform:scaleY(1);opacity:1}}
+
+/* ── MOBILE DEEP OPTIMIZATION ── */
+@media(max-width:480px){
+  :root{--nh:52px;--tb:28px}
+  .top-bar{padding:0 12px;gap:2px}
+  .lang-btn{padding:3px 7px;font-size:10px}
+  .c{padding:0 12px}
+  .nav-logo svg{width:100px;height:17px}
+  .kr-badge{font-size:7px;padding:1px 3px;top:-5px;right:-2px}
+  .btn-out,.btn-fill{padding:6px 12px;font-size:12px}
+  section{padding:40px 0}
+  .hero{min-height:auto}
+  .hero-in{padding:32px 0 40px;gap:28px}
+  .hero-badge{font-size:10px;padding:4px 10px;margin-bottom:16px}
+  .hero-h1{font-size:26px;letter-spacing:-0.5px}
+  .hero-p{font-size:13px;line-height:1.65;margin-bottom:24px}
+  .hero-stats{gap:16px;margin-top:24px}
+  .hs-val{font-size:18px}
+  .hs-lbl{font-size:11px}
+  .hero-vis{max-width:100%!important}
+  .terminal{border-radius:var(--r10)}
+  .term-header{padding:10px 14px}
+  .term-dot{width:8px;height:8px}
+  .term-title{font-size:10px}
+  .term-live{font-size:10px}
+  .term-price-row{padding:12px 14px 0}
+  .pair-icon{width:28px;height:28px;font-size:12px}
+  .pair-name{font-size:12px}
+  .pair-type{font-size:9px}
+  .term-chg{font-size:10px;padding:3px 8px}
+  .term-price{padding:6px 14px 10px}
+  .term-price-big{font-size:22px}
+  .term-price-usd{font-size:10px}
+  .term-chart{padding:8px 14px}
+  .chart-label{font-size:9px}
+  .candle-svg{height:90px}
+  .tf-btn{font-size:9px;padding:2px 6px}
+  .mini-tick{padding:8px 8px}
+  .mt-sym{font-size:9px}
+  .mt-price{font-size:11px}
+  .mt-chg{font-size:9px}
+  .btn-buy,.btn-sell{padding:11px;font-size:12px}
+  .ann-bar{padding:7px 0}
+  .ann-tag{font-size:10px;padding:2px 8px}
+  .ann-item{font-size:12px}
+  .tick-item{padding:0 12px}
+  .ti-ico{width:16px;height:16px;font-size:6px}
+  .ti-s{font-size:11px}
+  .ti-p{font-size:11px}
+  .ti-c{font-size:10px}
+  .sec-lbl{font-size:10px;letter-spacing:1px;margin-bottom:8px}
+  .sec-h{font-size:22px}
+  .sec-p{font-size:13px}
+  .sec-hc{margin-bottom:28px}
+  .prod-card{padding:24px 20px;border-radius:var(--r10)}
+  .prod-ico{width:44px;height:44px;font-size:20px;margin-bottom:14px}
+  .prod-h{font-size:17px;margin-bottom:8px}
+  .prod-feat{font-size:12px}
+  .prod-p{font-size:13px}
+  .step-n{width:46px;height:46px;font-size:18px}
+  .step-h{font-size:15px}
+  .step-p{font-size:13px}
+  .stats-sec{padding:36px 0}
+  .st-v{font-size:22px}
+  .st-l{font-size:11px}
+  .app-h{font-size:22px}
+  .app-p{font-size:13px;margin-bottom:24px}
+  .app-btn{padding:10px 16px}
+  .app-btn-ico{font-size:22px}
+  .app-btn-name{font-size:13px}
+  .qr-box svg{width:90px;height:90px}
+  .trust-card{padding:22px 18px;border-radius:var(--r10)}
+  .trust-ico{font-size:30px;margin-bottom:12px}
+  .trust-h{font-size:14px}
+  .trust-p{font-size:12px}
+  .sup-card{padding:20px 16px;gap:12px;border-radius:var(--r10)}
+  .sup-ico{width:42px;height:42px;font-size:18px}
+  .sup-h{font-size:14px}
+  .sup-p{font-size:12px}
+  .cta-ban{padding:40px 0}
+  .cta-h{font-size:20px}
+  .cta-p{font-size:13px}
+  footer{padding:44px 0 20px}
+  .ft-desc{font-size:12px}
+  .ft-soc{width:32px;height:32px;font-size:13px}
+  .mob-cta{padding:10px 12px;gap:8px}
+  .mob-cta button{padding:11px;font-size:13px}
+  .scr-top{width:38px;height:38px;font-size:15px;bottom:70px;right:12px}
+}
+
+/* Terminal coin transition */
+.term-price-row,.term-price{transition:opacity 0.3s ease}
+.term-fade{opacity:0.3}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR: Language Switcher -->
+<div class="top-bar">
+  <button class="lang-btn active" onclick="setLang('en')" id="lbEn">EN</button>
+  <span class="top-bar-divider">|</span>
+  <button class="lang-btn" onclick="setLang('ko')" id="lbKo">한국어</button>
+  <span class="top-bar-divider">|</span>
+  <button class="lang-btn" onclick="setLang('ja')" id="lbJa">日本語</button>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="c">
+    <div class="nav-in">
+      <a href="/" class="nav-logo" id="navLogo">
+        <!-- OrangeX official logo SVG (extracted from orangex.com source) -->
+        <svg width="130" height="22" viewBox="0 0 470 109" fill="none" xmlns="http://www.w3.org/2000/svg" color="#1D1D1F">
+          <!-- Orange circle icon -->
+          <path d="M71.8252 74.8975C64.6488 81.3873 55.2749 85.4898 44.9521 85.9561V70.8809C51.1192 70.4457 56.7338 68.0142 61.1553 64.2275L71.8252 74.8975ZM24.71 64.1953C28.8973 67.7948 34.161 70.175 39.9521 70.792V85.8955C30.0141 85.205 21.0053 81.1428 14.0645 74.8408L24.71 64.1953ZM85.9551 44.9541C85.4991 55.0427 81.5695 64.2246 75.333 71.335L64.6484 60.6504C68.193 56.3101 70.4619 50.8882 70.8809 44.9541H85.9551ZM15.0244 44.9541C15.4421 50.8702 17.6977 56.2777 21.2236 60.6113L10.5645 71.2705C4.36083 64.1692 0.454559 55.012 0 44.9541H15.0244ZM74.8398 14.0654C81.1421 21.0064 85.2043 30.0157 85.8945 39.9541H70.792C70.1752 34.1625 67.794 28.8986 64.1943 24.7109L74.8398 14.0654ZM21.6777 24.75C18.0967 28.9313 15.7272 34.1803 15.1123 39.9541H0.0605469C0.748723 30.0463 4.78838 21.0622 11.0576 14.1299L21.6777 24.75ZM39.9521 15.1133C34.409 15.7038 29.3492 17.9113 25.2539 21.2559L14.6201 10.6221C21.4831 4.60246 30.2769 0.732767 39.9521 0.0605469V15.1133ZM44.9521 0C55.0104 0.454347 64.168 4.36161 71.2695 10.5654L60.6104 21.2246C56.2765 17.6984 50.8686 15.4429 44.9521 15.0254V0Z" fill="#FFA500"/>
+          <!-- "range" wordmark -->
+          <path d="M136.054 38.8871C131.7 38.7484 128.885 38.6791 127.624 38.6791C123.131 38.6791 119.748 39.7468 117.502 41.896C115.255 44.0452 113.841 47.5672 113.286 52.4896L109.071 86.1146H96.9521L101.056 52.8085C102.11 43.8927 104.8 37.4173 109.113 33.4239C113.439 29.4166 120.053 27.4199 128.983 27.4199C132.491 27.4199 135.486 27.5308 137.94 27.7388L136.04 38.9148L136.054 38.8871Z" fill="currentColor"/>
+          <path d="M154.607 86.1008C149.338 86.1008 145.123 84.6033 141.961 81.6221C138.8 78.6409 137.219 74.7585 137.219 69.9747C137.219 68.9209 137.247 68.1166 137.33 67.5481C137.968 63.1942 139.091 59.7277 140.7 57.1625C142.322 54.5973 144.651 52.7393 147.702 51.5745C150.752 50.4098 154.774 49.8413 159.765 49.8413H177.472L177.583 48.9955C177.652 48.6488 177.694 48.1496 177.694 47.5257C177.694 44.7802 176.779 42.5755 174.949 40.8839C173.118 39.1922 170.276 38.3603 166.407 38.3603H163.662C157.408 38.3603 151.792 38.5405 146.801 38.8872L148.381 28.141L151.432 27.933C152.555 27.8637 154.538 27.7528 157.38 27.6141C160.223 27.4755 162.705 27.4061 164.813 27.4061H167.655C174.893 27.4061 180.37 29.1255 184.1 32.5643C187.816 36.003 189.688 40.6065 189.688 46.3748C189.688 47.0126 189.619 48.0942 189.48 49.6472L185.154 86.1147H154.593L154.607 86.1008ZM149.338 68.8238C149.338 70.8621 149.92 72.429 151.071 73.5105C152.236 74.6059 153.9 75.1467 156.077 75.1467H174.408L176.197 60.3933L158.698 60.2824C156.022 60.213 153.9 60.7261 152.319 61.8076C150.739 62.903 149.768 64.8165 149.421 67.5481L149.31 68.8099L149.338 68.8238Z" fill="currentColor"/>
+          <path d="M216.033 38.6792L210.348 86.1008H198.229L205.398 27.4061H231.854C246.4 27.4061 253.665 34.0757 253.665 47.4286C253.665 49.0509 253.555 50.798 253.347 52.6977L249.242 86.1008H237.123L241.228 52.3788C241.366 50.9783 241.436 49.9938 241.436 49.4253C241.436 42.2566 237.789 38.6792 230.482 38.6792H216.047H216.033Z" fill="currentColor"/>
+          <path d="M264.209 52.8086C266.039 35.8782 275.385 27.4061 292.246 27.4061H317.44L309.745 90.219C308.968 95.9041 306.639 100.411 302.742 103.711C298.846 107.011 292.953 108.661 285.091 108.661C278.13 108.661 271.572 108.383 265.387 107.815L266.649 96.8608C273.388 97.4987 279.78 97.8037 285.826 97.8037C289.694 97.8037 292.537 97.1659 294.367 95.9041C296.198 94.6423 297.279 92.6317 297.64 89.9001L298.056 86.1008H284.883C270.338 86.1008 263.072 79.3204 263.072 65.7594C263.072 64.2203 263.183 62.5703 263.391 60.8093L264.237 52.7947L264.209 52.8086ZM299.401 75.0496L303.935 38.485H290.873C282.235 38.485 277.423 43.1579 276.439 52.5036L275.496 61.1421C275.357 62.5425 275.288 63.4993 275.288 63.9846C275.288 71.3613 278.934 75.0496 286.242 75.0496H299.415H299.401Z" fill="currentColor"/>
+          <path d="M355.356 26.9904C362.594 26.9904 368.058 28.6959 371.746 32.1069C375.434 35.5179 377.278 40.5513 377.278 47.2347C377.278 48.7877 377.167 50.4655 376.959 52.2958L375.795 61.7801H336.485V61.891C336.346 63.444 336.277 64.4978 336.277 65.0525C336.277 68.6299 337.317 71.2922 339.383 73.0115C341.449 74.7309 344.943 75.5906 349.865 75.5906H355.023C358.67 75.5906 364.231 75.2717 371.677 74.6477L370.512 85.6019C364.328 86.2397 358.781 86.5447 353.859 86.5447H348.701C340.201 86.5447 333.961 84.8254 329.995 81.3866C326.03 77.9478 324.047 72.8868 324.047 66.2172C324.047 64.5949 324.158 62.9448 324.366 61.2671L325.42 52.4206C326.404 43.99 329.177 37.6533 333.739 33.3964C338.301 29.1396 344.804 27.0181 353.235 27.0181H355.342L355.356 26.9904ZM364.952 51.547V51.4361C365.09 49.897 365.16 48.7738 365.16 48.0666C365.16 44.6972 364.258 42.132 362.47 40.371C360.681 38.61 357.852 37.7365 353.984 37.7365H351.876C343.584 37.7365 338.883 42.34 337.76 51.547H364.952Z" fill="currentColor"/>
+          <!-- X -->
+          <path d="M420.592 36.2526L404.16 6.95374H389.504L411.745 45.5289L377.593 86.1008H393.082L418.068 55.6511L435.553 86.1008H450.417L426.817 46.3747L420.592 36.2526Z" fill="currentColor"/>
+          <path d="M443.879 6.95374L422.068 34.3945L428.349 44.4751L458.952 6.95374H443.879Z" fill="currentColor"/>
+        </svg>
+        <span class="kr-badge">KR</span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#market"    data-i="nav_market">Markets</a></li>
+        <li><a href="#products"  data-i="nav_spot">Spot</a></li>
+        <li><a href="#products"  data-i="nav_perp">Perpetual</a></li>
+        <li><a href="#products"  data-i="nav_copy">Copy Trading</a></li>
+        <li><a href="#products"  data-i="nav_earn">Earn</a></li>
+        <li><a href="#support"   data-i="nav_support">Support</a></li>
+      </ul>
+
+      <div class="nav-acts">
+        <button class="btn-out"  onclick="alert('Coming soon.')" data-i="btn_login">Log In</button>
+        <button class="btn-fill" onclick="alert('Coming soon.')" data-i="btn_reg">Register</button>
+        <button class="hbg" id="hbg" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mob-nav" id="mobNav">
+  <a href="#market"   onclick="closeMenu()" data-i="nav_market">Markets</a>
+  <a href="#products" onclick="closeMenu()" data-i="nav_spot">Spot Trading</a>
+  <a href="#products" onclick="closeMenu()" data-i="nav_perp">Perpetual</a>
+  <a href="#products" onclick="closeMenu()" data-i="nav_copy">Copy Trading</a>
+  <a href="#products" onclick="closeMenu()" data-i="nav_earn">Earn</a>
+  <a href="#support"  onclick="closeMenu()" data-i="nav_support">Support</a>
+  <div class="mob-nav-btns">
+    <button class="btn-out"  onclick="alert('Coming soon.')" data-i="btn_login">Log In</button>
+    <button class="btn-fill" onclick="alert('Coming soon.')" data-i="btn_reg">Register</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════ -->
+<section class="hero" id="hero">
+  <div class="hero-orb orb1"></div>
+  <div class="hero-orb orb2"></div>
+  <div class="c">
+    <div class="hero-in">
+
+      <!-- Left: Text -->
+      <div class="hero-txt">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span data-i="hero_badge">Official Korean Partner</span>
+        </div>
+        <h1 class="hero-h1">
+          Welcome to<br><span class="hl">OrangeX Korea</span>
+        </h1>
+        <p class="hero-p" data-i="hero_sub">Professional crypto trading platform with top-tier liquidity and institutional-grade security.</p>
+        <div class="hero-btns">
+          <a href="#" class="btn-hpri" onclick="alert('Coming soon.'); return false;" data-i="hero_cta">Get Started →</a>
+          <a href="#market" class="btn-hsec" data-i="hero_mkt">View Markets</a>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <div class="hs-val">$2.4B+</div>
+            <div class="hs-lbl" data-i="stat_vol">Daily Volume</div>
+          </div>
+          <div>
+            <div class="hs-val">5M+</div>
+            <div class="hs-lbl" data-i="stat_usr">Global Users</div>
+          </div>
+          <div>
+            <div class="hs-val">200+</div>
+            <div class="hs-lbl" data-i="stat_pairs">Trading Pairs</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Trading Terminal -->
+      <div class="hero-vis">
+        <div class="terminal">
+          <!-- Window bar -->
+          <div class="term-header">
+            <div class="term-dots">
+              <div class="term-dot td1"></div>
+              <div class="term-dot td2"></div>
+              <div class="term-dot td3"></div>
+            </div>
+            <span class="term-title">OrangeX Korea · Terminal</span>
+            <div class="term-live">
+              <span class="live-dot"></span>LIVE
+            </div>
+          </div>
+
+          <!-- Price -->
+          <div class="term-price-row">
+            <div class="term-pair">
+              <div class="pair-icon" style="background:#F7931A">₿</div>
+              <div>
+                <div class="pair-name">BTC / USDT</div>
+                <div class="pair-type">Perpetual · 100x</div>
+              </div>
+            </div>
+            <div class="term-chg" id="termChg">+2.34%</div>
+          </div>
+          <div class="term-price">
+            <div class="term-price-big" id="termPrice">$94,218.50</div>
+            <div class="term-price-usd" id="termKrw">≈ ₩130,501,243</div>
+          </div>
+
+          <!-- Candlestick chart -->
+          <div class="term-chart">
+            <div class="chart-labels">
+              <span class="chart-label">94,800</span>
+              <span class="chart-label">94,400</span>
+              <span class="chart-label">94,000</span>
+            </div>
+            <svg class="candle-svg" viewBox="0 0 400 120" height="120" preserveAspectRatio="none" id="candleSvg">
+              <!-- Grid lines -->
+              <line x1="0" y1="20" x2="400" y2="20" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+              <line x1="0" y1="60" x2="400" y2="60" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+              <line x1="0" y1="100" x2="400" y2="100" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+              <!-- Candles rendered by JS -->
+            </svg>
+            <div class="chart-timeframes">
+              <button class="tf-btn">1m</button>
+              <button class="tf-btn active">15m</button>
+              <button class="tf-btn">1H</button>
+              <button class="tf-btn">4H</button>
+              <button class="tf-btn">1D</button>
+            </div>
+          </div>
+
+          <!-- Mini tickers (dynamically updated) -->
+          <div class="term-tickers">
+            <div class="mini-tick">
+              <div class="mt-sym" id="mt1s">ETH/USDT</div>
+              <div class="mt-price" id="mt1p">$3,156</div>
+              <div class="mt-chg up" id="mt1c">+1.87%</div>
+            </div>
+            <div class="mini-tick">
+              <div class="mt-sym" id="mt2s">SOL/USDT</div>
+              <div class="mt-price" id="mt2p">$187.45</div>
+              <div class="mt-chg dn" id="mt2c">-0.92%</div>
+            </div>
+            <div class="mini-tick">
+              <div class="mt-sym" id="mt3s">BNB/USDT</div>
+              <div class="mt-price" id="mt3p">$612.30</div>
+              <div class="mt-chg up" id="mt3c">+0.54%</div>
+            </div>
+          </div>
+
+          <!-- Buy / Sell -->
+          <div class="term-actions">
+            <button class="btn-buy" onclick="alert('Coming soon.')">Buy / Long</button>
+            <button class="btn-sell" onclick="alert('Coming soon.')">Sell / Short</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ANNOUNCEMENTS -->
+<div class="ann-bar">
+  <div class="c">
+    <div class="ann-in">
+      <div class="ann-tag">📢 <span data-i="ann_label">Notice</span></div>
+      <div class="ann-scroll">
+        <div class="ann-track">
+          <span class="ann-item">🎉 OrangeX Korea officially launched! New members get 30-day zero trading fees →</span>
+          <span class="ann-item">📈 New listings: ONDO/USDT · WIF/USDT · PEPE/USDT now available →</span>
+          <span class="ann-item">🔒 Enable 2FA and receive exclusive bonus rewards →</span>
+          <span class="ann-item">💰 Top Copy Trading leader achieves 120% annualized return →</span>
+          <span class="ann-item">🎉 OrangeX Korea officially launched! New members get 30-day zero trading fees →</span>
+          <span class="ann-item">📈 New listings: ONDO/USDT · WIF/USDT · PEPE/USDT now available →</span>
+          <span class="ann-item">🔒 Enable 2FA and receive exclusive bonus rewards →</span>
+          <span class="ann-item">💰 Top Copy Trading leader achieves 120% annualized return →</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRICE TICKER -->
+<div class="tick-bar">
+  <div class="tick-track" id="tickTrack"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     MARKET
+═══════════════════════════════════════════ -->
+<section class="mkt-sec" id="market">
+  <div class="c">
+    <div style="margin-bottom:28px">
+      <div class="sec-lbl" data-i="mkt_lbl">Live Markets</div>
+      <h2 class="sec-h" data-i="mkt_h">Seize Your Opportunity</h2>
+    </div>
+    <div class="mkt-top">
+      <div class="mkt-tabs" id="mktTabs">
+        <button class="m-tab active" data-tab="d" data-i="tab_d">Hot Derivatives</button>
+        <button class="m-tab" data-tab="s" data-i="tab_s">Hot Coins</button>
+        <button class="m-tab" data-tab="g" data-i="tab_g">Top Gainers</button>
+        <button class="m-tab" data-tab="n" data-i="tab_n">New Listings</button>
+      </div>
+      <div class="srch-wrap">
+        <span class="srch-ico">🔍</span>
+        <input class="srch" type="text" id="mktSrch" placeholder="Search">
+      </div>
+    </div>
+    <div class="tbl-wrap">
+      <table class="mkt-tbl">
+        <thead><tr>
+          <th style="width:38%" data-i="th_sym">Symbol</th>
+          <th data-i="th_price">Last Price</th>
+          <th data-i="th_chg">24H Change</th>
+          <th class="cv" data-i="th_vol">24H Volume</th>
+          <th class="cm" data-i="th_cap">Market Cap</th>
+        </tr></thead>
+        <tbody id="mktBody"></tbody>
+      </table>
+    </div>
+    <div class="mkt-more">
+      <button class="mkt-more-btn" onclick="alert('Coming soon.')" data-i="mkt_more">View All Markets →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     PRODUCTS
+═══════════════════════════════════════════ -->
+<section class="prod-sec" id="products">
+  <div class="c">
+    <div class="sec-hc">
+      <div class="sec-lbl" data-i="prod_lbl">Services</div>
+      <h2 class="sec-h" data-i="prod_h">Build Your Portfolio</h2>
+      <p class="sec-p" data-i="prod_sub">Explore OrangeX Korea's full suite of trading products designed for every level.</p>
+    </div>
+    <div class="prod-grid">
+      <div class="prod-card fu">
+        <div class="prod-ico">📊</div>
+        <h3 class="prod-h" data-i="p1_h">Spot Trading</h3>
+        <div class="prod-feats">
+          <div class="prod-feat" data-i="p1_f1">200+ trading pairs</div>
+          <div class="prod-feat" data-i="p1_f2">Fees from 0.1%</div>
+          <div class="prod-feat" data-i="p1_f3">Instant matching engine</div>
+          <div class="prod-feat" data-i="p1_f4">Real-time order book</div>
+        </div>
+        <p class="prod-p" data-i="p1_p">Buy and sell digital assets in real time. Experience stable liquidity and lightning-fast execution at the best prices.</p>
+        <a href="#" class="prod-lnk" onclick="return false" data-i="learn_more">Learn More →</a>
+      </div>
+      <div class="prod-card fu">
+        <div class="prod-ico">⚡</div>
+        <h3 class="prod-h" data-i="p2_h">Perpetual Futures</h3>
+        <div class="prod-feats">
+          <div class="prod-feat" data-i="p2_f1">Up to 100x leverage</div>
+          <div class="prod-feat" data-i="p2_f2">USDT perpetual contracts</div>
+          <div class="prod-feat" data-i="p2_f3">Long & Short positions</div>
+          <div class="prod-feat" data-i="p2_f4">Competitive funding rates</div>
+        </div>
+        <p class="prod-p" data-i="p2_p">Capture opportunities in both bull and bear markets with leverage. Professional-grade tools for sophisticated trading strategies.</p>
+        <a href="#" class="prod-lnk" onclick="return false" data-i="learn_more">Learn More →</a>
+      </div>
+      <div class="prod-card fu">
+        <div class="prod-ico">🤝</div>
+        <h3 class="prod-h" data-i="p3_h">Copy Trading</h3>
+        <div class="prod-feats">
+          <div class="prod-feat" data-i="p3_f1">Auto-copy top traders</div>
+          <div class="prod-feat" data-i="p3_f2">Transparent P&L history</div>
+          <div class="prod-feat" data-i="p3_f3">One-click follow</div>
+          <div class="prod-feat" data-i="p3_f4">Perfect for beginners</div>
+        </div>
+        <p class="prod-p" data-i="p3_p">Mirror the strategies of verified expert traders automatically. Experience professional returns without extensive trading experience.</p>
+        <a href="#" class="prod-lnk" onclick="return false" data-i="learn_more">Learn More →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     GET STARTED
+═══════════════════════════════════════════ -->
+<section class="steps-sec">
+  <div class="c">
+    <div class="sec-hc">
+      <div class="sec-lbl" data-i="gs_lbl">Get Started</div>
+      <h2 class="sec-h" data-i="gs_h">Start Your Journey in 3 Steps</h2>
+      <p class="sec-p" data-i="gs_sub">No complex procedures — begin trading in minutes.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step fu">
+        <div class="step-n">1</div>
+        <h3 class="step-h" data-i="s1_h">Create Account</h3>
+        <p class="step-p" data-i="s1_p">Sign up with your email or phone number. Takes less than a minute to complete.</p>
+      </div>
+      <div class="step fu">
+        <div class="step-n">2</div>
+        <h3 class="step-h" data-i="s2_h">Verify Identity</h3>
+        <p class="step-p" data-i="s2_p">Complete KYC verification to unlock all features and ensure a secure trading environment.</p>
+      </div>
+      <div class="step fu">
+        <div class="step-n">3</div>
+        <h3 class="step-h" data-i="s3_h">Start Trading</h3>
+        <p class="step-p" data-i="s3_p">Deposit funds and start trading immediately. Our 24/7 support team is always here to help.</p>
+      </div>
+    </div>
+    <div class="steps-cta">
+      <a href="#" class="btn-hpri" onclick="alert('Coming soon.'); return false;" data-i="gs_cta">Start for Free →</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-sec">
+  <div class="c">
+    <div class="stats-g">
+      <div><div class="st-v" id="sv1">$0</div><div class="st-l" data-i="st1">Monthly Volume</div></div>
+      <div><div class="st-v" id="sv2">0</div><div class="st-l" data-i="st2">Global Users</div></div>
+      <div><div class="st-v" id="sv3">0</div><div class="st-l" data-i="st3">Trading Pairs</div></div>
+      <div><div class="st-v" id="sv4">0%</div><div class="st-l" data-i="st4">System Uptime</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     APP
+═══════════════════════════════════════════ -->
+<section class="app-sec">
+  <div class="c">
+    <div class="app-in">
+      <div class="app-cnt">
+        <div class="sec-lbl" data-i="app_lbl">Mobile App</div>
+        <h2 class="app-h" data-i="app_h">Trade Anytime,<br>Anywhere</h2>
+        <p class="app-p" data-i="app_p">Real-time prices, instant execution, and portfolio management — all in the palm of your hand on iOS and Android.</p>
+        <div class="app-btns">
+          <a href="#" class="app-btn" onclick="alert('Coming soon.'); return false;">
+            <span class="app-btn-ico">🍎</span>
+            <div><div class="app-btn-sub">Download on the</div><div class="app-btn-name">App Store</div></div>
+          </a>
+          <a href="#" class="app-btn" onclick="alert('Coming soon.'); return false;">
+            <span class="app-btn-ico">▶</span>
+            <div><div class="app-btn-sub">Get it on</div><div class="app-btn-name">Google Play</div></div>
+          </a>
+        </div>
+      </div>
+      <div class="app-vis">
+        <div class="qr-box">
+          <svg width="110" height="110" viewBox="0 0 110 110" fill="none">
+            <rect width="110" height="110" fill="white"/>
+            <rect x="8" y="8" width="34" height="34" fill="#1D1D1F"/><rect x="13" y="13" width="24" height="24" fill="white"/><rect x="18" y="18" width="14" height="14" fill="#1D1D1F"/>
+            <rect x="68" y="8" width="34" height="34" fill="#1D1D1F"/><rect x="73" y="13" width="24" height="24" fill="white"/><rect x="78" y="18" width="14" height="14" fill="#1D1D1F"/>
+            <rect x="8" y="68" width="34" height="34" fill="#1D1D1F"/><rect x="13" y="73" width="24" height="24" fill="white"/><rect x="18" y="78" width="14" height="14" fill="#1D1D1F"/>
+            <rect x="48" y="8" width="6" height="6" fill="#1D1D1F"/><rect x="56" y="8" width="6" height="6" fill="#1D1D1F"/>
+            <rect x="48" y="16" width="6" height="6" fill="#1D1D1F"/><rect x="56" y="24" width="6" height="6" fill="#1D1D1F"/>
+            <rect x="48" y="32" width="6" height="6" fill="#1D1D1F"/>
+            <rect x="8" y="48" width="6" height="6" fill="#1D1D1F"/><rect x="16" y="48" width="6" height="6" fill="#1D1D1F"/>
+            <rect x="32" y="48" width="6" height="6" fill="#1D1D1F"/><rect x="8" y="56" width="6" height="6" fill="#1D1D1F"/>
+            <rect x="24" y="56" width="6" height="6" fill="#1D1D1F"/><rect x="32" y="56" width="6" height="6" fill="#1D1D1F"/>
+            <rect x="48" y="48" width="6" height="6" fill="#FFA500"/><rect x="56" y="48" width="6" height="6" fill="#FFA500"/>
+            <rect x="64" y="48" width="6" height="6" fill="#FFA500"/>
+            <rect x="48" y="56" width="6" height="6" fill="#1D1D1F"/><rect x="64" y="56" width="6" height="6" fill="#1D1D1F"/>
+            <rect x="72" y="56" width="6" height="6" fill="#1D1D1F"/><rect x="80" y="48" width="6" height="6" fill="#1D1D1F"/>
+            <rect x="88" y="56" width="6" height="6" fill="#1D1D1F"/><rect x="96" y="48" width="6" height="6" fill="#1D1D1F"/>
+            <rect x="80" y="64" width="6" height="6" fill="#1D1D1F"/><rect x="56" y="64" width="6" height="6" fill="#1D1D1F"/>
+            <rect x="48" y="72" width="6" height="6" fill="#1D1D1F"/><rect x="64" y="72" width="6" height="6" fill="#1D1D1F"/>
+            <rect x="72" y="72" width="6" height="6" fill="#1D1D1F"/><rect x="56" y="80" width="6" height="6" fill="#1D1D1F"/>
+            <rect x="80" y="80" width="6" height="6" fill="#1D1D1F"/><rect x="88" y="72" width="6" height="6" fill="#1D1D1F"/>
+            <rect x="96" y="80" width="6" height="6" fill="#1D1D1F"/><rect x="88" y="88" width="6" height="6" fill="#1D1D1F"/>
+            <rect x="48" y="88" width="14" height="6" fill="#1D1D1F"/><rect x="72" y="88" width="6" height="6" fill="#1D1D1F"/>
+            <rect x="96" y="96" width="6" height="6" fill="#1D1D1F"/>
+          </svg>
+          <div class="qr-lbl" data-i="qr_lbl">Scan to Download</div>
+        </div>
+        <div class="phone-mock">
+          <div class="ph-scr">
+            <div class="ph-bar"><span class="ph-bar-t">OrangeX</span><span class="ph-bar-t">▲ +2.3%</span></div>
+            <div class="ph-chart">
+              <svg viewBox="0 0 110 60" preserveAspectRatio="none">
+                <defs><linearGradient id="pcg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FFA500" stop-opacity="0.4"/><stop offset="100%" stop-color="#FFA500" stop-opacity="0"/></linearGradient></defs>
+                <path d="M0,55 L15,48 L30,40 L45,42 L60,28 L75,20 L90,14 L110,8" fill="none" stroke="#FFA500" stroke-width="2" stroke-linecap="round"/>
+                <path d="M0,55 L15,48 L30,40 L45,42 L60,28 L75,20 L90,14 L110,8 L110,60 L0,60 Z" fill="url(#pcg)"/>
+              </svg>
+            </div>
+            <div class="ph-row"></div><div class="ph-row"></div><div class="ph-row"></div><div class="ph-row"></div><div class="ph-row"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust-sec" id="trust">
+  <div class="c">
+    <div class="sec-hc">
+      <div class="sec-lbl" data-i="tr_lbl">Security & Trust</div>
+      <h2 class="sec-h" data-i="tr_h">Your Trusted Exchange</h2>
+      <p class="sec-p" data-i="tr_sub">OrangeX Korea delivers world-class security and full regulatory compliance to protect your assets.</p>
+    </div>
+    <div class="trust-g">
+      <div class="trust-card fu"><div class="trust-ico">🔒</div><h3 class="trust-h" data-i="tr1_h">Cold Wallet Storage</h3><p class="trust-p" data-i="tr1_p">95%+ of all assets stored in offline cold wallets — fully protected from hacks and unauthorized access.</p></div>
+      <div class="trust-card fu"><div class="trust-ico">🛡️</div><h3 class="trust-h" data-i="tr2_h">Proof of Reserves</h3><p class="trust-p" data-i="tr2_p">Real-time, on-chain proof of reserves. Verify your assets are 100% backed at any time.</p></div>
+      <div class="trust-card fu"><div class="trust-ico">📋</div><h3 class="trust-h" data-i="tr3_h">Regulatory Compliance</h3><p class="trust-p" data-i="tr3_p">Full compliance with international financial regulations. Strict KYC/AML policies for a safe trading environment.</p></div>
+      <div class="trust-card fu"><div class="trust-ico">⚡</div><h3 class="trust-h" data-i="tr4_h">Ultra-Fast Engine</h3><p class="trust-p" data-i="tr4_p">Millisecond-level matching engine processing millions of orders per second. Zero slippage, optimal fills.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SUPPORT -->
+<section class="sup-sec" id="support">
+  <div class="c">
+    <div class="sec-hc">
+      <div class="sec-lbl" data-i="sp_lbl">Customer Support</div>
+      <h2 class="sec-h" data-i="sp_h">Feel Supported All The Time</h2>
+      <p class="sec-p" data-i="sp_sub">OrangeX Korea provides 24/7 dedicated Korean-language customer support.</p>
+    </div>
+    <div class="sup-g">
+      <div class="sup-card fu"><div class="sup-ico">💬</div><div><h3 class="sup-h" data-i="sp1_h">Live Chat Support</h3><p class="sup-p" data-i="sp1_p">24/7 real-time chat support in Korean and English. Average response time under 2 minutes.</p><a href="#" class="sup-lnk" onclick="alert('Coming soon.'); return false;" data-i="sp1_lnk">Start Chat →</a></div></div>
+      <div class="sup-card fu"><div class="sup-ico">📚</div><div><h3 class="sup-h" data-i="sp2_h">Help Center</h3><p class="sup-p" data-i="sp2_p">FAQs, trading guides, account setup — everything you need in one place.</p><a href="#" class="sup-lnk" onclick="alert('Coming soon.'); return false;" data-i="sp2_lnk">View Help →</a></div></div>
+      <div class="sup-card fu"><div class="sup-ico">🏘️</div><div><h3 class="sup-h" data-i="sp3_h">Community</h3><p class="sup-p" data-i="sp3_p">Join global traders on Telegram and KakaoTalk. Share insights and stay up to date.</p><a href="#" class="sup-lnk" onclick="alert('Coming soon.'); return false;" data-i="sp3_lnk">Join Community →</a></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-ban">
+  <div class="c">
+    <div class="cta-in">
+      <div>
+        <h2 class="cta-h" data-i="cta_h">Start Today &amp; Get<br>30-Day Zero Fees!</h2>
+        <p class="cta-p" data-i="cta_p">Sign up now — zero trading fees for 30 days + welcome bonus for new members</p>
+      </div>
+      <a href="#" class="btn-wht" onclick="alert('Coming soon.'); return false;" data-i="cta_btn">Create Free Account →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="c">
+    <div class="ft-g">
+      <div class="ft-brand">
+        <div style="display:inline-flex;position:relative;margin-bottom:14px">
+          <svg width="120" height="20" viewBox="0 0 470 109" fill="none" xmlns="http://www.w3.org/2000/svg" color="#ffffff">
+            <path d="M71.8252 74.8975C64.6488 81.3873 55.2749 85.4898 44.9521 85.9561V70.8809C51.1192 70.4457 56.7338 68.0142 61.1553 64.2275L71.8252 74.8975ZM24.71 64.1953C28.8973 67.7948 34.161 70.175 39.9521 70.792V85.8955C30.0141 85.205 21.0053 81.1428 14.0645 74.8408L24.71 64.1953ZM85.9551 44.9541C85.4991 55.0427 81.5695 64.2246 75.333 71.335L64.6484 60.6504C68.193 56.3101 70.4619 50.8882 70.8809 44.9541H85.9551ZM15.0244 44.9541C15.4421 50.8702 17.6977 56.2777 21.2236 60.6113L10.5645 71.2705C4.36083 64.1692 0.454559 55.012 0 44.9541H15.0244ZM74.8398 14.0654C81.1421 21.0064 85.2043 30.0157 85.8945 39.9541H70.792C70.1752 34.1625 67.794 28.8986 64.1943 24.7109L74.8398 14.0654ZM21.6777 24.75C18.0967 28.9313 15.7272 34.1803 15.1123 39.9541H0.0605469C0.748723 30.0463 4.78838 21.0622 11.0576 14.1299L21.6777 24.75ZM39.9521 15.1133C34.409 15.7038 29.3492 17.9113 25.2539 21.2559L14.6201 10.6221C21.4831 4.60246 30.2769 0.732767 39.9521 0.0605469V15.1133ZM44.9521 0C55.0104 0.454347 64.168 4.36161 71.2695 10.5654L60.6104 21.2246C56.2765 17.6984 50.8686 15.4429 44.9521 15.0254V0Z" fill="#FFA500"/>
+            <path d="M136.054 38.8871C131.7 38.7484 128.885 38.6791 127.624 38.6791C123.131 38.6791 119.748 39.7468 117.502 41.896C115.255 44.0452 113.841 47.5672 113.286 52.4896L109.071 86.1146H96.9521L101.056 52.8085C102.11 43.8927 104.8 37.4173 109.113 33.4239C113.439 29.4166 120.053 27.4199 128.983 27.4199C132.491 27.4199 135.486 27.5308 137.94 27.7388L136.04 38.9148L136.054 38.8871Z" fill="currentColor"/>
+            <path d="M154.607 86.1008C149.338 86.1008 145.123 84.6033 141.961 81.6221C138.8 78.6409 137.219 74.7585 137.219 69.9747C137.219 68.9209 137.247 68.1166 137.33 67.5481C137.968 63.1942 139.091 59.7277 140.7 57.1625C142.322 54.5973 144.651 52.7393 147.702 51.5745C150.752 50.4098 154.774 49.8413 159.765 49.8413H177.472L177.583 48.9955C177.652 48.6488 177.694 48.1496 177.694 47.5257C177.694 44.7802 176.779 42.5755 174.949 40.8839C173.118 39.1922 170.276 38.3603 166.407 38.3603H163.662C157.408 38.3603 151.792 38.5405 146.801 38.8872L148.381 28.141L151.432 27.933C152.555 27.8637 154.538 27.7528 157.38 27.6141C160.223 27.4755 162.705 27.4061 164.813 27.4061H167.655C174.893 27.4061 180.37 29.1255 184.1 32.5643C187.816 36.003 189.688 40.6065 189.688 46.3748C189.688 47.0126 189.619 48.0942 189.48 49.6472L185.154 86.1147H154.593L154.607 86.1008ZM149.338 68.8238C149.338 70.8621 149.92 72.429 151.071 73.5105C152.236 74.6059 153.9 75.1467 156.077 75.1467H174.408L176.197 60.3933L158.698 60.2824C156.022 60.213 153.9 60.7261 152.319 61.8076C150.739 62.903 149.768 64.8165 149.421 67.5481L149.31 68.8099L149.338 68.8238Z" fill="currentColor"/>
+            <path d="M216.033 38.6792L210.348 86.1008H198.229L205.398 27.4061H231.854C246.4 27.4061 253.665 34.0757 253.665 47.4286C253.665 49.0509 253.555 50.798 253.347 52.6977L249.242 86.1008H237.123L241.228 52.3788C241.366 50.9783 241.436 49.9938 241.436 49.4253C241.436 42.2566 237.789 38.6792 230.482 38.6792H216.047H216.033Z" fill="currentColor"/>
+            <path d="M264.209 52.8086C266.039 35.8782 275.385 27.4061 292.246 27.4061H317.44L309.745 90.219C308.968 95.9041 306.639 100.411 302.742 103.711C298.846 107.011 292.953 108.661 285.091 108.661C278.13 108.661 271.572 108.383 265.387 107.815L266.649 96.8608C273.388 97.4987 279.78 97.8037 285.826 97.8037C289.694 97.8037 292.537 97.1659 294.367 95.9041C296.198 94.6423 297.279 92.6317 297.64 89.9001L298.056 86.1008H284.883C270.338 86.1008 263.072 79.3204 263.072 65.7594C263.072 64.2203 263.183 62.5703 263.391 60.8093L264.237 52.7947L264.209 52.8086ZM299.401 75.0496L303.935 38.485H290.873C282.235 38.485 277.423 43.1579 276.439 52.5036L275.496 61.1421C275.357 62.5425 275.288 63.4993 275.288 63.9846C275.288 71.3613 278.934 75.0496 286.242 75.0496H299.415H299.401Z" fill="currentColor"/>
+            <path d="M355.356 26.9904C362.594 26.9904 368.058 28.6959 371.746 32.1069C375.434 35.5179 377.278 40.5513 377.278 47.2347C377.278 48.7877 377.167 50.4655 376.959 52.2958L375.795 61.7801H336.485V61.891C336.346 63.444 336.277 64.4978 336.277 65.0525C336.277 68.6299 337.317 71.2922 339.383 73.0115C341.449 74.7309 344.943 75.5906 349.865 75.5906H355.023C358.67 75.5906 364.231 75.2717 371.677 74.6477L370.512 85.6019C364.328 86.2397 358.781 86.5447 353.859 86.5447H348.701C340.201 86.5447 333.961 84.8254 329.995 81.3866C326.03 77.9478 324.047 72.8868 324.047 66.2172C324.047 64.5949 324.158 62.9448 324.366 61.2671L325.42 52.4206C326.404 43.99 329.177 37.6533 333.739 33.3964C338.301 29.1396 344.804 27.0181 353.235 27.0181H355.342L355.356 26.9904ZM364.952 51.547V51.4361C365.09 49.897 365.16 48.7738 365.16 48.0666C365.16 44.6972 364.258 42.132 362.47 40.371C360.681 38.61 357.852 37.7365 353.984 37.7365H351.876C343.584 37.7365 338.883 42.34 337.76 51.547H364.952Z" fill="currentColor"/>
+            <path d="M420.592 36.2526L404.16 6.95374H389.504L411.745 45.5289L377.593 86.1008H393.082L418.068 55.6511L435.553 86.1008H450.417L426.817 46.3747L420.592 36.2526Z" fill="currentColor"/>
+            <path d="M443.879 6.95374L422.068 34.3945L428.349 44.4751L458.952 6.95374H443.879Z" fill="currentColor"/>
+          </svg>
+          <span class="ft-logo-kr" style="position:absolute;top:-7px;right:-4px;background:var(--org);color:#fff;font-size:7px;font-weight:800;padding:1px 4px;border-radius:3px">KR</span>
+        </div>
+        <p class="ft-desc" data-i="ft_desc">OrangeX Korea is the official Korean partner of global digital asset exchange OrangeX — delivering best-in-class technology, security, and trading experience.</p>
+        <div class="ft-socs">
+          <a href="#" class="ft-soc" title="Telegram">✈</a>
+          <a href="#" class="ft-soc" title="X">𝕏</a>
+          <a href="#" class="ft-soc" title="KakaoTalk">💬</a>
+          <a href="#" class="ft-soc" title="YouTube">▶</a>
+          <a href="#" class="ft-soc" title="LinkedIn">in</a>
+        </div>
+      </div>
+      <div class="ft-col" id="fc1">
+        <h4 class="ft-col-h" data-i="ft1_h">About <span class="ft-acc">+</span></h4>
+        <ul class="ft-list"><li><a href="#">About OrangeX</a></li><li><a href="#" data-i="ft_ann">Announcements</a></li><li><a href="#" data-i="ft_terms">Terms of Service</a></li><li><a href="#" data-i="ft_priv">Privacy Policy</a></li><li><a href="#" data-i="ft_careers">Careers</a></li></ul>
+      </div>
+      <div class="ft-col" id="fc2">
+        <h4 class="ft-col-h" data-i="ft2_h">Products <span class="ft-acc">+</span></h4>
+        <ul class="ft-list"><li><a href="#">Spot Trading</a></li><li><a href="#">Perpetual</a></li><li><a href="#">Copy Trading</a></li><li><a href="#">Earn</a></li><li><a href="#">OTC Trading</a></li></ul>
+      </div>
+      <div class="ft-col" id="fc3">
+        <h4 class="ft-col-h" data-i="ft3_h">Programs <span class="ft-acc">+</span></h4>
+        <ul class="ft-list"><li><a href="#" data-i="ft_ref">Referral</a></li><li><a href="#" data-i="ft_aff">Affiliate</a></li><li><a href="#">API Docs</a></li><li><a href="#" data-i="ft_list">Listing</a></li><li><a href="#" data-i="ft_por">Proof of Reserves</a></li></ul>
+      </div>
+      <div class="ft-col" id="fc4">
+        <h4 class="ft-col-h" data-i="ft4_h">Support <span class="ft-acc">+</span></h4>
+        <ul class="ft-list"><li><a href="#">FAQ</a></li><li><a href="#" data-i="ft_fees">Fee Schedule</a></li><li><a href="#" data-i="ft_help">Help Center</a></li><li><a href="#" data-i="ft_chat">Live Chat</a></li><li><a href="#" data-i="ft_anti">Anti-Phishing</a></li></ul>
+      </div>
+    </div>
+    <div class="ft-bot">
+      <div class="ft-copy">© 2026 OrangeX Korea. All Rights Reserved.</div>
+      <div class="ft-legal">
+        <a href="#" data-i="ft_terms">Terms</a>
+        <a href="#" data-i="ft_priv">Privacy</a>
+        <a href="#" data-i="ft_legal">Legal</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="mob-cta" id="mobCta">
+  <button class="mc-login" onclick="alert('Coming soon.')" data-i="btn_login">Log In</button>
+  <button class="mc-reg" onclick="alert('Coming soon.')" data-i="btn_reg">Register</button>
+</div>
+<button class="scr-top" id="scrTop">↑</button>
+
+<!-- ═══════════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════════ -->
+<script>
+'use strict';
+
+/* ── i18n ── */
+const LANG = {
+  en:{
+    nav_market:'Markets',nav_spot:'Spot',nav_perp:'Perpetual',nav_copy:'Copy Trading',nav_earn:'Earn',nav_support:'Support',
+    btn_login:'Log In',btn_reg:'Register',
+    hero_badge:'Official Korean Partner',hero_sub:'Professional crypto trading platform with top-tier liquidity and institutional-grade security.',
+    hero_cta:'Get Started →',hero_mkt:'View Markets',
+    stat_vol:'Daily Volume',stat_usr:'Global Users',stat_pairs:'Trading Pairs',
+    ann_label:'Notice',
+    mkt_lbl:'Live Markets',mkt_h:'Seize Your Opportunity',
+    tab_d:'Hot Derivatives',tab_s:'Hot Coins',tab_g:'Top Gainers',tab_n:'New Listings',
+    th_sym:'Symbol',th_price:'Last Price',th_chg:'24H Change',th_vol:'24H Volume',th_cap:'Market Cap',
+    mkt_more:'View All Markets →',
+    prod_lbl:'Services',prod_h:'Build Your Portfolio',prod_sub:"Explore OrangeX Korea's full suite of trading products designed for every level.",
+    p1_h:'Spot Trading',p1_f1:'200+ trading pairs',p1_f2:'Fees from 0.1%',p1_f3:'Instant matching engine',p1_f4:'Real-time order book',
+    p1_p:'Buy and sell digital assets in real time. Experience stable liquidity and lightning-fast execution.',
+    p2_h:'Perpetual Futures',p2_f1:'Up to 100x leverage',p2_f2:'USDT perpetual contracts',p2_f3:'Long & Short positions',p2_f4:'Competitive funding rates',
+    p2_p:'Capture opportunities in both bull and bear markets with leverage.',
+    p3_h:'Copy Trading',p3_f1:'Auto-copy top traders',p3_f2:'Transparent P&L history',p3_f3:'One-click follow',p3_f4:'Perfect for beginners',
+    p3_p:'Mirror the strategies of verified expert traders automatically.',
+    learn_more:'Learn More →',
+    gs_lbl:'Get Started',gs_h:'Start Your Journey in 3 Steps',gs_sub:'No complex procedures — begin trading in minutes.',
+    s1_h:'Create Account',s1_p:'Sign up with your email or phone number. Takes less than a minute.',
+    s2_h:'Verify Identity',s2_p:'Complete KYC to unlock all features and ensure a secure environment.',
+    s3_h:'Start Trading',s3_p:'Deposit funds and start trading immediately. 24/7 support always available.',
+    gs_cta:'Start for Free →',
+    st1:'Monthly Volume',st2:'Global Users',st3:'Trading Pairs',st4:'System Uptime',
+    app_lbl:'Mobile App',app_h:'Trade Anytime,\nAnywhere',app_p:'Real-time prices, instant execution, and portfolio management — all in your hand.',
+    qr_lbl:'Scan to Download',
+    tr_lbl:'Security & Trust',tr_h:'Your Trusted Exchange',tr_sub:'OrangeX Korea delivers world-class security and full regulatory compliance.',
+    tr1_h:'Cold Wallet Storage',tr1_p:'95%+ of all assets in offline cold wallets — fully protected from hacks.',
+    tr2_h:'Proof of Reserves',tr2_p:'Real-time on-chain proof of reserves. Verify your assets are 100% backed.',
+    tr3_h:'Regulatory Compliance',tr3_p:'Full compliance with international regulations. Strict KYC/AML policies.',
+    tr4_h:'Ultra-Fast Engine',tr4_p:'Millisecond matching engine. Zero slippage, optimal fills every time.',
+    sp_lbl:'Customer Support',sp_h:'Feel Supported All The Time',sp_sub:'OrangeX Korea provides 24/7 dedicated customer support.',
+    sp1_h:'Live Chat Support',sp1_p:'24/7 real-time chat in Korean and English. Average response under 2 minutes.',sp1_lnk:'Start Chat →',
+    sp2_h:'Help Center',sp2_p:'FAQs, trading guides, account setup — everything in one place.',sp2_lnk:'View Help →',
+    sp3_h:'Community',sp3_p:'Join global traders on Telegram and KakaoTalk. Share insights and stay updated.',sp3_lnk:'Join Community →',
+    cta_h:'Start Today & Get\n30-Day Zero Fees!',cta_p:'Sign up now — zero trading fees for 30 days + welcome bonus',cta_btn:'Create Free Account →',
+    ft_desc:'OrangeX Korea is the official Korean partner of global digital asset exchange OrangeX — delivering best-in-class technology, security, and trading experience.',
+    ft1_h:'About',ft2_h:'Products',ft3_h:'Programs',ft4_h:'Support',
+    ft_ann:'Announcements',ft_terms:'Terms of Service',ft_priv:'Privacy Policy',ft_careers:'Careers',
+    ft_ref:'Referral',ft_aff:'Affiliate',ft_list:'Listing',ft_por:'Proof of Reserves',
+    ft_fees:'Fee Schedule',ft_help:'Help Center',ft_chat:'Live Chat',ft_anti:'Anti-Phishing',ft_legal:'Legal',
+  },
+  ko:{
+    nav_market:'마켓',nav_spot:'현물거래',nav_perp:'선물거래',nav_copy:'카피트레이딩',nav_earn:'수익창출',nav_support:'고객지원',
+    btn_login:'로그인',btn_reg:'회원가입',
+    hero_badge:'공식 한국 파트너',hero_sub:'글로벌 최고 수준의 유동성과 기관급 보안을 갖춘 전문 디지털 자산 거래 플랫폼.',
+    hero_cta:'지금 시작하기 →',hero_mkt:'마켓 보기',
+    stat_vol:'일일 거래량',stat_usr:'글로벌 사용자',stat_pairs:'거래 종목',
+    ann_label:'공지',
+    mkt_lbl:'실시간 마켓',mkt_h:'지금 바로 기회를 잡으세요',
+    tab_d:'인기 파생상품',tab_s:'인기 현물',tab_g:'상승률 TOP',tab_n:'신규 상장',
+    th_sym:'종목',th_price:'현재가',th_chg:'24H 변동',th_vol:'24H 거래량',th_cap:'시가총액',
+    mkt_more:'전체 마켓 보기 →',
+    prod_lbl:'서비스',prod_h:'포트폴리오를 구성하세요',prod_sub:'OrangeX Korea의 다양한 거래 상품으로 나만의 전략을 완성하세요.',
+    p1_h:'현물거래',p1_f1:'200+ 거래 종목',p1_f2:'최저 0.1% 수수료',p1_f3:'즉시 체결 엔진',p1_f4:'실시간 오더북',
+    p1_p:'다양한 디지털 자산을 실시간으로 매수·매도하세요. 안정적인 유동성과 빠른 체결로 최적의 가격을 경험하세요.',
+    p2_h:'선물거래',p2_f1:'최대 100배 레버리지',p2_f2:'USDT 영구 계약',p2_f3:'롱/숏 양방향 거래',p2_f4:'낮은 펀딩비율',
+    p2_p:'레버리지를 활용해 상승장과 하락장 모두에서 기회를 포착하세요.',
+    p3_h:'카피트레이딩',p3_f1:'TOP 트레이더 자동 복사',p3_f2:'실시간 수익률 공개',p3_f3:'원클릭 팔로우',p3_f4:'초보자도 쉽게',
+    p3_p:'검증된 전문 트레이더의 전략을 그대로 복사해 투자하세요.',
+    learn_more:'자세히 보기 →',
+    gs_lbl:'시작 가이드',gs_h:'3단계로 쉽게 시작하세요',gs_sub:'복잡한 절차 없이 몇 분 안에 거래를 시작할 수 있습니다.',
+    s1_h:'회원가입',s1_p:'이메일 또는 휴대폰 번호로 간편하게 가입하세요. 1분이면 충분합니다.',
+    s2_h:'본인인증 (KYC)',s2_p:'신원 확인을 완료하고 안전한 거래 환경을 구축하세요.',
+    s3_h:'거래 시작',s3_p:'자산을 입금하고 즉시 거래를 시작하세요. 24/7 한국어 지원팀이 함께합니다.',
+    gs_cta:'무료로 시작하기 →',
+    st1:'월간 총 거래량',st2:'글로벌 사용자',st3:'거래 가능 종목',st4:'시스템 가동률',
+    app_lbl:'모바일 앱',app_h:'언제 어디서나\n거래하세요',app_p:'실시간 시세, 즉시 체결, 포트폴리오 관리까지 모든 것을 한 손에.',
+    qr_lbl:'앱 다운로드 QR',
+    tr_lbl:'신뢰와 보안',tr_h:'신뢰할 수 있는 거래소',tr_sub:'OrangeX Korea는 글로벌 최고 수준의 보안과 투명한 운영으로 자산을 보호합니다.',
+    tr1_h:'콜드 월렛 보관',tr1_p:'전체 자산의 95% 이상을 오프라인 콜드 월렛에 보관하여 해킹으로부터 완벽히 보호합니다.',
+    tr2_h:'준비금 실시간 증명',tr2_p:'언제든지 자산 준비금 현황을 실시간으로 확인하세요. 100% 투명한 운영.',
+    tr3_h:'글로벌 규제 준수',tr3_p:'국제 금융 규제를 완벽히 준수하며 KYC/AML 정책으로 안전한 거래 환경을 제공합니다.',
+    tr4_h:'초고속 체결 엔진',tr4_p:'밀리초 단위의 매칭 엔진으로 초당 수십만 건을 처리합니다. 슬리피지 없이 최적가 체결.',
+    sp_lbl:'고객지원',sp_h:'항상 곁에 있겠습니다',sp_sub:'OrangeX Korea는 24시간 365일 한국어 전담 고객지원을 제공합니다.',
+    sp1_h:'실시간 채팅 지원',sp1_p:'24시간 365일 한국어 실시간 채팅 상담. 평균 응답 시간 2분 이내.',sp1_lnk:'채팅 시작 →',
+    sp2_h:'도움말 센터',sp2_p:'자주 묻는 질문, 거래 가이드, 계정 설정 등 모든 정보를 한곳에서.',sp2_lnk:'도움말 보기 →',
+    sp3_h:'커뮤니티',sp3_p:'텔레그램, 카카오톡 오픈채팅에서 글로벌 트레이더들과 소통하세요.',sp3_lnk:'커뮤니티 가입 →',
+    cta_h:'지금 바로 시작하고\n첫 달 수수료 무료!',cta_p:'신규 회원 가입 시 30일 무료 거래 + 신규 가입 보너스 제공',cta_btn:'무료 회원가입 →',
+    ft_desc:'OrangeX Korea는 글로벌 디지털 자산 거래소 OrangeX의 공식 한국 파트너로, 최고의 기술력과 보안으로 안전한 거래 환경을 제공합니다.',
+    ft1_h:'회사소개',ft2_h:'서비스',ft3_h:'프로그램',ft4_h:'지원',
+    ft_ann:'공지사항',ft_terms:'이용약관',ft_priv:'개인정보처리방침',ft_careers:'채용공고',
+    ft_ref:'친구 초대',ft_aff:'제휴 프로그램',ft_list:'상장 신청',ft_por:'준비금 증명',
+    ft_fees:'수수료 안내',ft_help:'도움말 센터',ft_chat:'라이브 채팅',ft_anti:'피싱 주의',ft_legal:'법적 고지',
+  },
+  ja:{
+    nav_market:'マーケット',nav_spot:'現物取引',nav_perp:'先物取引',nav_copy:'コピートレード',nav_earn:'積立',nav_support:'サポート',
+    btn_login:'ログイン',btn_reg:'新規登録',
+    hero_badge:'公式韓国パートナー',hero_sub:'最高水準の流動性と機関レベルのセキュリティを備えたプロ向けデジタル資産取引プラットフォーム。',
+    hero_cta:'今すぐ始める →',hero_mkt:'マーケットを見る',
+    stat_vol:'日次取引量',stat_usr:'グローバルユーザー',stat_pairs:'取引ペア数',
+    ann_label:'お知らせ',
+    mkt_lbl:'リアルタイムマーケット',mkt_h:'チャンスを掴もう',
+    tab_d:'人気デリバティブ',tab_s:'人気コイン',tab_g:'上昇率トップ',tab_n:'新規上場',
+    th_sym:'銘柄',th_price:'現在値',th_chg:'24H変動',th_vol:'24H出来高',th_cap:'時価総額',
+    mkt_more:'全マーケットを見る →',
+    prod_lbl:'サービス',prod_h:'ポートフォリオを構築しよう',prod_sub:'OrangeX Koreaの多彩な取引商品であなただけの戦略を完成させましょう。',
+    p1_h:'現物取引',p1_f1:'200以上の取引ペア',p1_f2:'手数料0.1%から',p1_f3:'即時マッチングエンジン',p1_f4:'リアルタイム板情報',
+    p1_p:'多様なデジタル資産をリアルタイムで売買できます。安定した流動性と高速約定を体験してください。',
+    p2_h:'先物取引',p2_f1:'最大100倍レバレッジ',p2_f2:'USDT永続契約',p2_f3:'ロング＆ショート両方向',p2_f4:'低いファンディングレート',
+    p2_p:'レバレッジを活用して強気・弱気市場どちらでもチャンスを掴みましょう。',
+    p3_h:'コピートレード',p3_f1:'TOPトレーダーを自動コピー',p3_f2:'リアルタイムP&L公開',p3_f3:'ワンクリックフォロー',p3_f4:'初心者にも最適',
+    p3_p:'認定済みトレーダーの戦略をそのままコピーして投資できます。',
+    learn_more:'詳しく見る →',
+    gs_lbl:'はじめ方',gs_h:'3ステップで簡単スタート',gs_sub:'複雑な手続きなし — 数分で取引を始められます。',
+    s1_h:'アカウント作成',s1_p:'メールまたは電話番号で簡単登録。1分もかかりません。',
+    s2_h:'本人確認(KYC)',s2_p:'身元確認を完了し、安全な取引環境を構築しましょう。',
+    s3_h:'取引開始',s3_p:'資産を入金してすぐに取引開始。24/7サポートがいつでも対応します。',
+    gs_cta:'無料で始める →',
+    st1:'月間取引量',st2:'グローバルユーザー',st3:'取引可能ペア',st4:'稼働率',
+    app_lbl:'モバイルアプリ',app_h:'いつでも、どこでも\n取引しよう',app_p:'リアルタイム価格、即時約定、ポートフォリオ管理、すべてを手のひらに。',
+    qr_lbl:'スキャンしてダウンロード',
+    tr_lbl:'信頼とセキュリティ',tr_h:'信頼できる取引所',tr_sub:'OrangeX Koreaは世界最高水準のセキュリティと透明な運営でお客様の資産を守ります。',
+    tr1_h:'コールドウォレット保管',tr1_p:'全資産の95%以上をオフラインのコールドウォレットで保管し、ハッキングから完全に保護。',
+    tr2_h:'準備金リアルタイム証明',tr2_p:'いつでも資産の準備金状況をリアルタイムで確認できます。100%透明な運営。',
+    tr3_h:'グローバル規制準拠',tr3_p:'国際金融規制を完全遵守。厳格なKYC/AMLポリシーで安全な取引環境を提供。',
+    tr4_h:'超高速約定エンジン',tr4_p:'ミリ秒単位のマッチングエンジンで秒間数十万件を処理。スリッページゼロで最適約定。',
+    sp_lbl:'カスタマーサポート',sp_h:'いつでも傍にいます',sp_sub:'OrangeX Koreaは24時間365日の専任カスタマーサポートを提供します。',
+    sp1_h:'ライブチャットサポート',sp1_p:'24時間365日のリアルタイムチャット対応。平均応答時間2分以内。',sp1_lnk:'チャット開始 →',
+    sp2_h:'ヘルプセンター',sp2_p:'よくある質問、取引ガイド、アカウント設定など全ての情報を一か所に。',sp2_lnk:'ヘルプを見る →',
+    sp3_h:'コミュニティ',sp3_p:'TelegramやKakaoTalkでグローバルトレーダーと情報交換しましょう。',sp3_lnk:'コミュニティに参加 →',
+    cta_h:'今すぐ始めて\n30日間手数料無料！',cta_p:'新規登録で30日間手数料無料＋ウェルカムボーナス進呈',cta_btn:'無料で新規登録 →',
+    ft_desc:'OrangeX Koreaはグローバルデジタル資産取引所OrangeXの公式韓国パートナーです。最高の技術と安全性で最良の取引環境を提供します。',
+    ft1_h:'会社概要',ft2_h:'サービス',ft3_h:'プログラム',ft4_h:'サポート',
+    ft_ann:'お知らせ',ft_terms:'利用規約',ft_priv:'プライバシーポリシー',ft_careers:'採用情報',
+    ft_ref:'友達招待',ft_aff:'アフィリエイト',ft_list:'上場申請',ft_por:'準備金証明',
+    ft_fees:'手数料案内',ft_help:'ヘルプセンター',ft_chat:'ライブチャット',ft_anti:'フィッシング注意',ft_legal:'法的告知',
+  }
+};
+
+let curLang = 'en';
+function setLang(l) {
+  curLang = l;
+  document.documentElement.lang = l === 'ko' ? 'ko' : l === 'ja' ? 'ja' : 'en';
+  document.body.className = l === 'ko' ? 'lang-ko' : l === 'ja' ? 'lang-ja' : '';
+  ['lbEn','lbKo','lbJa'].forEach(id => document.getElementById(id)?.classList.remove('active'));
+  document.getElementById(l === 'en' ? 'lbEn' : l === 'ko' ? 'lbKo' : 'lbJa')?.classList.add('active');
+  const dict = LANG[l];
+  document.querySelectorAll('[data-i]').forEach(el => {
+    const key = el.getAttribute('data-i');
+    if (dict[key]) {
+      if (el.tagName === 'INPUT') el.placeholder = dict[key];
+      else el.innerHTML = dict[key].replace(/\n/g,'<br>');
+    }
+  });
+  // Re-render market table headers are handled by data-i
+  renderTable(filteredCoins);
+}
+
+/* ── Coin Data ── */
+const COINS = [
+  {sym:'BTC',name:'Bitcoin',  color:'#F7931A',price:94218.50,ch:2.34, vol:'$1.23B',cap:'$1.86T',fmt:n=>'$'+n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})},
+  {sym:'ETH',name:'Ethereum', color:'#627EEA',price:3156.20, ch:1.87, vol:'$987.6M',cap:'$379.4B',fmt:n=>'$'+n.toFixed(2)},
+  {sym:'SOL',name:'Solana',   color:'#9945FF',price:187.45,  ch:-0.92,vol:'$456.7M',cap:'$89.2B', fmt:n=>'$'+n.toFixed(2)},
+  {sym:'BNB',name:'BNB',      color:'#F3BA2F',price:612.30,  ch:0.54, vol:'$234.5M',cap:'$88.1B', fmt:n=>'$'+n.toFixed(2)},
+  {sym:'XRP',name:'XRP',      color:'#346AA9',price:0.5821,  ch:3.12, vol:'$789.0M',cap:'$65.3B', fmt:n=>'$'+n.toFixed(4)},
+  {sym:'DOGE',name:'Dogecoin',color:'#C2A633',price:0.1834,  ch:-1.23,vol:'$345.6M',cap:'$26.7B', fmt:n=>'$'+n.toFixed(4)},
+  {sym:'ADA',name:'Cardano',  color:'#0033AD',price:0.4521,  ch:0.87, vol:'$123.4M',cap:'$15.9B', fmt:n=>'$'+n.toFixed(4)},
+  {sym:'AVAX',name:'Avalanche',color:'#E84142',price:38.72,  ch:-2.15,vol:'$89.0M', cap:'$15.8B', fmt:n=>'$'+n.toFixed(2)},
+  {sym:'DOT',name:'Polkadot', color:'#E6007A',price:7.83,    ch:1.45, vol:'$67.8M', cap:'$10.3B', fmt:n=>'$'+n.toFixed(2)},
+  {sym:'LINK',name:'Chainlink',color:'#2A5ADA',price:18.45,  ch:2.89, vol:'$213.4M',cap:'$10.9B', fmt:n=>'$'+n.toFixed(2)},
+  {sym:'UNI',name:'Uniswap',  color:'#FF007A',price:11.23,   ch:-0.45,vol:'$78.9M', cap:'$6.7B',  fmt:n=>'$'+n.toFixed(2)},
+  {sym:'MATIC',name:'Polygon',color:'#8247E5',price:0.8934,  ch:-0.67,vol:'$156.3M',cap:'$8.5B',  fmt:n=>'$'+n.toFixed(4)},
+];
+
+function liveJitter(p) { return parseFloat((p*(1+(Math.random()-0.499)*0.0015)).toFixed(p<1?6:2)); }
+
+/* ── Ticker Bar ── */
+function renderTicker() {
+  const t = document.getElementById('tickTrack'); if(!t) return;
+  t.innerHTML = [...COINS,...COINS].map(c => {
+    const up = c.ch >= 0;
+    return `<div class="tick-item"><div class="ti-ico" style="background:${c.color}">${c.sym.slice(0,2)}</div><span class="ti-s">${c.sym}/USDT</span><span class="ti-p">${c.fmt(c.price)}</span><span class="ti-c ${up?'up':'dn'}">${up?'+':''}${c.ch.toFixed(2)}%</span></div>`;
+  }).join('');
+}
+
+/* ── Market Table ── */
+let filteredCoins = [...COINS];
+let curTab = 'd';
+function tabCoins(tab) {
+  if(tab==='g') return [...COINS].sort((a,b)=>b.ch-a.ch);
+  if(tab==='n') return [...COINS].slice(-6).reverse();
+  if(tab==='s') return COINS.filter((_,i)=>i%2===0);
+  return [...COINS];
+}
+function renderTable(coins) {
+  const b = document.getElementById('mktBody'); if(!b) return;
+  if(!coins.length){b.innerHTML='<tr><td colspan="5" style="text-align:center;padding:40px;color:var(--tm)">No results.</td></tr>';return;}
+  b.innerHTML = coins.map(c => {
+    const up=c.ch>=0, arr=up?'▲':'▼';
+    return `<tr><td><div class="sym-cell"><div class="sym-ico" style="background:${c.color}">${c.sym.slice(0,3)}</div><div><div class="sym-n">${c.sym}/USDT</div><div class="sym-s">${c.name}</div></div></div></td><td class="pv">${c.fmt(c.price)}</td><td class="cv2 ${up?'up':'dn'}">${arr} ${up?'+':''}${c.ch.toFixed(2)}%</td><td class="vv cv">${c.vol}</td><td class="vv cm">${c.cap}</td></tr>`;
+  }).join('');
+}
+
+document.getElementById('mktTabs')?.addEventListener('click',e=>{
+  const tab=e.target.closest('[data-tab]'); if(!tab) return;
+  document.querySelectorAll('.m-tab').forEach(t=>t.classList.remove('active'));
+  tab.classList.add('active'); curTab=tab.dataset.tab;
+  const q=document.getElementById('mktSrch')?.value.trim().toUpperCase();
+  filteredCoins=tabCoins(curTab);
+  if(q) filteredCoins=filteredCoins.filter(c=>c.sym.includes(q)||c.name.toUpperCase().includes(q));
+  renderTable(filteredCoins);
+});
+document.getElementById('mktSrch')?.addEventListener('input',e=>{
+  const q=e.target.value.trim().toUpperCase();
+  filteredCoins=q?tabCoins(curTab).filter(c=>c.sym.includes(q)||c.name.toUpperCase().includes(q)):tabCoins(curTab);
+  renderTable(filteredCoins);
+});
+
+/* ── Candlestick Chart ── */
+function buildCandles() {
+  const svg = document.getElementById('candleSvg'); if(!svg) return;
+  const W=400,H=120,count=22,cw=14,gap=4;
+  const prices=[];let p=94200;
+  for(let i=0;i<count;i++){
+    const o=p, move=(Math.random()-0.45)*120;
+    const c=o+move, h=Math.max(o,c)+(Math.random()*40), l=Math.min(o,c)-(Math.random()*40);
+    prices.push({o,c,h,l}); p=c;
+  }
+  const allH=prices.map(p=>p.h), allL=prices.map(p=>p.l);
+  const maxP=Math.max(...allH)+50, minP=Math.min(...allL)-50;
+  const range=maxP-minP;
+  const py=v=>((maxP-v)/range)*(H-16)+8;
+
+  let html='';
+  prices.forEach((bar,i)=>{
+    const x=i*(cw+gap)+8;
+    const up=bar.c>=bar.o;
+    const col=up?'#1BB273':'#F2495E';
+    const bodyTop=py(Math.max(bar.o,bar.c)), bodyBot=py(Math.min(bar.o,bar.c));
+    const bodyH=Math.max(bodyBot-bodyTop,1);
+    const wickMid=x+cw/2;
+    html+=`<line x1="${wickMid}" y1="${py(bar.h)}" x2="${wickMid}" y2="${py(bar.l)}" stroke="${col}" stroke-width="1" opacity="0.7"/>`;
+    html+=`<rect x="${x}" y="${bodyTop}" width="${cw}" height="${bodyH}" fill="${col}" rx="1"/>`;
+  });
+  // Remove old candle content (keep grid lines)
+  const existing = svg.querySelectorAll('rect,line:not([y1="20"]):not([y1="60"]):not([y1="100"])');
+  existing.forEach(e=>e.remove());
+  svg.insertAdjacentHTML('beforeend', html);
+}
+
+/* ── Terminal Coin Cycling ── */
+const TERM_COINS = [
+  {sym:'BTC',name:'Bitcoin',icon:'₿',color:'#F7931A',type:'Perpetual · 100x',idx:0},
+  {sym:'ETH',name:'Ethereum',icon:'Ξ',color:'#627EEA',type:'Perpetual · 50x',idx:1},
+  {sym:'SOL',name:'Solana',icon:'◎',color:'#9945FF',type:'Perpetual · 50x',idx:2},
+  {sym:'BNB',name:'BNB',icon:'◆',color:'#F3BA2F',type:'Perpetual · 50x',idx:3},
+  {sym:'XRP',name:'XRP',icon:'✕',color:'#346AA9',type:'Perpetual · 75x',idx:4},
+];
+let termIdx = 0;
+
+function updateTerminal() {
+  const tc = TERM_COINS[termIdx];
+  const coin = COINS[tc.idx];
+  coin.price = liveJitter(coin.price);
+  const el = document.getElementById('termPrice');
+  if(el) el.textContent = coin.fmt(coin.price);
+  const krw = document.getElementById('termKrw');
+  if(krw) krw.textContent = '≈ ₩' + Math.round(coin.price*1384.5).toLocaleString('ko-KR');
+}
+
+function cycleTermCoin() {
+  termIdx = (termIdx + 1) % TERM_COINS.length;
+  const tc = TERM_COINS[termIdx];
+  const coin = COINS[tc.idx];
+  // Fade out
+  const prRow = document.querySelector('.term-price-row');
+  const prBlk = document.querySelector('.term-price');
+  prRow?.classList.add('term-fade');
+  prBlk?.classList.add('term-fade');
+  setTimeout(()=>{
+    // Update pair display
+    const ico = document.querySelector('.pair-icon');
+    if(ico){ico.style.background=tc.color;ico.textContent=tc.icon;}
+    const pn = document.querySelector('.pair-name');
+    if(pn) pn.textContent = tc.sym + ' / USDT';
+    const pt = document.querySelector('.pair-type');
+    if(pt) pt.textContent = tc.type;
+    const chg = document.getElementById('termChg');
+    if(chg){
+      const up = coin.ch >= 0;
+      chg.textContent = (up?'+':'') + coin.ch.toFixed(2) + '%';
+      chg.style.background = up ? 'var(--grn-b)' : 'var(--red-b)';
+      chg.style.color = up ? 'var(--grn)' : 'var(--red)';
+    }
+    updateTerminal();
+    buildCandles();
+    // Fade in
+    prRow?.classList.remove('term-fade');
+    prBlk?.classList.remove('term-fade');
+  }, 300);
+}
+
+function updateMiniTickers() {
+  COINS.forEach(c=>{ c.price=liveJitter(c.price); });
+  // Show 3 coins that are NOT the current terminal coin
+  const others = TERM_COINS.filter((_,i)=>i!==termIdx).slice(0,3);
+  others.forEach((tc,i)=>{
+    const coin = COINS[tc.idx];
+    const up = coin.ch >= 0;
+    const symEl = document.getElementById('mt'+(i+1)+'s');
+    const prEl = document.getElementById('mt'+(i+1)+'p');
+    const chEl = document.getElementById('mt'+(i+1)+'c');
+    if(symEl) symEl.textContent = tc.sym+'/USDT';
+    if(prEl) prEl.textContent = coin.fmt(coin.price);
+    if(chEl){chEl.textContent=(up?'+':'')+coin.ch.toFixed(2)+'%';chEl.className='mt-chg '+(up?'up':'dn');}
+  });
+  renderTable(filteredCoins);
+  renderTicker();
+}
+
+/* ── Stats counter ── */
+function animStat(el,target,pfx,sfx,dec){
+  const dur=1800,s=performance.now();
+  function f(now){
+    const t=Math.min((now-s)/dur,1),e=1-Math.pow(1-t,3),v=target*e;
+    el.textContent=pfx+(dec?v.toFixed(dec):Math.floor(v).toLocaleString())+sfx;
+    if(t<1) requestAnimationFrame(f);
+  }
+  requestAnimationFrame(f);
+}
+let statsRan=false;
+const statsObs=new IntersectionObserver(en=>{
+  if(en[0].isIntersecting&&!statsRan){statsRan=true;
+    animStat(document.getElementById('sv1'),24,'$','B+',1);
+    animStat(document.getElementById('sv2'),5,'','M+',0);
+    animStat(document.getElementById('sv3'),200,'','+',0);
+    animStat(document.getElementById('sv4'),99.9,'','%',1);
+  }},{threshold:0.3});
+const sEl=document.querySelector('.stats-sec');
+if(sEl) statsObs.observe(sEl);
+
+/* ── Intersection fade-up ── */
+const io=new IntersectionObserver(en=>{en.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}});},{threshold:0.12});
+document.querySelectorAll('.fu').forEach(el=>io.observe(el));
+
+/* ── Navbar scroll ── */
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar')?.classList.toggle('scrolled',scrollY>20);
+  document.getElementById('scrTop')?.classList.toggle('show',scrollY>400);
+},{passive:true});
+
+/* ── Mobile CTA hide near footer ── */
+window.addEventListener('scroll',()=>{
+  const cta=document.getElementById('mobCta'),ft=document.querySelector('footer');
+  if(cta&&ft) cta.style.display=ft.getBoundingClientRect().top<window.innerHeight?'none':'';
+},{passive:true});
+
+/* ── Hamburger ── */
+const hbg=document.getElementById('hbg'),mNav=document.getElementById('mobNav');
+function closeMenu(){hbg?.classList.remove('open');mNav?.classList.remove('open');document.body.style.overflow='';}
+hbg?.addEventListener('click',()=>{
+  const o=hbg.classList.toggle('open');
+  mNav?.classList.toggle('open',o);
+  document.body.style.overflow=o?'hidden':'';
+});
+
+/* ── Scroll top ── */
+document.getElementById('scrTop')?.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+/* ── Footer accordion ── */
+document.querySelectorAll('.ft-col-h').forEach(h=>{
+  h.addEventListener('click',()=>{if(window.innerWidth<768) h.closest('.ft-col')?.classList.toggle('open');});
+});
+
+/* ── Chart timeframes ── */
+document.querySelectorAll('.tf-btn').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.tf-btn').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    buildCandles();
+  });
+});
+
+/* ── Init ── */
+renderTicker();
+filteredCoins=tabCoins('d');
+renderTable(filteredCoins);
+buildCandles();
+setInterval(updateTerminal, 1500);
+setInterval(updateMiniTickers, 3000);
+setInterval(buildCandles, 15000);
+setInterval(cycleTermCoin, 5000); // Cycle terminal coin every 5 seconds
+</script>
+</body>
+</html>
