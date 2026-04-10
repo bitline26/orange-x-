@@ -602,6 +602,13 @@ footer{background:#111;color:#fff;padding:64px 0 28px}
 /* Terminal coin transition */
 .term-price-row,.term-price{transition:opacity 0.3s ease}
 .term-fade{opacity:0.3}
+
+/* ── PROMO TEXT ── */
+.promo{margin-bottom:20px;line-height:1.8}
+.promo b{font-weight:900;color:var(--org);font-size:15px}
+.promo-dc{font-weight:900;font-size:16px;color:var(--org);display:block;margin-top:2px}
+@media(max-width:960px){.promo{text-align:center}.promo b{font-size:14px}.promo-dc{font-size:15px}}
+@media(max-width:480px){.promo b{font-size:13px}.promo-dc{font-size:14px}}
 </style>
 </head>
 <body>
@@ -682,6 +689,10 @@ footer{background:#111;color:#fff;padding:64px 0 28px}
 
       <!-- Left: Text -->
       <div class="hero-txt">
+        <div class="promo">
+          <b>페이백 20% / 지정가 0.01 , 시장가 0.03</b>
+          <span class="promo-dc">50% D/C EVENT</span>
+        </div>
         <div class="hero-badge">
           <span class="badge-dot"></span>
           <span data-i="hero_badge">Official Korean Partner</span>
