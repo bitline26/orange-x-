@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OrangeX Korea | 국내 입출금 허용 VASP 공식 등재 파트너</title>
+<meta name="description" content="2025.08.27 빗썸 공식 공지로 확인된 트래블룰 CODE 연동 VASP. 업비트·빗썸·코인원 공식 공지 등재 파트너. 무료 상담 신청.">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Noto Sans KR','Inter',sans-serif;background:#fff;color:#1D1D1F;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+button,input,select,textarea{font-family:inherit}
+ul{list-style:none}
+img{max-width:100%;display:block}
+
+:root{
+  --org:#FFA500;--org-d:#cc8400;--org-h:#ff8c00;--org-l:rgba(255,165,0,0.1);
+  --dark:#0A0A0C;--t1:#1D1D1F;--t2:#3A3A3C;--tm:#6E6E73;--tl:#9999A1;
+  --bdr:#E5E5EA;--hov:#F5F5F7;
+  --grn:#1BB273;--grn-l:rgba(27,178,115,0.12);
+  --red:#F2495E;
+  --s1:0 1px 3px rgba(0,0,0,0.05);--s2:0 4px 16px rgba(0,0,0,0.08);--s3:0 16px 48px rgba(0,0,0,0.14);
+}
+.c{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* ── TOP BAR ── */
+.top-bar{background:var(--dark);padding:11px 0;font-size:13px;color:#fff;text-align:center;font-weight:500}
+.top-bar b{color:var(--org);font-weight:800}
+.top-bar .dot{display:inline-block;width:7px;height:7px;background:var(--grn);border-radius:50%;margin-right:7px;vertical-align:middle;box-shadow:0 0 10px var(--grn);animation:pulse 1.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+
+/* ── HEADER ── */
+header{background:#fff;border-bottom:1px solid var(--bdr);padding:16px 0;position:sticky;top:0;z-index:100;backdrop-filter:blur(12px)}
+.hd{display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:8px}
+.logo svg{height:26px}
+.kr{background:var(--org);color:#fff;font-size:9px;font-weight:800;padding:2px 6px;border-radius:3px;letter-spacing:0.3px}
+.hd-phone{display:flex;align-items:center;gap:6px;color:var(--org);font-weight:800;font-size:14.5px}
+@media(max-width:560px){.hd-phone span.lbl{display:none}}
+
+/* ── HERO ── */
+.hero{background:linear-gradient(135deg,var(--dark) 0%,#16161a 55%,#0c0c0f 100%);color:#fff;padding:68px 0 88px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(255,165,0,0.16) 0%,transparent 65%);top:-260px;right:-220px;pointer-events:none}
+.hero::after{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(255,165,0,0.1) 0%,transparent 65%);bottom:-200px;left:-120px;pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:48px;position:relative;z-index:2}
+@media(min-width:980px){.hero-grid{grid-template-columns:1.15fr 1fr;gap:60px;align-items:center}}
+
+.hero-eyebrow{display:inline-flex;align-items:center;gap:9px;background:rgba(255,165,0,0.12);border:1px solid rgba(255,165,0,0.3);color:var(--org);font-size:12.5px;font-weight:800;padding:9px 18px;border-radius:26px;margin-bottom:24px;letter-spacing:0.5px}
+.hero-eyebrow::before{content:'';width:7px;height:7px;background:var(--org);border-radius:50%;box-shadow:0 0 10px var(--org)}
+.hero-h1{font-size:54px;font-weight:900;color:#fff;line-height:1.12;letter-spacing:-1.8px;margin-bottom:22px}
+.hero-h1 em{font-style:normal;color:var(--org)}
+@media(max-width:720px){.hero-h1{font-size:34px;letter-spacing:-1px}}
+.hero-p{font-size:17px;color:rgba(255,255,255,0.62);line-height:1.75;margin-bottom:32px;max-width:560px}
+.hero-p b{color:#fff;font-weight:700}
+@media(max-width:720px){.hero-p{font-size:14.5px}}
+
+.hero-points{display:flex;flex-direction:column;gap:14px;margin-bottom:38px}
+.hp{display:flex;align-items:flex-start;gap:14px;font-size:15px;color:rgba(255,255,255,0.88);font-weight:500}
+.hp-ico{width:28px;height:28px;background:var(--grn-l);border:1.5px solid rgba(27,178,115,0.45);color:var(--grn);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;flex-shrink:0;margin-top:1px}
+.hp-ico::before{content:'✓'}
+.hp b{color:#fff;font-weight:800}
+
+.hero-num{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:24px 0;border-top:1px solid rgba(255,255,255,0.1);border-bottom:1px solid rgba(255,255,255,0.1)}
+.hn-v{font-size:28px;font-weight:900;color:var(--org);line-height:1;font-family:'Inter',sans-serif;letter-spacing:-0.8px}
+@media(max-width:720px){.hn-v{font-size:21px}}
+.hn-l{font-size:11.5px;color:rgba(255,255,255,0.5);margin-top:7px;font-weight:600}
+
+/* Lead form card */
+.form-card{background:#fff;color:var(--t1);border-radius:20px;padding:38px 34px;box-shadow:0 28px 88px rgba(0,0,0,0.42);position:relative;border-top:6px solid var(--org)}
+@media(max-width:640px){.form-card{padding:30px 24px;border-radius:16px}}
+.form-badge{display:inline-block;background:var(--org);color:#fff;font-size:11px;font-weight:900;padding:6px 13px;border-radius:20px;margin-bottom:14px;letter-spacing:0.6px}
+.form-h{font-size:26px;font-weight:900;color:var(--t1);line-height:1.25;letter-spacing:-0.5px;margin-bottom:10px}
+.form-h em{font-style:normal;color:var(--org)}
+.form-sub{font-size:13px;color:var(--tm);margin-bottom:24px;line-height:1.65}
+.form-row{margin-bottom:14px}
+.form-row label{display:block;font-size:12.5px;font-weight:700;color:var(--t2);margin-bottom:6px}
+.form-row label .req{color:var(--red);margin-left:3px}
+.form-row input,.form-row select{width:100%;padding:14px;border:1.5px solid var(--bdr);border-radius:10px;font-size:14px;color:var(--t1);background:#fff;outline:none;transition:border-color 0.2s,background 0.2s}
+.form-row input:focus,.form-row select:focus{border-color:var(--org);background:#fffbf2}
+.form-row select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M6 8L0 0h12z' fill='%236E6E73'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+.form-check{display:flex;align-items:flex-start;gap:9px;margin:18px 0 10px;font-size:11.5px;color:var(--tm);line-height:1.55}
+.form-check input[type="checkbox"]{width:17px;height:17px;margin-top:2px;flex-shrink:0;accent-color:var(--org)}
+.form-check a{color:var(--org);text-decoration:underline}
+.form-submit{width:100%;background:var(--org);color:#fff;font-size:16px;font-weight:900;padding:18px;border:none;border-radius:12px;cursor:pointer;transition:background 0.2s,transform 0.1s;margin-top:10px;letter-spacing:-0.2px;box-shadow:0 10px 28px rgba(255,165,0,0.4)}
+.form-submit:hover{background:var(--org-h)}
+.form-submit:active{transform:scale(0.98)}
+.form-note{font-size:11.5px;color:var(--tm);text-align:center;margin-top:12px;line-height:1.55}
+
+/* ── SEC HEAD ── */
+.sec-head{text-align:center;margin-bottom:48px}
+.sec-lbl{display:inline-block;font-size:12.5px;font-weight:900;color:var(--org);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:14px}
+.sec-h{font-size:38px;font-weight:900;color:var(--t1);line-height:1.22;letter-spacing:-0.8px;margin-bottom:16px}
+.sec-h em{font-style:normal;color:var(--org)}
+@media(max-width:720px){.sec-h{font-size:26px}}
+.sec-p{font-size:15.5px;color:var(--tm);max-width:660px;margin:0 auto;line-height:1.75}
+
+/* ── OFFER STRIP ── */
+.offer-sec{padding:56px 0;background:linear-gradient(135deg,var(--org) 0%,var(--org-h) 100%);position:relative;overflow:hidden}
+.offer-sec::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,0.14) 0%,transparent 60%);top:-280px;right:-180px}
+.offer-grid{display:grid;grid-template-columns:1fr;gap:24px;align-items:center;position:relative;z-index:2;text-align:center}
+@media(min-width:820px){.offer-grid{grid-template-columns:1.5fr 1fr;text-align:left}}
+.offer-head{font-size:14px;font-weight:900;color:rgba(0,0,0,0.7);letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+.offer-h{font-size:34px;font-weight:900;color:#fff;line-height:1.2;letter-spacing:-0.5px}
+.offer-h em{font-style:normal;background:var(--dark);color:var(--org);padding:3px 14px;border-radius:8px;display:inline-block;margin-top:6px}
+@media(max-width:720px){.offer-h{font-size:24px}}
+.offer-btn{display:inline-flex;align-items:center;gap:10px;background:var(--dark);color:#fff;font-size:16px;font-weight:900;padding:20px 42px;border-radius:12px;box-shadow:0 14px 40px rgba(0,0,0,0.28)}
+.offer-btn::after{content:'→';color:var(--org);font-size:20px}
+
+/* ── BENEFITS ── */
+.benefits-sec{padding:88px 0;background:#fff}
+.benefit-grid{display:grid;grid-template-columns:1fr;gap:22px}
+@media(min-width:720px){.benefit-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.benefit-grid{grid-template-columns:repeat(3,1fr)}}
+.benefit{background:var(--hov);border:1px solid var(--bdr);border-radius:16px;padding:32px 28px;transition:transform 0.25s,box-shadow 0.25s,border-color 0.25s}
+.benefit:hover{transform:translateY(-5px);box-shadow:var(--s2);border-color:rgba(255,165,0,0.3)}
+.benefit-ico{width:56px;height:56px;background:var(--org-l);color:var(--org);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:20px;font-weight:900}
+.benefit-h{font-size:18px;font-weight:800;color:var(--t1);margin-bottom:10px;letter-spacing:-0.3px}
+.benefit-p{font-size:13.5px;color:var(--tm);line-height:1.7}
+
+/* ── STEPS ── */
+.steps-sec{padding:88px 0;background:var(--hov)}
+.steps-grid{display:grid;grid-template-columns:1fr;gap:28px;margin-top:48px;max-width:980px;margin-left:auto;margin-right:auto}
+@media(min-width:820px){.steps-grid{grid-template-columns:repeat(3,1fr);gap:24px;position:relative}}
+.step-card{background:#fff;border-radius:16px;padding:40px 30px 32px;position:relative;border:1px solid var(--bdr);box-shadow:var(--s1);text-align:center}
+.step-n{width:52px;height:52px;background:var(--dark);color:var(--org);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:900;margin:0 auto 20px;font-family:'Inter',sans-serif;border:3px solid var(--org)}
+.step-h{font-size:18px;font-weight:800;color:var(--t1);margin-bottom:10px;letter-spacing:-0.3px}
+.step-p{font-size:13.5px;color:var(--tm);line-height:1.7}
+
+/* ── TRUST GRID ── */
+.trust-sec{padding:88px 0;background:#fff}
+.trust-g{display:grid;grid-template-columns:1fr;gap:18px;margin-top:44px}
+@media(min-width:720px){.trust-g{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.trust-g{grid-template-columns:repeat(4,1fr)}}
+.tc{background:var(--hov);border:1.5px solid var(--bdr);border-radius:16px;padding:30px 24px;text-align:center;position:relative;transition:transform 0.25s}
+.tc:hover{transform:translateY(-4px)}
+.tc::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:60px;height:4px;background:var(--org);border-radius:0 0 6px 6px}
+.tc-name{font-size:22px;font-weight:900;color:var(--t1);letter-spacing:-0.4px;margin-bottom:8px;font-family:'Inter',sans-serif}
+.tc-meta{font-size:12px;color:var(--tm);font-weight:600;margin-bottom:16px;line-height:1.5}
+.tc-pill{display:inline-flex;align-items:center;gap:5px;background:var(--grn-l);color:var(--grn);font-size:11px;font-weight:900;padding:6px 14px;border-radius:16px;letter-spacing:0.3px}
+.tc-pill::before{content:'✓'}
+
+/* ── STATS BIG ── */
+.stats-sec{background:var(--dark);padding:72px 0;position:relative;overflow:hidden}
+.stats-sec::before{content:'';position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(255,165,0,0.1) 0%,transparent 65%);top:-300px;right:-200px}
+.stats-g{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;position:relative;z-index:2}
+@media(min-width:720px){.stats-g{grid-template-columns:repeat(4,1fr)}}
+.st-it{text-align:center}
+.st-v{font-size:48px;font-weight:900;color:var(--org);line-height:1;font-family:'Inter',sans-serif;letter-spacing:-1.2px;margin-bottom:10px}
+@media(max-width:720px){.st-v{font-size:32px}}
+.st-l{font-size:12.5px;color:rgba(255,255,255,0.55);font-weight:600;letter-spacing:0.3px}
+
+/* ── FAQ ── */
+.faq-sec{padding:88px 0;background:var(--hov)}
+.faq-list{max-width:860px;margin:48px auto 0;display:flex;flex-direction:column;gap:14px}
+.faq-item{background:#fff;border:1px solid var(--bdr);border-radius:14px;padding:26px 30px;transition:border-color 0.2s}
+.faq-item:hover{border-color:rgba(255,165,0,0.35)}
+.faq-q{font-size:16px;font-weight:800;color:var(--t1);margin-bottom:10px;letter-spacing:-0.3px}
+.faq-q::before{content:'Q. ';color:var(--org);font-weight:900}
+.faq-a{font-size:13.5px;color:var(--tm);line-height:1.75}
+
+/* ── BOTTOM CTA ── */
+.cta-sec{background:linear-gradient(135deg,var(--dark) 0%,#1a1a1e 100%);padding:80px 0;text-align:center;color:#fff;position:relative;overflow:hidden}
+.cta-sec::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(255,165,0,0.14) 0%,transparent 65%);top:50%;left:50%;transform:translate(-50%,-50%)}
+.cta-h{font-size:40px;font-weight:900;color:#fff;line-height:1.2;letter-spacing:-0.8px;margin-bottom:16px;position:relative;z-index:2}
+.cta-h em{font-style:normal;color:var(--org)}
+@media(max-width:720px){.cta-h{font-size:26px}}
+.cta-p{font-size:15.5px;color:rgba(255,255,255,0.6);margin-bottom:36px;max-width:640px;margin-left:auto;margin-right:auto;position:relative;z-index:2}
+.cta-btn{display:inline-flex;align-items:center;gap:10px;background:var(--org);color:#fff;font-size:17px;font-weight:900;padding:22px 56px;border-radius:12px;box-shadow:0 14px 40px rgba(255,165,0,0.42);position:relative;z-index:2;transition:transform 0.2s}
+.cta-btn:hover{transform:translateY(-3px)}
+.cta-btn::after{content:'→'}
+
+/* ── FOOTER ── */
+footer{background:#050507;color:rgba(255,255,255,0.5);padding:56px 0 32px;font-size:12.5px;line-height:1.75}
+.ft-brand{display:flex;align-items:center;gap:10px;margin-bottom:20px}
+.ft-brand svg{height:22px}
+.ft-brand svg path:not(:first-child){fill:#fff !important}
+.ft-tag{font-size:10px;color:rgba(255,255,255,0.35);font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:3px 9px;border:1px solid rgba(255,255,255,0.15);border-radius:4px}
+.ft-contact{display:flex;flex-wrap:wrap;gap:26px;margin-bottom:22px;padding-bottom:22px;border-bottom:1px solid rgba(255,255,255,0.08)}
+.ft-contact div b{color:#fff;font-weight:800;display:block;font-size:10.5px;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.5px}
+.ft-contact a{color:var(--org);font-weight:700}
+.ft-biz{font-size:11.5px;color:rgba(255,255,255,0.35);margin-bottom:16px;max-width:820px}
+.ft-biz span{display:inline-block;margin-right:14px;margin-bottom:4px}
+.ft-biz span b{color:rgba(255,255,255,0.55);font-weight:700;margin-right:4px}
+.ft-legal{font-size:11px;color:rgba(255,255,255,0.28);line-height:1.7;padding-top:16px;border-top:1px solid rgba(255,255,255,0.08)}
+.ft-links{display:flex;gap:18px;margin-top:14px;flex-wrap:wrap}
+.ft-links a{color:rgba(255,255,255,0.4);font-size:11.5px}
+.ft-links a:hover{color:var(--org)}
+
+/* Modal */
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:1000;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px)}
+.modal.show{display:flex}
+.modal-box{background:#fff;border-radius:18px;max-width:420px;width:100%;padding:40px 32px;text-align:center;box-shadow:var(--s3)}
+.modal-ico{width:70px;height:70px;background:var(--grn-l);color:var(--grn);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 22px;font-size:34px;font-weight:900}
+.modal-h{font-size:22px;font-weight:900;color:var(--t1);margin-bottom:12px;letter-spacing:-0.4px}
+.modal-p{font-size:14px;color:var(--tm);line-height:1.65;margin-bottom:26px}
+.modal-btn{width:100%;background:var(--org);color:#fff;font-size:15px;font-weight:800;padding:16px;border:none;border-radius:10px;cursor:pointer}
+.modal-btn:hover{background:var(--org-h)}
+</style>
+</head>
+<body>
+
+<!-- Top bar -->
+<div class="top-bar">
+  <span class="dot"></span>
+  <b>2025.08.27</b> 빗썸 공식 공지 · 트래블룰 CODE 연동 VASP 공식 추가 완료
+</div>
+
+<!-- Header -->
+<header>
+  <div class="c">
+    <div class="hd">
+      <a href="/" class="logo">
+        <svg viewBox="0 0 470 109" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M71.8252 74.8975C64.6488 81.3873 55.2749 85.4898 44.9521 85.9561V70.8809C51.1192 70.4457 56.7338 68.0142 61.1553 64.2275L71.8252 74.8975ZM24.71 64.1953C28.8973 67.7948 34.161 70.175 39.9521 70.792V85.8955C30.0141 85.205 21.0053 81.1428 14.0645 74.8408L24.71 64.1953ZM85.9551 44.9541C85.4991 55.0427 81.5695 64.2246 75.333 71.335L64.6484 60.6504C68.193 56.3101 70.4619 50.8882 70.8809 44.9541H85.9551ZM15.0244 44.9541C15.4421 50.8702 17.6977 56.2777 21.2236 60.6113L10.5645 71.2705C4.36083 64.1692 0.454559 55.012 0 44.9541H15.0244ZM74.8398 14.0654C81.1421 21.0064 85.2043 30.0157 85.8945 39.9541H70.792C70.1752 34.1625 67.794 28.8986 64.1943 24.7109L74.8398 14.0654ZM21.6777 24.75C18.0967 28.9313 15.7272 34.1803 15.1123 39.9541H0.0605469C0.748723 30.0463 4.78838 21.0622 11.0576 14.1299L21.6777 24.75ZM39.9521 15.1133C34.409 15.7038 29.3492 17.9113 25.2539 21.2559L14.6201 10.6221C21.4831 4.60246 30.2769 0.732767 39.9521 0.0605469V15.1133ZM44.9521 0C55.0104 0.454347 64.168 4.36161 71.2695 10.5654L60.6104 21.2246C56.2765 17.6984 50.8686 15.4429 44.9521 15.0254V0Z" fill="#FFA500"/>
+          <path d="M136.054 38.8871C131.7 38.7484 128.885 38.6791 127.624 38.6791C123.131 38.6791 119.748 39.7468 117.502 41.896C115.255 44.0452 113.841 47.5672 113.286 52.4896L109.071 86.1146H96.9521L101.056 52.8085C102.11 43.8927 104.8 37.4173 109.113 33.4239C113.439 29.4166 120.053 27.4199 128.983 27.4199C132.491 27.4199 135.486 27.5308 137.94 27.7388L136.04 38.9148Z" fill="#1D1D1F"/>
+          <path d="M154.607 86.1008C149.338 86.1008 145.123 84.6033 141.961 81.6221C138.8 78.6409 137.219 74.7585 137.219 69.9747C137.219 68.9209 137.247 68.1166 137.33 67.5481C137.968 63.1942 139.091 59.7277 140.7 57.1625C142.322 54.5973 144.651 52.7393 147.702 51.5745C150.752 50.4098 154.774 49.8413 159.765 49.8413H177.472L177.583 48.9955C177.652 48.6488 177.694 48.1496 177.694 47.5257C177.694 44.7802 176.779 42.5755 174.949 40.8839C173.118 39.1922 170.276 38.3603 166.407 38.3603H163.662C157.408 38.3603 151.792 38.5405 146.801 38.8872L148.381 28.141L151.432 27.933C152.555 27.8637 154.538 27.7528 157.38 27.6141C160.223 27.4755 162.705 27.4061 164.813 27.4061H167.655C174.893 27.4061 180.37 29.1255 184.1 32.5643C187.816 36.003 189.688 40.6065 189.688 46.3748C189.688 47.0126 189.619 48.0942 189.48 49.6472L185.154 86.1147H154.593ZM149.338 68.8238C149.338 70.8621 149.92 72.429 151.071 73.5105C152.236 74.6059 153.9 75.1467 156.077 75.1467H174.408L176.197 60.3933L158.698 60.2824C156.022 60.213 153.9 60.7261 152.319 61.8076C150.739 62.903 149.768 64.8165 149.421 67.5481L149.31 68.8099Z" fill="#1D1D1F"/>
+          <path d="M216.033 38.6792L210.348 86.1008H198.229L205.398 27.4061H231.854C246.4 27.4061 253.665 34.0757 253.665 47.4286C253.665 49.0509 253.555 50.798 253.347 52.6977L249.242 86.1008H237.123L241.228 52.3788C241.366 50.9783 241.436 49.9938 241.436 49.4253C241.436 42.2566 237.789 38.6792 230.482 38.6792H216.047Z" fill="#1D1D1F"/>
+          <path d="M264.209 52.8086C266.039 35.8782 275.385 27.4061 292.246 27.4061H317.44L309.745 90.219C308.968 95.9041 306.639 100.411 302.742 103.711C298.846 107.011 292.953 108.661 285.091 108.661C278.13 108.661 271.572 108.383 265.387 107.815L266.649 96.8608C273.388 97.4987 279.78 97.8037 285.826 97.8037C289.694 97.8037 292.537 97.1659 294.367 95.9041C296.198 94.6423 297.279 92.6317 297.64 89.9001L298.056 86.1008H284.883C270.338 86.1008 263.072 79.3204 263.072 65.7594C263.072 64.2203 263.183 62.5703 263.391 60.8093L264.237 52.7947ZM299.401 75.0496L303.935 38.485H290.873C282.235 38.485 277.423 43.1579 276.439 52.5036L275.496 61.1421C275.357 62.5425 275.288 63.4993 275.288 63.9846C275.288 71.3613 278.934 75.0496 286.242 75.0496H299.415Z" fill="#1D1D1F"/>
+          <path d="M355.356 26.9904C362.594 26.9904 368.058 28.6959 371.746 32.1069C375.434 35.5179 377.278 40.5513 377.278 47.2347C377.278 48.7877 377.167 50.4655 376.959 52.2958L375.795 61.7801H336.485V61.891C336.346 63.444 336.277 64.4978 336.277 65.0525C336.277 68.6299 337.317 71.2922 339.383 73.0115C341.449 74.7309 344.943 75.5906 349.865 75.5906H355.023C358.67 75.5906 364.231 75.2717 371.677 74.6477L370.512 85.6019C364.328 86.2397 358.781 86.5447 353.859 86.5447H348.701C340.201 86.5447 333.961 84.8254 329.995 81.3866C326.03 77.9478 324.047 72.8868 324.047 66.2172C324.047 64.5949 324.158 62.9448 324.366 61.2671L325.42 52.4206C326.404 43.99 329.177 37.6533 333.739 33.3964C338.301 29.1396 344.804 27.0181 353.235 27.0181H355.342ZM364.952 51.547V51.4361C365.09 49.897 365.16 48.7738 365.16 48.0666C365.16 44.6972 364.258 42.132 362.47 40.371C360.681 38.61 357.852 37.7365 353.984 37.7365H351.876C343.584 37.7365 338.883 42.34 337.76 51.547H364.952Z" fill="#1D1D1F"/>
+          <path d="M420.592 36.2526L404.16 6.95374H389.504L411.745 45.5289L377.593 86.1008H393.082L418.068 55.6511L435.553 86.1008H450.417L426.817 46.3747Z" fill="#1D1D1F"/>
+          <path d="M443.879 6.95374L422.068 34.3945L428.349 44.4751L458.952 6.95374H443.879Z" fill="#1D1D1F"/>
+        </svg>
+        <span class="kr">KR</span>
+      </a>
+      <a href="tel:+821099111136" class="hd-phone">📞 <span class="lbl">010-9911-1136</span></a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="c">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow">KOREA VASP · 2025.08.27</div>
+        <h1 class="hero-h1">3대 거래소가<br>공식 등재한<br><em>그 파트너.</em></h1>
+        <p class="hero-p">2025년 8월 27일, <b>빗썸 트래블룰 CODE 연동 VASP</b>로 공식 추가되었습니다. 업비트·빗썸·코인원 공식 공지 및 코인니스 언론 보도로 확인 가능.</p>
+
+        <div class="hero-points">
+          <div class="hp"><div class="hp-ico"></div>업비트 · 빗썸 · 코인원 <b>3사 공식 공지 등재</b></div>
+          <div class="hp"><div class="hp-ico"></div>2025.08.27 <b>빗썸 트래블룰 CODE 연동</b></div>
+          <div class="hp"><div class="hp-ico"></div>코인니스 <b>언론 보도 커버리지</b></div>
+          <div class="hp"><div class="hp-ico"></div>24시간 <b>한국어 전담 상담 운영</b></div>
+        </div>
+
+        <div class="hero-num">
+          <div>
+            <div class="hn-v">$2.4B+</div>
+            <div class="hn-l">일일 거래량</div>
+          </div>
+          <div>
+            <div class="hn-v">5M+</div>
+            <div class="hn-l">글로벌 사용자</div>
+          </div>
+          <div>
+            <div class="hn-v">200+</div>
+            <div class="hn-l">트레이딩 종목</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <span class="form-badge">FREE CONSULT</span>
+        <h2 class="form-h">무료 상담<br><em>1:1 신청</em></h2>
+        <p class="form-sub">정보 입력 1분 · 담당자 영업일 24시간 이내 연락 · 비용 일절 없음</p>
+
+        <form id="leadForm" onsubmit="return submitLead(event)">
+          <div class="form-row">
+            <label for="fName">이름<span class="req">*</span></label>
+            <input type="text" id="fName" required placeholder="홍길동" autocomplete="name">
+          </div>
+          <div class="form-row">
+            <label for="fPhone">연락처<span class="req">*</span></label>
+            <input type="tel" id="fPhone" required placeholder="010-0000-0000" autocomplete="tel">
+          </div>
+          <div class="form-row">
+            <label for="fTopic">상담 주제</label>
+            <select id="fTopic">
+              <option value="vasp">VASP 등재 관련 안내</option>
+              <option value="basic">기초 개념 학습</option>
+              <option value="market">시장 구조 이해</option>
+              <option value="etc">기타 문의</option>
+            </select>
+          </div>
+
+          <label class="form-check">
+            <input type="checkbox" id="fAgree" required>
+            <span>[필수] 개인정보 수집·이용에 동의합니다. 수집 정보는 상담 목적으로만 사용되며 상담 완료 후 파기됩니다. <a href="#privacy">자세히</a></span>
+          </label>
+
+          <button type="submit" class="form-submit">무료 상담 신청하기 →</button>
+          <p class="form-note">담당자가 영업일 기준 24시간 이내 연락드립니다.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFER STRIP -->
+<section class="offer-sec">
+  <div class="c">
+    <div class="offer-grid">
+      <div>
+        <div class="offer-head">OFFICIAL NOTICE · 2025.08.27</div>
+        <div class="offer-h">빗썸 트래블룰 CODE<br><em>VASP 공식 추가</em></div>
+      </div>
+      <a href="#leadForm" class="offer-btn" onclick="document.getElementById('fName').focus();return false;">지금 상담 신청</a>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits-sec">
+  <div class="c">
+    <div class="sec-head">
+      <div class="sec-lbl">WHY ORANGEX</div>
+      <h2 class="sec-h">공식 공지로 <em>확인된 파트너</em></h2>
+      <p class="sec-p">OrangeX Korea는 국내 주요 거래소의 공식 공지사항과 언론 보도를 통해 입출금 가능 VASP로 확인된 플랫폼입니다.</p>
+    </div>
+
+    <div class="benefit-grid">
+      <div class="benefit">
+        <div class="benefit-ico">🏛️</div>
+        <h3 class="benefit-h">3사 공식 공지 등재</h3>
+        <p class="benefit-p">업비트·빗썸·코인원 3대 거래소의 공식 공지사항에 모두 등재되어 입출금 가능 VASP로 확인되었습니다.</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit-ico">🔗</div>
+        <h3 class="benefit-h">트래블룰 CODE 연동</h3>
+        <p class="benefit-p">2025년 8월 27일자 빗썸 공식 공지를 통해 트래블룰 솔루션 CODE 연동 VASP로 공식 추가되었습니다.</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit-ico">📰</div>
+        <h3 class="benefit-h">언론 보도 커버리지</h3>
+        <p class="benefit-p">주요 암호화폐 전문 매체 코인니스를 포함한 언론을 통해 국내 VASP 추가 소식이 보도되었습니다.</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit-ico">🇰🇷</div>
+        <h3 class="benefit-h">24시간 한국어 상담</h3>
+        <p class="benefit-p">한국어 전담 상담팀이 365일 24시간 운영되어, 언제든지 편하게 문의하실 수 있습니다.</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit-ico">📊</div>
+        <h3 class="benefit-h">글로벌 규모 플랫폼</h3>
+        <p class="benefit-p">일일 거래량 $2.4B+, 글로벌 사용자 5M+, 트레이딩 종목 200+의 글로벌 규모 플랫폼입니다.</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit-ico">⚡</div>
+        <h3 class="benefit-h">99.9% 시스템 가동률</h3>
+        <p class="benefit-p">안정적인 시스템 운영으로 99.9%의 가동률을 유지하며, 중단 없는 서비스 환경을 제공합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="steps-sec">
+  <div class="c">
+    <div class="sec-head">
+      <div class="sec-lbl">HOW IT WORKS</div>
+      <h2 class="sec-h">3단계로 <em>상담 받기</em></h2>
+      <p class="sec-p">복잡한 절차 없이, 간단한 정보 입력만으로 전담 컨설턴트의 1:1 상담을 받을 수 있습니다.</p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-n">1</div>
+        <h3 class="step-h">정보 입력</h3>
+        <p class="step-p">이름과 연락처, 상담 주제만 선택하면 됩니다. 1분 이내 완료.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-n">2</div>
+        <h3 class="step-h">담당자 배정</h3>
+        <p class="step-p">신청 내용에 맞는 전담 컨설턴트가 영업일 24시간 이내 연락드립니다.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-n">3</div>
+        <h3 class="step-h">1:1 맞춤 상담</h3>
+        <p class="step-p">VASP 등재 정보부터 시장 개념까지, 궁금한 내용을 편하게 문의하세요.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust-sec">
+  <div class="c">
+    <div class="sec-head">
+      <div class="sec-lbl">OFFICIAL NOTICES</div>
+      <h2 class="sec-h">4개 공식 출처로 <em>확인된 파트너</em></h2>
+      <p class="sec-p">국내 3대 거래소 공식 공지사항과 주요 언론 보도에서 OrangeX의 VASP 공식 등재를 확인하실 수 있습니다.</p>
+    </div>
+
+    <div class="trust-g">
+      <div class="tc">
+        <div class="tc-name">UPBIT</div>
+        <div class="tc-meta">입출금 가능<br>VASP 리스트 등재</div>
+        <div class="tc-pill">공식 공지</div>
+      </div>
+      <div class="tc">
+        <div class="tc-name">BITHUMB</div>
+        <div class="tc-meta">트래블룰 CODE 연동<br>VASP 공식 추가</div>
+        <div class="tc-pill">2025.08.27</div>
+      </div>
+      <div class="tc">
+        <div class="tc-name">COINONE</div>
+        <div class="tc-meta">VASP 추가 안내<br>공식 공지 등재</div>
+        <div class="tc-pill">공식 공지</div>
+      </div>
+      <div class="tc">
+        <div class="tc-name">COINNESS</div>
+        <div class="tc-meta">국내 VASP 업데이트<br>언론 보도 커버리지</div>
+        <div class="tc-pill">PRESS</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-sec">
+  <div class="c">
+    <div class="stats-g">
+      <div class="st-it">
+        <div class="st-v">$2.4B+</div>
+        <div class="st-l">일일 거래량</div>
+      </div>
+      <div class="st-it">
+        <div class="st-v">5M+</div>
+        <div class="st-l">글로벌 사용자</div>
+      </div>
+      <div class="st-it">
+        <div class="st-v">200+</div>
+        <div class="st-l">트레이딩 종목</div>
+      </div>
+      <div class="st-it">
+        <div class="st-v">99.9%</div>
+        <div class="st-l">시스템 가동률</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-sec">
+  <div class="c">
+    <div class="sec-head">
+      <div class="sec-lbl">FAQ</div>
+      <h2 class="sec-h">자주 묻는 <em>질문</em></h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">OrangeX는 어떻게 국내 입출금이 가능한가요?</div>
+        <div class="faq-a">2025년 8월 27일 빗썸 공식 공지사항 "트래블룰 솔루션 CODE 연동 VASP 추가 안내"를 통해 OrangeX가 공식 VASP로 추가되었습니다. 업비트·빗썸·코인원 3사의 공식 공지사항과 코인니스 등 언론 보도에서 확인하실 수 있습니다.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">상담 비용이 발생하나요?</div>
+        <div class="faq-a">아니요. 본 상담은 100% 무료로 제공되며, 어떠한 형태의 비용도 청구되지 않습니다. 정보 제공만 목적으로 운영됩니다.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">상담은 어떻게 진행되나요?</div>
+        <div class="faq-a">신청서를 제출하시면 담당 컨설턴트가 남겨주신 연락처로 직접 연락드려, 편하신 시간에 전화 또는 메신저로 상담을 진행합니다.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">개인정보는 어떻게 관리되나요?</div>
+        <div class="faq-a">개인정보보호법에 따라 안전하게 관리되며, 상담 목적 외 어떤 용도로도 사용되지 않습니다. 상담 후 정보 삭제를 원하시면 즉시 파기해드립니다.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">꼭 상담 후 무엇인가를 해야 하나요?</div>
+        <div class="faq-a">전혀 아닙니다. 상담은 단순 정보 제공을 목적으로 하며, 어떤 행동도 강요되지 않습니다. 궁금증만 해소하고 끝내셔도 괜찮습니다.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">VASP란 무엇인가요?</div>
+        <div class="faq-a">VASP(Virtual Asset Service Provider)는 가상자산사업자를 의미합니다. 국내 거래소의 공식 공지에 등재된 VASP는 트래블룰 정책 하에 입출금이 가능한 파트너임을 뜻합니다.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="cta-sec">
+  <div class="c">
+    <h2 class="cta-h">전문 컨설턴트와<br><em>지금 상담 받으세요</em></h2>
+    <p class="cta-p">정보 입력 1분 · 담당자 24시간 이내 연락 · 비용 일절 없음</p>
+    <a href="#leadForm" class="cta-btn" onclick="document.getElementById('fName').focus();return false;">무료 상담 신청하기</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="c">
+    <div class="ft-brand">
+      <svg viewBox="0 0 470 109" fill="none" xmlns="http://www.w3.org/2000/svg" height="22">
+        <path d="M71.8252 74.8975C64.6488 81.3873 55.2749 85.4898 44.9521 85.9561V70.8809C51.1192 70.4457 56.7338 68.0142 61.1553 64.2275L71.8252 74.8975ZM24.71 64.1953C28.8973 67.7948 34.161 70.175 39.9521 70.792V85.8955C30.0141 85.205 21.0053 81.1428 14.0645 74.8408L24.71 64.1953ZM85.9551 44.9541C85.4991 55.0427 81.5695 64.2246 75.333 71.335L64.6484 60.6504C68.193 56.3101 70.4619 50.8882 70.8809 44.9541H85.9551ZM15.0244 44.9541C15.4421 50.8702 17.6977 56.2777 21.2236 60.6113L10.5645 71.2705C4.36083 64.1692 0.454559 55.012 0 44.9541H15.0244ZM74.8398 14.0654C81.1421 21.0064 85.2043 30.0157 85.8945 39.9541H70.792C70.1752 34.1625 67.794 28.8986 64.1943 24.7109L74.8398 14.0654ZM21.6777 24.75C18.0967 28.9313 15.7272 34.1803 15.1123 39.9541H0.0605469C0.748723 30.0463 4.78838 21.0622 11.0576 14.1299L21.6777 24.75ZM39.9521 15.1133C34.409 15.7038 29.3492 17.9113 25.2539 21.2559L14.6201 10.6221C21.4831 4.60246 30.2769 0.732767 39.9521 0.0605469V15.1133ZM44.9521 0C55.0104 0.454347 64.168 4.36161 71.2695 10.5654L60.6104 21.2246C56.2765 17.6984 50.8686 15.4429 44.9521 15.0254V0Z" fill="#FFA500"/>
+      </svg>
+      <span class="ft-tag">Education Desk</span>
+    </div>
+
+    <div class="ft-contact">
+      <div>
+        <b>Customer Support</b>
+        <a href="tel:+821099111136">010-9911-1136</a>
+      </div>
+      <div>
+        <b>Operating Hours</b>
+        Mon–Fri · 09:00–18:00 KST
+      </div>
+      <div>
+        <b>Inquiry</b>
+        <a href="mailto:support@orange-x.co.kr">support@orange-x.co.kr</a>
+      </div>
+    </div>
+
+    <div class="ft-biz">
+      <span><b>Business:</b>OrangeX Korea Education Desk</span>
+      <span><b>Business Reg. No.:</b>000-00-00000</span>
+      <span><b>Mail-Order Reg. No.:</b>2026-Seoul-00000</span>
+      <span><b>Address:</b>Seoul, Republic of Korea</span>
+    </div>
+
+    <div class="ft-legal">
+      본 페이지는 일반 금융·시장 개념에 대한 교육 상담을 목적으로 운영되며, 특정 상품의 가입·투자·매매를 권유하지 않습니다. 모든 판단과 결정은 이용자 본인에게 있으며, 제공되는 정보는 참고용으로만 활용하시기 바랍니다.
+      <div class="ft-links">
+        <a href="#privacy">개인정보처리방침</a>
+        <a href="#terms">이용약관</a>
+        <a href="#disclaimer">면책조항</a>
+      </div>
+      <div style="margin-top:14px;font-size:11px;color:rgba(255,255,255,0.2)">© 2026 OrangeX Korea Education Desk. All Rights Reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<!-- Modal -->
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <div class="modal-ico">✓</div>
+    <h3 class="modal-h">신청 완료</h3>
+    <p class="modal-p">담당 컨설턴트가 영업일 기준 24시간 이내<br>남겨주신 연락처로 연락드리겠습니다.</p>
+    <button class="modal-btn" onclick="closeModal()">확인</button>
+  </div>
+</div>
+
+<script>
+function submitLead(e){
+  e.preventDefault();
+  const name=document.getElementById('fName').value.trim();
+  const phone=document.getElementById('fPhone').value.trim();
+  const agree=document.getElementById('fAgree').checked;
+  if(!name||!phone||!agree){alert('필수 항목을 모두 입력해주세요.');return false;}
+  document.getElementById('modal').classList.add('show');
+  document.getElementById('leadForm').reset();
+  return false;
+}
+function closeModal(){document.getElementById('modal').classList.remove('show');}
+document.getElementById('modal')?.addEventListener('click',e=>{if(e.target.id==='modal')closeModal();});
+document.getElementById('fPhone').addEventListener('input',e=>{
+  let v=e.target.value.replace(/[^0-9]/g,'').slice(0,11);
+  if(v.length>=7) v=v.slice(0,3)+'-'+v.slice(3,7)+'-'+v.slice(7);
+  else if(v.length>=4) v=v.slice(0,3)+'-'+v.slice(3);
+  e.target.value=v;
+});
+</script>
+</body>
+</html>
