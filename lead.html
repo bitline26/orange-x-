@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>무료 금융 교육 상담 신청 | OrangeX Korea</title>
+<meta name="description" content="전문 컨설턴트가 1:1로 제공하는 무료 금융 교육 상담. 기초부터 차근차근, 개인 맞춤형 가이드를 받아보세요.">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Noto Sans KR',-apple-system,sans-serif;background:#F8F9FB;color:#1D1D1F;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+button,input,select,textarea{font-family:inherit}
+ul{list-style:none}
+
+:root{
+  --pri:#FFA500;--pri-d:#cc8400;--pri-l:rgba(255,165,0,0.1);
+  --text:#1D1D1F;--t2:#3A3A3C;--tm:#6E6E73;
+  --bdr:#E5E5EA;--hov:#F2F2F7;
+  --grn:#1BB273;--red:#F2495E;
+  --s1:0 1px 3px rgba(0,0,0,0.06);
+  --s2:0 4px 16px rgba(0,0,0,0.08);
+  --s3:0 12px 40px rgba(0,0,0,0.12);
+}
+
+/* ── HEADER ── */
+header{background:#fff;border-bottom:1px solid var(--bdr);padding:14px 0;position:sticky;top:0;z-index:100}
+.c{max-width:1080px;margin:0 auto;padding:0 20px}
+.hd-in{display:flex;align-items:center;justify-content:space-between}
+.hd-logo{display:flex;align-items:center;gap:8px}
+.hd-logo svg{height:22px}
+.hd-phone{display:flex;align-items:center;gap:6px;color:var(--pri);font-weight:700;font-size:14px}
+@media(max-width:480px){.hd-phone span{display:none}}
+
+/* ── HERO ── */
+.hero{padding:56px 0 48px;background:linear-gradient(180deg,#fff 0%,#F8F9FB 100%);border-bottom:1px solid var(--bdr)}
+.hero-lbl{display:inline-block;background:var(--pri-l);color:var(--pri);font-size:12px;font-weight:700;padding:6px 14px;border-radius:20px;margin-bottom:18px;letter-spacing:0.3px}
+h1{font-size:36px;font-weight:800;line-height:1.25;letter-spacing:-0.8px;color:var(--text);margin-bottom:16px}
+h1 em{font-style:normal;color:var(--pri)}
+.hero-p{font-size:16px;color:var(--tm);line-height:1.7;max-width:620px}
+@media(max-width:640px){h1{font-size:26px}.hero-p{font-size:14px}.hero{padding:40px 0 36px}}
+
+/* ── MAIN GRID ── */
+.main{padding:48px 0 72px}
+.grid{display:grid;grid-template-columns:1fr;gap:32px}
+@media(min-width:900px){.grid{grid-template-columns:1.1fr 1fr;gap:48px;align-items:start}}
+
+/* ── INFO SIDE ── */
+.info-h{font-size:22px;font-weight:800;color:var(--text);margin-bottom:20px;letter-spacing:-0.3px}
+.info-h em{font-style:normal;color:var(--pri)}
+.info-list{display:flex;flex-direction:column;gap:14px;margin-bottom:32px}
+.info-item{background:#fff;border:1px solid var(--bdr);border-radius:12px;padding:18px 20px;display:flex;gap:14px;align-items:flex-start;box-shadow:var(--s1)}
+.info-ico{width:40px;height:40px;background:var(--pri-l);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px}
+.info-tt{font-size:15px;font-weight:700;color:var(--text);margin-bottom:4px}
+.info-dd{font-size:13px;color:var(--tm);line-height:1.6}
+
+/* ── TRUST ── */
+.trust{background:#fff;border:1px solid var(--bdr);border-radius:12px;padding:22px;box-shadow:var(--s1)}
+.trust-h{font-size:14px;font-weight:700;color:var(--text);margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.trust-h::before{content:'✓';color:var(--grn);font-weight:900}
+.trust-p{font-size:12.5px;color:var(--tm);line-height:1.65}
+.trust-p b{color:var(--t2);font-weight:700}
+
+/* ── FORM SIDE ── */
+.form-card{background:#fff;border-radius:16px;box-shadow:var(--s3);border:1px solid var(--bdr);padding:32px 28px;position:sticky;top:90px}
+@media(max-width:899px){.form-card{position:static}}
+.form-lbl{display:inline-block;background:var(--pri);color:#fff;font-size:11px;font-weight:800;padding:5px 12px;border-radius:20px;margin-bottom:14px;letter-spacing:0.3px}
+.form-h{font-size:22px;font-weight:800;color:var(--text);line-height:1.3;margin-bottom:8px;letter-spacing:-0.3px}
+.form-sub{font-size:13px;color:var(--tm);margin-bottom:24px;line-height:1.6}
+.form-row{margin-bottom:14px}
+.form-row label{display:block;font-size:12.5px;font-weight:700;color:var(--t2);margin-bottom:6px}
+.form-row label .req{color:var(--red);margin-left:3px}
+.form-row input,.form-row select,.form-row textarea{width:100%;padding:12px 14px;border:1.5px solid var(--bdr);border-radius:8px;font-size:14px;color:var(--text);background:#fff;outline:none;transition:border-color 0.2s,background 0.2s}
+.form-row input:focus,.form-row select:focus,.form-row textarea:focus{border-color:var(--pri);background:#fffbf2}
+.form-row textarea{resize:vertical;min-height:80px;font-family:inherit}
+.form-row select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M6 8L0 0h12z' fill='%236E6E73'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+.form-check{display:flex;align-items:flex-start;gap:8px;margin:18px 0 8px;font-size:12px;color:var(--tm);line-height:1.55}
+.form-check input[type="checkbox"]{width:16px;height:16px;margin-top:2px;flex-shrink:0;accent-color:var(--pri)}
+.form-check a{color:var(--pri);text-decoration:underline}
+.form-submit{width:100%;background:var(--pri);color:#fff;font-size:15px;font-weight:800;padding:16px;border:none;border-radius:10px;cursor:pointer;transition:background 0.2s,transform 0.1s;margin-top:14px;letter-spacing:-0.2px}
+.form-submit:hover{background:var(--pri-d)}
+.form-submit:active{transform:scale(0.98)}
+.form-note{font-size:11px;color:var(--tm);text-align:center;margin-top:12px;line-height:1.5}
+
+/* ── FAQ ── */
+.faq-sec{background:#fff;padding:56px 0;border-top:1px solid var(--bdr)}
+.faq-h{font-size:22px;font-weight:800;color:var(--text);text-align:center;margin-bottom:28px;letter-spacing:-0.3px}
+.faq-list{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.faq-item{background:#F8F9FB;border:1px solid var(--bdr);border-radius:10px;padding:18px 20px}
+.faq-q{font-size:14px;font-weight:700;color:var(--text);margin-bottom:6px}
+.faq-q::before{content:'Q. ';color:var(--pri);font-weight:800}
+.faq-a{font-size:13px;color:var(--tm);line-height:1.65}
+
+/* ── FOOTER ── */
+footer{background:#fff;border-top:1px solid var(--bdr);padding:32px 0;color:var(--tm);font-size:12px;line-height:1.7}
+.ft-biz{font-size:11.5px;color:#9999A1;margin-top:10px;max-width:720px}
+.ft-links{display:flex;gap:16px;margin-top:12px;flex-wrap:wrap}
+.ft-links a{color:var(--tm);font-size:12px}
+.ft-links a:hover{color:var(--pri)}
+
+/* Success Modal */
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:1000;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px)}
+.modal.show{display:flex}
+.modal-box{background:#fff;border-radius:16px;max-width:400px;width:100%;padding:36px 28px;text-align:center;box-shadow:var(--s3)}
+.modal-ico{width:64px;height:64px;background:rgba(27,178,115,0.12);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-size:32px}
+.modal-h{font-size:20px;font-weight:800;color:var(--text);margin-bottom:10px}
+.modal-p{font-size:14px;color:var(--tm);line-height:1.6;margin-bottom:24px}
+.modal-btn{width:100%;background:var(--pri);color:#fff;font-size:14px;font-weight:700;padding:14px;border:none;border-radius:10px;cursor:pointer}
+.modal-btn:hover{background:var(--pri-d)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="c">
+    <div class="hd-in">
+      <a href="/" class="hd-logo">
+        <svg viewBox="0 0 470 109" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M71.8252 74.8975C64.6488 81.3873 55.2749 85.4898 44.9521 85.9561V70.8809C51.1192 70.4457 56.7338 68.0142 61.1553 64.2275L71.8252 74.8975ZM24.71 64.1953C28.8973 67.7948 34.161 70.175 39.9521 70.792V85.8955C30.0141 85.205 21.0053 81.1428 14.0645 74.8408L24.71 64.1953ZM85.9551 44.9541C85.4991 55.0427 81.5695 64.2246 75.333 71.335L64.6484 60.6504C68.193 56.3101 70.4619 50.8882 70.8809 44.9541H85.9551ZM15.0244 44.9541C15.4421 50.8702 17.6977 56.2777 21.2236 60.6113L10.5645 71.2705C4.36083 64.1692 0.454559 55.012 0 44.9541H15.0244ZM74.8398 14.0654C81.1421 21.0064 85.2043 30.0157 85.8945 39.9541H70.792C70.1752 34.1625 67.794 28.8986 64.1943 24.7109L74.8398 14.0654ZM21.6777 24.75C18.0967 28.9313 15.7272 34.1803 15.1123 39.9541H0.0605469C0.748723 30.0463 4.78838 21.0622 11.0576 14.1299L21.6777 24.75ZM39.9521 15.1133C34.409 15.7038 29.3492 17.9113 25.2539 21.2559L14.6201 10.6221C21.4831 4.60246 30.2769 0.732767 39.9521 0.0605469V15.1133ZM44.9521 0C55.0104 0.454347 64.168 4.36161 71.2695 10.5654L60.6104 21.2246C56.2765 17.6984 50.8686 15.4429 44.9521 15.0254V0Z" fill="#FFA500"/>
+          <path d="M136.054 38.8871C131.7 38.7484 128.885 38.6791 127.624 38.6791C123.131 38.6791 119.748 39.7468 117.502 41.896C115.255 44.0452 113.841 47.5672 113.286 52.4896L109.071 86.1146H96.9521L101.056 52.8085C102.11 43.8927 104.8 37.4173 109.113 33.4239C113.439 29.4166 120.053 27.4199 128.983 27.4199C132.491 27.4199 135.486 27.5308 137.94 27.7388L136.04 38.9148Z" fill="#1D1D1F"/>
+          <path d="M154.607 86.1008C149.338 86.1008 145.123 84.6033 141.961 81.6221C138.8 78.6409 137.219 74.7585 137.219 69.9747C137.219 68.9209 137.247 68.1166 137.33 67.5481C137.968 63.1942 139.091 59.7277 140.7 57.1625C142.322 54.5973 144.651 52.7393 147.702 51.5745C150.752 50.4098 154.774 49.8413 159.765 49.8413H177.472L177.583 48.9955C177.652 48.6488 177.694 48.1496 177.694 47.5257C177.694 44.7802 176.779 42.5755 174.949 40.8839C173.118 39.1922 170.276 38.3603 166.407 38.3603H163.662C157.408 38.3603 151.792 38.5405 146.801 38.8872L148.381 28.141L151.432 27.933C152.555 27.8637 154.538 27.7528 157.38 27.6141C160.223 27.4755 162.705 27.4061 164.813 27.4061H167.655C174.893 27.4061 180.37 29.1255 184.1 32.5643C187.816 36.003 189.688 40.6065 189.688 46.3748C189.688 47.0126 189.619 48.0942 189.48 49.6472L185.154 86.1147H154.593ZM149.338 68.8238C149.338 70.8621 149.92 72.429 151.071 73.5105C152.236 74.6059 153.9 75.1467 156.077 75.1467H174.408L176.197 60.3933L158.698 60.2824C156.022 60.213 153.9 60.7261 152.319 61.8076C150.739 62.903 149.768 64.8165 149.421 67.5481L149.31 68.8099Z" fill="#1D1D1F"/>
+          <path d="M216.033 38.6792L210.348 86.1008H198.229L205.398 27.4061H231.854C246.4 27.4061 253.665 34.0757 253.665 47.4286C253.665 49.0509 253.555 50.798 253.347 52.6977L249.242 86.1008H237.123L241.228 52.3788C241.366 50.9783 241.436 49.9938 241.436 49.4253C241.436 42.2566 237.789 38.6792 230.482 38.6792H216.047Z" fill="#1D1D1F"/>
+          <path d="M264.209 52.8086C266.039 35.8782 275.385 27.4061 292.246 27.4061H317.44L309.745 90.219C308.968 95.9041 306.639 100.411 302.742 103.711C298.846 107.011 292.953 108.661 285.091 108.661C278.13 108.661 271.572 108.383 265.387 107.815L266.649 96.8608C273.388 97.4987 279.78 97.8037 285.826 97.8037C289.694 97.8037 292.537 97.1659 294.367 95.9041C296.198 94.6423 297.279 92.6317 297.64 89.9001L298.056 86.1008H284.883C270.338 86.1008 263.072 79.3204 263.072 65.7594C263.072 64.2203 263.183 62.5703 263.391 60.8093L264.237 52.7947ZM299.401 75.0496L303.935 38.485H290.873C282.235 38.485 277.423 43.1579 276.439 52.5036L275.496 61.1421C275.357 62.5425 275.288 63.4993 275.288 63.9846C275.288 71.3613 278.934 75.0496 286.242 75.0496H299.415Z" fill="#1D1D1F"/>
+          <path d="M355.356 26.9904C362.594 26.9904 368.058 28.6959 371.746 32.1069C375.434 35.5179 377.278 40.5513 377.278 47.2347C377.278 48.7877 377.167 50.4655 376.959 52.2958L375.795 61.7801H336.485V61.891C336.346 63.444 336.277 64.4978 336.277 65.0525C336.277 68.6299 337.317 71.2922 339.383 73.0115C341.449 74.7309 344.943 75.5906 349.865 75.5906H355.023C358.67 75.5906 364.231 75.2717 371.677 74.6477L370.512 85.6019C364.328 86.2397 358.781 86.5447 353.859 86.5447H348.701C340.201 86.5447 333.961 84.8254 329.995 81.3866C326.03 77.9478 324.047 72.8868 324.047 66.2172C324.047 64.5949 324.158 62.9448 324.366 61.2671L325.42 52.4206C326.404 43.99 329.177 37.6533 333.739 33.3964C338.301 29.1396 344.804 27.0181 353.235 27.0181H355.342ZM364.952 51.547V51.4361C365.09 49.897 365.16 48.7738 365.16 48.0666C365.16 44.6972 364.258 42.132 362.47 40.371C360.681 38.61 357.852 37.7365 353.984 37.7365H351.876C343.584 37.7365 338.883 42.34 337.76 51.547H364.952Z" fill="#1D1D1F"/>
+          <path d="M420.592 36.2526L404.16 6.95374H389.504L411.745 45.5289L377.593 86.1008H393.082L418.068 55.6511L435.553 86.1008H450.417L426.817 46.3747Z" fill="#1D1D1F"/>
+          <path d="M443.879 6.95374L422.068 34.3945L428.349 44.4751L458.952 6.95374H443.879Z" fill="#1D1D1F"/>
+        </svg>
+      </a>
+      <div class="hd-phone">📞 <span>상담문의 1:1</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="c">
+    <span class="hero-lbl">무료 1:1 상담</span>
+    <h1>시장이 어렵게 느껴지신다면,<br><em>전문가에게 먼저 물어보세요.</em></h1>
+    <p class="hero-p">OrangeX Korea 교육팀이 제공하는 1:1 무료 상담 서비스입니다. 기초 개념부터 자주 묻는 질문까지, 궁금하신 내용을 편하게 문의해주세요.</p>
+  </div>
+</section>
+
+<!-- MAIN -->
+<section class="main">
+  <div class="c">
+    <div class="grid">
+      <!-- LEFT: INFO -->
+      <div>
+        <h2 class="info-h">상담을 통해 <em>무엇을 얻을 수 있나요?</em></h2>
+        <div class="info-list">
+          <div class="info-item">
+            <div class="info-ico">📚</div>
+            <div>
+              <div class="info-tt">기초 개념 정리</div>
+              <div class="info-dd">용어, 시장 구조, 자주 나오는 표현 등 헷갈리는 기본 개념을 쉽게 풀어드립니다.</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-ico">🎯</div>
+            <div>
+              <div class="info-tt">맞춤형 가이드</div>
+              <div class="info-dd">관심 분야와 수준에 맞춰 어떤 학습 자료를 먼저 보면 좋을지 개인화된 방향을 제시합니다.</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-ico">❓</div>
+            <div>
+              <div class="info-tt">궁금증 해소</div>
+              <div class="info-dd">혼자 찾아보기 어려웠던 질문, 애매했던 개념을 전문 컨설턴트가 직접 답변해드립니다.</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-ico">🤝</div>
+            <div>
+              <div class="info-tt">부담 없는 상담</div>
+              <div class="info-dd">상담 비용 일절 없습니다. 강요나 불필요한 권유 없이, 정보 제공만 이루어집니다.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="trust">
+          <div class="trust-h">개인정보는 안전하게 보호됩니다</div>
+          <p class="trust-p">제공해주신 정보는 상담 목적 외에 어떤 용도로도 사용되지 않으며, <b>개인정보보호법</b>에 따라 안전하게 관리·파기됩니다. 상담 후 정보 삭제를 원하시면 언제든 요청하실 수 있습니다.</p>
+        </div>
+      </div>
+
+      <!-- RIGHT: FORM -->
+      <div>
+        <div class="form-card">
+          <span class="form-lbl">FREE CONSULT</span>
+          <h2 class="form-h">무료 상담 신청하기</h2>
+          <p class="form-sub">아래 정보를 남겨주시면, 담당 컨설턴트가 영업일 기준 24시간 이내 연락드립니다.</p>
+
+          <form id="leadForm" onsubmit="return submitLead(event)">
+            <div class="form-row">
+              <label for="fName">이름<span class="req">*</span></label>
+              <input type="text" id="fName" name="name" required placeholder="홍길동" autocomplete="name">
+            </div>
+            <div class="form-row">
+              <label for="fPhone">연락처<span class="req">*</span></label>
+              <input type="tel" id="fPhone" name="phone" required placeholder="010-0000-0000" autocomplete="tel">
+            </div>
+            <div class="form-row">
+              <label for="fEmail">이메일</label>
+              <input type="email" id="fEmail" name="email" placeholder="example@email.com" autocomplete="email">
+            </div>
+            <div class="form-row">
+              <label for="fTopic">상담 주제</label>
+              <select id="fTopic" name="topic">
+                <option value="basic">기초 개념 학습</option>
+                <option value="market">시장 구조 이해</option>
+                <option value="strategy">학습 로드맵 가이드</option>
+                <option value="etc">기타 문의</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="fMsg">문의 내용 (선택)</label>
+              <textarea id="fMsg" name="message" placeholder="궁금하신 내용이나 상황을 편하게 적어주세요."></textarea>
+            </div>
+
+            <label class="form-check">
+              <input type="checkbox" id="fAgree" required>
+              <span>[필수] 개인정보 수집·이용에 동의합니다. 수집된 정보(이름, 연락처, 이메일)는 상담 목적으로만 사용되며, 상담 완료 후 즉시 파기됩니다. <a href="#privacy">자세히</a></span>
+            </label>
+
+            <button type="submit" class="form-submit">무료 상담 신청하기</button>
+            <p class="form-note">신청 후 담당자가 영업일 기준 24시간 이내 연락드립니다.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-sec">
+  <div class="c">
+    <h2 class="faq-h">자주 묻는 질문</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">상담 비용이 발생하나요?</div>
+        <div class="faq-a">아니요. 본 상담은 100% 무료로 제공되며, 어떠한 형태의 비용도 청구되지 않습니다.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">상담은 어떻게 진행되나요?</div>
+        <div class="faq-a">신청서를 제출하시면 담당 컨설턴트가 남겨주신 연락처로 직접 연락드려, 편하신 시간에 전화 또는 메신저로 상담을 진행합니다.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">상담 내용은 비공개로 유지되나요?</div>
+        <div class="faq-a">네. 모든 상담 내용은 기밀로 처리되며, 외부에 공유되지 않습니다. 제공된 개인정보도 상담 목적 외에는 절대 사용되지 않습니다.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">꼭 상담 후 뭔가를 해야 하나요?</div>
+        <div class="faq-a">전혀 아닙니다. 상담은 단순 정보 제공을 목적으로 하며, 어떤 행동도 강요되지 않습니다. 궁금증만 해소하고 끝내셔도 괜찮습니다.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">개인정보 삭제를 원하면 어떻게 하나요?</div>
+        <div class="faq-a">상담 종료 후 언제든 삭제 요청이 가능하며, 요청 즉시 관련 정보를 파기해드립니다.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="c">
+    <div>© 2026 OrangeX Korea Education Desk. All Rights Reserved.</div>
+    <div class="ft-biz">본 페이지는 일반 금융·시장 개념에 대한 교육 상담을 목적으로 운영되며, 특정 상품의 가입, 투자, 매매를 권유하지 않습니다. 모든 판단과 결정은 이용자 본인에게 있으며, 제공되는 정보는 참고용으로만 활용하시기 바랍니다.</div>
+    <div class="ft-links">
+      <a href="#privacy">개인정보처리방침</a>
+      <a href="#terms">이용약관</a>
+      <a href="#contact">문의하기</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Success Modal -->
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <div class="modal-ico">✓</div>
+    <h3 class="modal-h">신청이 완료되었습니다</h3>
+    <p class="modal-p">담당 컨설턴트가 영업일 기준 24시간 이내<br>남겨주신 연락처로 연락드리겠습니다.</p>
+    <button class="modal-btn" onclick="closeModal()">확인</button>
+  </div>
+</div>
+
+<script>
+function submitLead(e){
+  e.preventDefault();
+  // Basic validation
+  const name=document.getElementById('fName').value.trim();
+  const phone=document.getElementById('fPhone').value.trim();
+  const agree=document.getElementById('fAgree').checked;
+  if(!name||!phone||!agree){alert('필수 항목을 모두 입력해주세요.');return false;}
+  // Show success modal
+  document.getElementById('modal').classList.add('show');
+  document.getElementById('leadForm').reset();
+  return false;
+}
+function closeModal(){document.getElementById('modal').classList.remove('show');}
+document.getElementById('modal')?.addEventListener('click',e=>{if(e.target.id==='modal')closeModal();});
+// Phone formatting
+document.getElementById('fPhone').addEventListener('input',e=>{
+  let v=e.target.value.replace(/[^0-9]/g,'').slice(0,11);
+  if(v.length>=7) v=v.slice(0,3)+'-'+v.slice(3,7)+'-'+v.slice(7);
+  else if(v.length>=4) v=v.slice(0,3)+'-'+v.slice(3);
+  e.target.value=v;
+});
+</script>
+</body>
+</html>
