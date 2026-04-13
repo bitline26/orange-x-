@@ -8,11 +8,13 @@
 <meta name="robots" content="index,follow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;800;900&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{font-family:'Noto Sans KR','Inter',sans-serif;background:#fff;color:#1D1D1F;line-height:1.65;-webkit-font-smoothing:antialiased}
+body.lang-en{font-family:'Inter','Noto Sans KR',sans-serif}
+body.lang-ja{font-family:'Noto Sans JP','Inter',sans-serif}
 a{text-decoration:none;color:inherit}
 button,input,select,textarea{font-family:inherit}
 ul{list-style:none}
@@ -27,6 +29,24 @@ img{max-width:100%;display:block}
   --s1:0 1px 3px rgba(0,0,0,0.05);--s2:0 4px 16px rgba(0,0,0,0.08);--s3:0 16px 48px rgba(0,0,0,0.14);
 }
 .c{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* ── LANG BAR ── */
+.lang-bar{background:#050507;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.06)}
+.lang-in{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.lang-left{display:flex;align-items:center;gap:14px}
+.lang-home{display:inline-flex;align-items:center;gap:7px;color:rgba(255,255,255,0.7);font-size:12px;font-weight:600;padding:4px 0;transition:color 0.2s;letter-spacing:0.2px}
+.lang-home:hover{color:var(--org)}
+.lang-home svg{width:13px;height:13px;opacity:0.8}
+.lang-right{display:flex;align-items:center;gap:4px}
+.lang-btn{padding:5px 11px;font-size:11.5px;font-weight:700;color:rgba(255,255,255,0.5);border-radius:4px;transition:color 0.2s,background 0.2s;letter-spacing:0.3px;background:none;border:none;cursor:pointer;font-family:inherit}
+.lang-btn.active,.lang-btn:hover{color:#fff;background:rgba(255,255,255,0.1)}
+.lang-btn.active{color:var(--org)}
+.lang-sep{color:rgba(255,255,255,0.2);font-size:11px}
+@media(max-width:520px){
+  .lang-bar{padding:7px 0}
+  .lang-home{font-size:11px}
+  .lang-btn{padding:4px 8px;font-size:10.5px}
+}
 
 /* ── TOP BAR ── */
 .top-bar{background:var(--dark);padding:11px 0;font-size:13px;color:#fff;text-align:center;font-weight:500}
@@ -320,10 +340,31 @@ footer{background:#050507;color:rgba(255,255,255,0.5);padding:56px 0 32px;font-s
 </head>
 <body>
 
+<!-- Language bar -->
+<div class="lang-bar">
+  <div class="c">
+    <div class="lang-in">
+      <div class="lang-left">
+        <a href="https://www.orangex.com/" target="_blank" rel="noopener" class="lang-home">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span data-i="homepage">OrangeX 공식 홈페이지</span>
+        </a>
+      </div>
+      <div class="lang-right">
+        <button class="lang-btn" onclick="setLang('en')" id="lbEn">EN</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn active" onclick="setLang('ko')" id="lbKo">한국어</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" onclick="setLang('ja')" id="lbJa">日本語</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Top bar -->
 <div class="top-bar">
   <span class="dot"></span>
-  <b>2025.08.27</b> 빗썸 공식 공지 · 트래블룰 CODE 연동 VASP 공식 추가 완료
+  <span data-i="topbar"><b>2025.08.27</b> 빗썸 공식 공지 · 트래블룰 CODE 연동 VASP 공식 추가 완료</span>
 </div>
 
 <!-- Header -->
@@ -353,64 +394,64 @@ footer{background:#050507;color:rgba(255,255,255,0.5);padding:56px 0 32px;font-s
   <div class="c">
     <div class="hero-grid">
       <div>
-        <div class="hero-eyebrow">KOREA VASP · 2025.08.27</div>
-        <h1 class="hero-h1">3대 거래소가<br>공식 등재한<br><em>그 파트너.</em></h1>
-        <p class="hero-p">2025년 8월 27일, <b>빗썸 트래블룰 CODE 연동 VASP</b>로 공식 추가되었습니다. 업비트·빗썸·코인원 공식 공지 및 코인니스 언론 보도로 확인 가능.</p>
+        <div class="hero-eyebrow" data-i="hero_eye">KOREA VASP · 2025.08.27</div>
+        <h1 class="hero-h1" data-i="hero_h1">3대 거래소가<br>공식 등재한<br><em>그 파트너.</em></h1>
+        <p class="hero-p" data-i="hero_p">2025년 8월 27일, <b>빗썸 트래블룰 CODE 연동 VASP</b>로 공식 추가되었습니다. 업비트·빗썸·코인원 공식 공지 및 코인니스 언론 보도로 확인 가능.</p>
 
         <div class="hero-points">
-          <div class="hp"><div class="hp-ico"></div>업비트 · 빗썸 · 코인원 <b>3사 공식 공지 등재</b></div>
-          <div class="hp"><div class="hp-ico"></div>2025.08.27 <b>빗썸 트래블룰 CODE 연동</b></div>
-          <div class="hp"><div class="hp-ico"></div>코인니스 <b>언론 보도 커버리지</b></div>
-          <div class="hp"><div class="hp-ico"></div>24시간 <b>한국어 전담 상담 운영</b></div>
+          <div class="hp"><div class="hp-ico"></div><span data-i="hp1">업비트 · 빗썸 · 코인원 <b>3사 공식 공지 등재</b></span></div>
+          <div class="hp"><div class="hp-ico"></div><span data-i="hp2">2025.08.27 <b>빗썸 트래블룰 CODE 연동</b></span></div>
+          <div class="hp"><div class="hp-ico"></div><span data-i="hp3">코인니스 <b>언론 보도 커버리지</b></span></div>
+          <div class="hp"><div class="hp-ico"></div><span data-i="hp4">24시간 <b>한국어 전담 상담 운영</b></span></div>
         </div>
 
         <div class="hero-num">
           <div>
             <div class="hn-v">$2.4B+</div>
-            <div class="hn-l">일일 거래량</div>
+            <div class="hn-l" data-i="stat_vol">일일 거래량</div>
           </div>
           <div>
             <div class="hn-v">5M+</div>
-            <div class="hn-l">글로벌 사용자</div>
+            <div class="hn-l" data-i="stat_usr">글로벌 사용자</div>
           </div>
           <div>
             <div class="hn-v">200+</div>
-            <div class="hn-l">트레이딩 종목</div>
+            <div class="hn-l" data-i="stat_pair">트레이딩 종목</div>
           </div>
         </div>
       </div>
 
       <div class="form-card">
-        <span class="form-badge">FREE CONSULT</span>
-        <h2 class="form-h">무료 상담<br><em>1:1 신청</em></h2>
-        <p class="form-sub">정보 입력 1분 · 담당자 영업일 24시간 이내 연락 · 비용 일절 없음</p>
+        <span class="form-badge" data-i="form_badge">FREE CONSULT</span>
+        <h2 class="form-h" data-i="form_h">무료 상담<br><em>1:1 신청</em></h2>
+        <p class="form-sub" data-i="form_sub">정보 입력 1분 · 담당자 영업일 24시간 이내 연락 · 비용 일절 없음</p>
 
         <form id="leadForm" onsubmit="return submitLead(event)">
           <div class="form-row">
-            <label for="fName">이름<span class="req">*</span></label>
-            <input type="text" id="fName" required placeholder="홍길동" autocomplete="name">
+            <label for="fName" data-i="l_name">이름<span class="req">*</span></label>
+            <input type="text" id="fName" required placeholder="홍길동" autocomplete="name" data-i-ph="ph_name">
           </div>
           <div class="form-row">
-            <label for="fPhone">연락처<span class="req">*</span></label>
+            <label for="fPhone" data-i="l_phone">연락처<span class="req">*</span></label>
             <input type="tel" id="fPhone" required placeholder="010-0000-0000" autocomplete="tel">
           </div>
           <div class="form-row">
-            <label for="fTopic">상담 주제</label>
+            <label for="fTopic" data-i="l_topic">상담 주제</label>
             <select id="fTopic">
-              <option value="vasp">VASP 등재 관련 안내</option>
-              <option value="basic">기초 개념 학습</option>
-              <option value="market">시장 구조 이해</option>
-              <option value="etc">기타 문의</option>
+              <option value="vasp" data-i="opt_vasp">VASP 등재 관련 안내</option>
+              <option value="basic" data-i="opt_basic">기초 개념 학습</option>
+              <option value="market" data-i="opt_market">시장 구조 이해</option>
+              <option value="etc" data-i="opt_etc">기타 문의</option>
             </select>
           </div>
 
           <label class="form-check">
             <input type="checkbox" id="fAgree" required>
-            <span>[필수] 개인정보 수집·이용에 동의합니다. 수집 정보는 상담 목적으로만 사용되며 상담 완료 후 파기됩니다. <a href="#privacy">자세히</a></span>
+            <span data-i="agree">[필수] 개인정보 수집·이용에 동의합니다. 수집 정보는 상담 목적으로만 사용되며 상담 완료 후 파기됩니다. <a href="#privacy">자세히</a></span>
           </label>
 
-          <button type="submit" class="form-submit">무료 상담 신청하기 →</button>
-          <p class="form-note">담당자가 영업일 기준 24시간 이내 연락드립니다.</p>
+          <button type="submit" class="form-submit" data-i="btn_submit">무료 상담 신청하기 →</button>
+          <p class="form-note" data-i="form_note">담당자가 영업일 기준 24시간 이내 연락드립니다.</p>
         </form>
       </div>
     </div>
@@ -662,6 +703,88 @@ footer{background:#050507;color:rgba(255,255,255,0.5);padding:56px 0 32px;font-s
 </div>
 
 <script>
+/* ── i18n ── */
+const LANG = {
+  ko:{
+    homepage:'OrangeX 공식 홈페이지',
+    hero_eye:'KOREA VASP · 2025.08.27',
+    hero_h1:'3대 거래소가<br>공식 등재한<br><em>그 파트너.</em>',
+    hero_p:'2025년 8월 27일, <b>빗썸 트래블룰 CODE 연동 VASP</b>로 공식 추가되었습니다. 업비트·빗썸·코인원 공식 공지 및 코인니스 언론 보도로 확인 가능.',
+    hp1:'업비트 · 빗썸 · 코인원 <b>3사 공식 공지 등재</b>',
+    hp2:'2025.08.27 <b>빗썸 트래블룰 CODE 연동</b>',
+    hp3:'코인니스 <b>언론 보도 커버리지</b>',
+    hp4:'24시간 <b>한국어 전담 상담 운영</b>',
+    stat_vol:'일일 거래량',stat_usr:'글로벌 사용자',stat_pair:'트레이딩 종목',
+    form_badge:'FREE CONSULT',
+    form_h:'무료 상담<br><em>1:1 신청</em>',
+    form_sub:'정보 입력 1분 · 담당자 영업일 24시간 이내 연락 · 비용 일절 없음',
+    l_name:'이름<span class="req">*</span>',l_phone:'연락처<span class="req">*</span>',l_topic:'상담 주제',
+    ph_name:'홍길동',
+    opt_vasp:'VASP 등재 관련 안내',opt_basic:'기초 개념 학습',opt_market:'시장 구조 이해',opt_etc:'기타 문의',
+    agree:'[필수] 개인정보 수집·이용에 동의합니다. 수집 정보는 상담 목적으로만 사용되며 상담 완료 후 파기됩니다. <a href="#privacy">자세히</a>',
+    btn_submit:'무료 상담 신청하기 →',
+    form_note:'담당자가 영업일 기준 24시간 이내 연락드립니다.',
+    topbar:'<b>2025.08.27</b> 빗썸 공식 공지 · 트래블룰 CODE 연동 VASP 공식 추가 완료',
+  },
+  en:{
+    homepage:'OrangeX Official Website',
+    hero_eye:'KOREA VASP · 2025.08.27',
+    hero_h1:'The partner listed<br>by the top 3<br><em>Korean exchanges.</em>',
+    hero_p:'On August 27, 2025, officially added as a <b>Travel Rule CODE-integrated VASP</b> via Bithumb. Verified across Upbit, Bithumb, Coinone official notices and Coinness press coverage.',
+    hp1:'Listed in <b>Upbit · Bithumb · Coinone</b> official notices',
+    hp2:'2025.08.27 <b>Bithumb Travel Rule CODE integration</b>',
+    hp3:'<b>Coinness press coverage</b> confirmed',
+    hp4:'<b>24/7 Korean consultation</b> available',
+    stat_vol:'Daily Volume',stat_usr:'Global Users',stat_pair:'Trading Pairs',
+    form_badge:'FREE CONSULT',
+    form_h:'Free 1:1<br><em>Consultation</em>',
+    form_sub:'1 minute to submit · Reply within 24 business hours · Zero cost',
+    l_name:'Full Name<span class="req">*</span>',l_phone:'Phone<span class="req">*</span>',l_topic:'Consultation Topic',
+    ph_name:'John Doe',
+    opt_vasp:'VASP listing inquiry',opt_basic:'Fundamentals',opt_market:'Market structure',opt_etc:'Other inquiry',
+    agree:'[Required] I agree to the collection and use of my personal information for consultation purposes only. Data is destroyed after consultation. <a href="#privacy">Details</a>',
+    btn_submit:'Request Free Consultation →',
+    form_note:'A consultant will reply within 24 business hours.',
+    topbar:'<b>2025.08.27</b> Bithumb Official Notice · Travel Rule CODE VASP officially added',
+  },
+  ja:{
+    homepage:'OrangeX 公式ホームページ',
+    hero_eye:'KOREA VASP · 2025.08.27',
+    hero_h1:'韓国3大取引所が<br>公式に記載した<br><em>そのパートナー。</em>',
+    hero_p:'2025年8月27日、<b>Bithumbのトラベルルール CODE 連動 VASP</b> として公式に追加されました。Upbit・Bithumb・Coinone の公式お知らせおよび Coinness の報道で確認可能。',
+    hp1:'Upbit · Bithumb · Coinone <b>3社公式お知らせ掲載</b>',
+    hp2:'2025.08.27 <b>Bithumb トラベルルール CODE 連動</b>',
+    hp3:'Coinness <b>メディア報道掲載</b>',
+    hp4:'24時間 <b>韓国語専任サポート</b>',
+    stat_vol:'1日取引量',stat_usr:'グローバルユーザー',stat_pair:'取引ペア',
+    form_badge:'FREE CONSULT',
+    form_h:'無料 1:1<br><em>相談申込</em>',
+    form_sub:'入力1分 · 営業日24時間以内にご連絡 · 費用なし',
+    l_name:'お名前<span class="req">*</span>',l_phone:'電話番号<span class="req">*</span>',l_topic:'相談内容',
+    ph_name:'山田太郎',
+    opt_vasp:'VASP 掲載に関するご案内',opt_basic:'基礎概念の学習',opt_market:'市場構造の理解',opt_etc:'その他のお問い合わせ',
+    agree:'[必須] 個人情報の収集・利用に同意します。収集された情報は相談目的のみに使用され、完了後破棄されます。<a href="#privacy">詳細</a>',
+    btn_submit:'無料相談を申し込む →',
+    form_note:'担当者が営業日基準24時間以内にご連絡いたします。',
+    topbar:'<b>2025.08.27</b> Bithumb 公式お知らせ · トラベルルール CODE 連動 VASP 公式追加',
+  }
+};
+function setLang(l){
+  document.documentElement.lang = l;
+  document.body.className = 'lang-'+l;
+  ['lbEn','lbKo','lbJa'].forEach(id=>document.getElementById(id)?.classList.remove('active'));
+  document.getElementById(l==='en'?'lbEn':l==='ja'?'lbJa':'lbKo')?.classList.add('active');
+  const dict = LANG[l];
+  document.querySelectorAll('[data-i]').forEach(el=>{
+    const k = el.getAttribute('data-i');
+    if(dict[k]) el.innerHTML = dict[k];
+  });
+  document.querySelectorAll('[data-i-ph]').forEach(el=>{
+    const k = el.getAttribute('data-i-ph');
+    if(dict[k]) el.placeholder = dict[k];
+  });
+}
+
 function submitLead(e){
   e.preventDefault();
   const name=document.getElementById('fName').value.trim();
