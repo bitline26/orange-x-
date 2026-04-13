@@ -8,11 +8,13 @@
 <meta name="robots" content="index,follow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#F8F9FB;color:#1D1D1F;line-height:1.6;-webkit-font-smoothing:antialiased}
+body.lang-ko{font-family:'Noto Sans KR','Inter',sans-serif}
+body.lang-ja{font-family:'Noto Sans JP','Inter',sans-serif}
 a{text-decoration:none;color:inherit}
 button,input,select,textarea{font-family:inherit}
 ul{list-style:none}
@@ -27,8 +29,17 @@ ul{list-style:none}
   --s3:0 12px 40px rgba(0,0,0,0.12);
 }
 
+/* TOP BAR: Language switcher */
+.top-bar{height:32px;background:#111;display:flex;align-items:center;justify-content:flex-end;padding:0 24px;gap:4px;position:sticky;top:0;z-index:101}
+.lang-btn{padding:4px 10px;font-size:11px;font-weight:600;color:rgba(255,255,255,0.5);border-radius:4px;transition:color 0.2s,background 0.2s;letter-spacing:0.5px;background:none;border:none;cursor:pointer;font-family:inherit}
+.lang-btn.active,.lang-btn:hover{color:#fff;background:rgba(255,255,255,0.12)}
+.lang-btn.active{color:var(--pri)}
+.top-bar-divider{color:rgba(255,255,255,0.2);font-size:11px}
+@media(max-width:520px){.top-bar{padding:0 14px;height:28px}.lang-btn{padding:3px 8px;font-size:10px}}
+
 /* HEADER */
-header{background:#fff;border-bottom:1px solid var(--bdr);padding:14px 0;position:sticky;top:0;z-index:100}
+header{background:#fff;border-bottom:1px solid var(--bdr);padding:14px 0;position:sticky;top:32px;z-index:100}
+@media(max-width:520px){header{top:28px}}
 .c{max-width:1080px;margin:0 auto;padding:0 20px}
 .hd-in{display:flex;align-items:center;justify-content:space-between}
 .hd-logo{display:flex;align-items:center;gap:8px}
@@ -191,6 +202,15 @@ footer{background:#111;border-top:1px solid var(--bdr);padding:44px 0 36px;color
 </head>
 <body>
 
+<!-- TOP BAR: Language Switcher -->
+<div class="top-bar">
+  <button class="lang-btn active" onclick="setLang('en')" id="lbEn">EN</button>
+  <span class="top-bar-divider">|</span>
+  <button class="lang-btn" onclick="setLang('ko')" id="lbKo">한국어</button>
+  <span class="top-bar-divider">|</span>
+  <button class="lang-btn" onclick="setLang('ja')" id="lbJa">日本語</button>
+</div>
+
 <header>
   <div class="c">
     <div class="hd-in">
@@ -214,9 +234,9 @@ footer{background:#111;border-top:1px solid var(--bdr);padding:44px 0 36px;color
 <!-- HERO -->
 <section class="hero">
   <div class="c">
-    <span class="hero-lbl">FREE 1:1 CONSULTATION</span>
-    <h1>Feeling overwhelmed by the market?<br><em>Ask an expert first.</em></h1>
-    <p class="hero-p">A free 1:1 consultation service provided by the OrangeX Korea Education Desk. From basic concepts to frequently asked questions — feel free to ask whatever you're curious about.</p>
+    <span class="hero-lbl" data-i="hero_lbl">FREE 1:1 CONSULTATION</span>
+    <h1 data-i="hero_h">Feeling overwhelmed by the market?<br><em>Ask an expert first.</em></h1>
+    <p class="hero-p" data-i="hero_p">A free 1:1 consultation service provided by the OrangeX Korea Education Desk. From basic concepts to frequently asked questions — feel free to ask whatever you're curious about.</p>
   </div>
 </section>
 
@@ -226,85 +246,85 @@ footer{background:#111;border-top:1px solid var(--bdr);padding:44px 0 36px;color
     <div class="grid">
       <!-- LEFT -->
       <div>
-        <h2 class="info-h">What you'll get <em>from this consultation</em></h2>
+        <h2 class="info-h" data-i="info_h">What you'll get <em>from this consultation</em></h2>
         <div class="info-list">
           <div class="info-item">
             <div class="info-ico">📚</div>
             <div>
-              <div class="info-tt">Fundamentals, Simplified</div>
-              <div class="info-dd">Terms, market structure, and commonly confusing concepts — explained in plain, easy-to-understand language.</div>
+              <div class="info-tt" data-i="i1_t">Fundamentals, Simplified</div>
+              <div class="info-dd" data-i="i1_d">Terms, market structure, and commonly confusing concepts — explained in plain, easy-to-understand language.</div>
             </div>
           </div>
           <div class="info-item">
             <div class="info-ico">🎯</div>
             <div>
-              <div class="info-tt">Personalized Guidance</div>
-              <div class="info-dd">Get a customized learning path based on your interests and experience level. Know exactly where to start.</div>
+              <div class="info-tt" data-i="i2_t">Personalized Guidance</div>
+              <div class="info-dd" data-i="i2_d">Get a customized learning path based on your interests and experience level. Know exactly where to start.</div>
             </div>
           </div>
           <div class="info-item">
             <div class="info-ico">❓</div>
             <div>
-              <div class="info-tt">Clear Your Questions</div>
-              <div class="info-dd">Get direct answers to questions that were hard to figure out on your own, straight from our education specialists.</div>
+              <div class="info-tt" data-i="i3_t">Clear Your Questions</div>
+              <div class="info-dd" data-i="i3_d">Get direct answers to questions that were hard to figure out on your own, straight from our education specialists.</div>
             </div>
           </div>
           <div class="info-item">
             <div class="info-ico">🤝</div>
             <div>
-              <div class="info-tt">Zero Pressure</div>
-              <div class="info-dd">The consultation is 100% free. No fees, no sales pitches, no obligations — just helpful information.</div>
+              <div class="info-tt" data-i="i4_t">Zero Pressure</div>
+              <div class="info-dd" data-i="i4_d">The consultation is 100% free. No fees, no sales pitches, no obligations — just helpful information.</div>
             </div>
           </div>
         </div>
 
         <div class="trust">
-          <div class="trust-h">Your information is safe with us</div>
-          <p class="trust-p">Any information you provide is used solely for consultation purposes and is handled in accordance with the <b>Personal Information Protection Act (PIPA)</b>. You may request deletion of your data at any time after the consultation.</p>
+          <div class="trust-h" data-i="trust_h">Your information is safe with us</div>
+          <p class="trust-p" data-i="trust_p">Any information you provide is used solely for consultation purposes and is handled in accordance with the <b>Personal Information Protection Act (PIPA)</b>. You may request deletion of your data at any time after the consultation.</p>
         </div>
       </div>
 
       <!-- RIGHT -->
       <div>
         <div class="form-card">
-          <span class="form-lbl">FREE CONSULT</span>
-          <h2 class="form-h">Request Your Free Consultation</h2>
-          <p class="form-sub">Leave your details below and a consultant will contact you within 24 business hours.</p>
+          <span class="form-lbl" data-i="form_lbl">FREE CONSULT</span>
+          <h2 class="form-h" data-i="form_h">Request Your Free Consultation</h2>
+          <p class="form-sub" data-i="form_sub">Leave your details below and a consultant will contact you within 24 business hours.</p>
 
           <form id="leadForm" onsubmit="return submitLead(event)">
             <div class="form-row">
-              <label for="fName">Full Name<span class="req">*</span></label>
-              <input type="text" id="fName" name="name" required placeholder="John Doe" autocomplete="name">
+              <label for="fName" data-i="l_name">Full Name<span class="req">*</span></label>
+              <input type="text" id="fName" name="name" required placeholder="John Doe" autocomplete="name" data-i-ph="ph_name">
             </div>
             <div class="form-row">
-              <label for="fPhone">Phone Number<span class="req">*</span></label>
+              <label for="fPhone" data-i="l_phone">Phone Number<span class="req">*</span></label>
               <input type="tel" id="fPhone" name="phone" required placeholder="010-0000-0000" autocomplete="tel">
             </div>
             <div class="form-row">
-              <label for="fEmail">Email</label>
+              <label for="fEmail" data-i="l_email">Email</label>
               <input type="email" id="fEmail" name="email" placeholder="example@email.com" autocomplete="email">
             </div>
             <div class="form-row">
-              <label for="fTopic">Consultation Topic</label>
+              <label for="fTopic" data-i="l_topic">Consultation Topic</label>
               <select id="fTopic" name="topic">
-                <option value="basic">Fundamentals & Concepts</option>
-                <option value="market">Market Structure</option>
-                <option value="strategy">Learning Roadmap</option>
-                <option value="etc">Other Inquiry</option>
+                <option value="basic" data-i="opt_basic">Fundamentals & Concepts</option>
+                <option value="market" data-i="opt_market">Market Structure</option>
+                <option value="strategy" data-i="opt_strategy">Learning Roadmap</option>
+                <option value="etc" data-i="opt_etc">Other Inquiry</option>
               </select>
             </div>
             <div class="form-row">
-              <label for="fMsg">Your Message (Optional)</label>
-              <textarea id="fMsg" name="message" placeholder="Feel free to share any questions or context you'd like to discuss."></textarea>
+              <label for="fMsg" data-i="l_msg">Your Message (Optional)</label>
+              <textarea id="fMsg" name="message" placeholder="Feel free to share any questions or context you'd like to discuss." data-i-ph="ph_msg"></textarea>
             </div>
 
             <label class="form-check">
               <input type="checkbox" id="fAgree" required>
-              <span>[Required] I agree to the collection and use of my personal information. Collected data (name, phone, email) will be used only for the consultation and destroyed immediately after. <a href="#privacy">Details</a></span>
+              <span data-i="agree_txt">[Required] I agree to the collection and use of my personal information. Collected data (name, phone, email) will be used only for the consultation and destroyed immediately after. <a href="#privacy">Details</a></span>
             </label>
 
-            <button type="submit" class="form-submit">Request Free Consultation</button>
-            <p class="form-note">A consultant will contact you within 24 business hours after submission.</p>
+            <button type="submit" class="form-submit" data-i="btn_submit">Request Free Consultation</button>
+            <p class="form-note" data-i="form_note">A consultant will contact you within 24 business hours after submission.</p>
           </form>
         </div>
       </div>
@@ -315,27 +335,27 @@ footer{background:#111;border-top:1px solid var(--bdr);padding:44px 0 36px;color
 <!-- FAQ -->
 <section class="faq-sec">
   <div class="c">
-    <h2 class="faq-h">Frequently Asked Questions</h2>
+    <h2 class="faq-h" data-i="faq_h">Frequently Asked Questions</h2>
     <div class="faq-list">
       <div class="faq-item">
-        <div class="faq-q">Is there any fee for the consultation?</div>
-        <div class="faq-a">No. This consultation is 100% free of charge. No fees are billed in any form.</div>
+        <div class="faq-q" data-i="q1">Is there any fee for the consultation?</div>
+        <div class="faq-a" data-i="a1">No. This consultation is 100% free of charge. No fees are billed in any form.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">How does the consultation work?</div>
-        <div class="faq-a">Once you submit the form, a consultant will contact you at the number you provided. The consultation is conducted at your convenience via phone or messaging.</div>
+        <div class="faq-q" data-i="q2">How does the consultation work?</div>
+        <div class="faq-a" data-i="a2">Once you submit the form, a consultant will contact you at the number you provided. The consultation is conducted at your convenience via phone or messaging.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Will the consultation be kept confidential?</div>
-        <div class="faq-a">Yes. All consultation content is treated confidentially and never shared externally. Personal data is used strictly for the consultation and nothing else.</div>
+        <div class="faq-q" data-i="q3">Will the consultation be kept confidential?</div>
+        <div class="faq-a" data-i="a3">Yes. All consultation content is treated confidentially and never shared externally. Personal data is used strictly for the consultation and nothing else.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Am I required to do anything after the consultation?</div>
-        <div class="faq-a">Absolutely not. The consultation is purely informational. You are under no obligation to take any action. You can simply get your questions answered and walk away.</div>
+        <div class="faq-q" data-i="q4">Am I required to do anything after the consultation?</div>
+        <div class="faq-a" data-i="a4">Absolutely not. The consultation is purely informational. You are under no obligation to take any action. You can simply get your questions answered and walk away.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">How can I request deletion of my personal data?</div>
-        <div class="faq-a">You may request deletion at any time after the consultation ends. We will delete your information immediately upon request.</div>
+        <div class="faq-q" data-i="q5">How can I request deletion of my personal data?</div>
+        <div class="faq-a" data-i="a5">You may request deletion at any time after the consultation ends. We will delete your information immediately upon request.</div>
       </div>
     </div>
   </div>
@@ -448,6 +468,103 @@ footer{background:#111;border-top:1px solid var(--bdr);padding:44px 0 36px;color
 </div>
 
 <script>
+/* ── i18n ── */
+const LANG = {
+  en:{
+    hero_lbl:'FREE 1:1 CONSULTATION',
+    hero_h:'Feeling overwhelmed by the market?<br><em>Ask an expert first.</em>',
+    hero_p:"A free 1:1 consultation service provided by the OrangeX Korea Education Desk. From basic concepts to frequently asked questions — feel free to ask whatever you're curious about.",
+    info_h:"What you'll get <em>from this consultation</em>",
+    i1_t:'Fundamentals, Simplified',i1_d:'Terms, market structure, and commonly confusing concepts — explained in plain, easy-to-understand language.',
+    i2_t:'Personalized Guidance',i2_d:'Get a customized learning path based on your interests and experience level. Know exactly where to start.',
+    i3_t:'Clear Your Questions',i3_d:'Get direct answers to questions that were hard to figure out on your own, straight from our education specialists.',
+    i4_t:'Zero Pressure',i4_d:'The consultation is 100% free. No fees, no sales pitches, no obligations — just helpful information.',
+    trust_h:'Your information is safe with us',
+    trust_p:'Any information you provide is used solely for consultation purposes and is handled in accordance with the <b>Personal Information Protection Act (PIPA)</b>. You may request deletion of your data at any time after the consultation.',
+    form_lbl:'FREE CONSULT',form_h:'Request Your Free Consultation',
+    form_sub:'Leave your details below and a consultant will contact you within 24 business hours.',
+    l_name:'Full Name<span class="req">*</span>',l_phone:'Phone Number<span class="req">*</span>',l_email:'Email',l_topic:'Consultation Topic',l_msg:'Your Message (Optional)',
+    ph_name:'John Doe',ph_msg:"Feel free to share any questions or context you'd like to discuss.",
+    opt_basic:'Fundamentals & Concepts',opt_market:'Market Structure',opt_strategy:'Learning Roadmap',opt_etc:'Other Inquiry',
+    agree_txt:'[Required] I agree to the collection and use of my personal information. Collected data (name, phone, email) will be used only for the consultation and destroyed immediately after. <a href="#privacy">Details</a>',
+    btn_submit:'Request Free Consultation',
+    form_note:'A consultant will contact you within 24 business hours after submission.',
+    faq_h:'Frequently Asked Questions',
+    q1:'Is there any fee for the consultation?',a1:'No. This consultation is 100% free of charge. No fees are billed in any form.',
+    q2:'How does the consultation work?',a2:'Once you submit the form, a consultant will contact you at the number you provided. The consultation is conducted at your convenience via phone or messaging.',
+    q3:'Will the consultation be kept confidential?',a3:'Yes. All consultation content is treated confidentially and never shared externally. Personal data is used strictly for the consultation and nothing else.',
+    q4:'Am I required to do anything after the consultation?',a4:'Absolutely not. The consultation is purely informational. You are under no obligation to take any action. You can simply get your questions answered and walk away.',
+    q5:'How can I request deletion of my personal data?',a5:'You may request deletion at any time after the consultation ends. We will delete your information immediately upon request.',
+  },
+  ko:{
+    hero_lbl:'무료 1:1 상담',
+    hero_h:'시장이 어렵게 느껴지시나요?<br><em>전문가에게 먼저 물어보세요.</em>',
+    hero_p:'OrangeX Korea 교육팀이 제공하는 1:1 무료 상담 서비스입니다. 기초 개념부터 자주 묻는 질문까지, 궁금하신 내용을 편하게 문의해주세요.',
+    info_h:'상담을 통해 <em>얻을 수 있는 것</em>',
+    i1_t:'기초 개념 정리',i1_d:'용어, 시장 구조, 자주 헷갈리는 개념을 쉽고 명확하게 풀어드립니다.',
+    i2_t:'맞춤형 가이드',i2_d:'관심 분야와 수준에 맞춰 어떤 학습 자료부터 보면 좋을지 개인화된 방향을 제시합니다.',
+    i3_t:'궁금증 해소',i3_d:'혼자 찾아보기 어려웠던 질문, 애매했던 개념을 전문 컨설턴트가 직접 답변해드립니다.',
+    i4_t:'부담 없는 상담',i4_d:'상담 비용 일절 없습니다. 강요나 불필요한 권유 없이, 정보 제공만 이루어집니다.',
+    trust_h:'개인정보는 안전하게 보호됩니다',
+    trust_p:'제공해주신 정보는 상담 목적 외에 어떤 용도로도 사용되지 않으며, <b>개인정보보호법</b>에 따라 안전하게 관리·파기됩니다. 상담 후 정보 삭제를 원하시면 언제든 요청하실 수 있습니다.',
+    form_lbl:'무료 상담',form_h:'무료 상담 신청하기',
+    form_sub:'아래 정보를 남겨주시면, 담당 컨설턴트가 영업일 기준 24시간 이내 연락드립니다.',
+    l_name:'이름<span class="req">*</span>',l_phone:'연락처<span class="req">*</span>',l_email:'이메일',l_topic:'상담 주제',l_msg:'문의 내용 (선택)',
+    ph_name:'홍길동',ph_msg:'궁금하신 내용이나 상황을 편하게 적어주세요.',
+    opt_basic:'기초 개념 학습',opt_market:'시장 구조 이해',opt_strategy:'학습 로드맵 가이드',opt_etc:'기타 문의',
+    agree_txt:'[필수] 개인정보 수집·이용에 동의합니다. 수집된 정보(이름, 연락처, 이메일)는 상담 목적으로만 사용되며, 상담 완료 후 즉시 파기됩니다. <a href="#privacy">자세히</a>',
+    btn_submit:'무료 상담 신청하기',
+    form_note:'신청 후 담당자가 영업일 기준 24시간 이내 연락드립니다.',
+    faq_h:'자주 묻는 질문',
+    q1:'상담 비용이 발생하나요?',a1:'아니요. 본 상담은 100% 무료로 제공되며, 어떠한 형태의 비용도 청구되지 않습니다.',
+    q2:'상담은 어떻게 진행되나요?',a2:'신청서를 제출하시면 담당 컨설턴트가 남겨주신 연락처로 직접 연락드려, 편하신 시간에 전화 또는 메신저로 상담을 진행합니다.',
+    q3:'상담 내용은 비공개로 유지되나요?',a3:'네. 모든 상담 내용은 기밀로 처리되며, 외부에 공유되지 않습니다. 제공된 개인정보도 상담 목적 외에는 절대 사용되지 않습니다.',
+    q4:'꼭 상담 후 뭔가를 해야 하나요?',a4:'전혀 아닙니다. 상담은 단순 정보 제공을 목적으로 하며, 어떤 행동도 강요되지 않습니다. 궁금증만 해소하고 끝내셔도 괜찮습니다.',
+    q5:'개인정보 삭제를 원하면 어떻게 하나요?',a5:'상담 종료 후 언제든 삭제 요청이 가능하며, 요청 즉시 관련 정보를 파기해드립니다.',
+  },
+  ja:{
+    hero_lbl:'無料1:1相談',
+    hero_h:'市場が難しく感じられますか？<br><em>まずは専門家に聞いてみましょう。</em>',
+    hero_p:'OrangeX Korea エデュケーションチームが提供する1:1無料相談サービスです。基礎概念からよくある質問まで、気になる内容をお気軽にお問い合わせください。',
+    info_h:'この相談で<em>得られること</em>',
+    i1_t:'基礎概念をわかりやすく',i1_d:'用語、市場構造、混乱しがちな概念を、わかりやすい言葉で丁寧に解説します。',
+    i2_t:'パーソナライズガイド',i2_d:'関心分野とレベルに合わせた学習ロードマップをご提案します。どこから始めればよいか明確にします。',
+    i3_t:'疑問を解消',i3_d:'一人では調べにくかった質問、曖昧だった概念に、エデュケーション専門家が直接お答えします。',
+    i4_t:'プレッシャーなし',i4_d:'相談は100％無料。費用、営業、義務は一切ありません。純粋な情報提供のみです。',
+    trust_h:'お客様の情報は安全に保護されます',
+    trust_p:'ご提供いただいた情報は相談目的以外には一切使用されず、<b>個人情報保護法</b>に従い安全に管理・破棄されます。相談後いつでも情報削除をリクエストいただけます。',
+    form_lbl:'無料相談',form_h:'無料相談を申し込む',
+    form_sub:'以下の情報をご記入いただくと、担当コンサルタントが営業日基準24時間以内にご連絡いたします。',
+    l_name:'お名前<span class="req">*</span>',l_phone:'電話番号<span class="req">*</span>',l_email:'メール',l_topic:'相談トピック',l_msg:'お問い合わせ内容 (任意)',
+    ph_name:'山田太郎',ph_msg:'気になる内容や状況をお気軽にお書きください。',
+    opt_basic:'基礎概念の学習',opt_market:'市場構造の理解',opt_strategy:'学習ロードマップガイド',opt_etc:'その他のお問い合わせ',
+    agree_txt:'[必須] 個人情報の収集・利用に同意します。収集された情報(氏名、電話番号、メール)は相談目的のみに使用され、相談完了後すぐに破棄されます。<a href="#privacy">詳細</a>',
+    btn_submit:'無料相談を申し込む',
+    form_note:'お申し込み後、担当者が営業日基準24時間以内にご連絡いたします。',
+    faq_h:'よくある質問',
+    q1:'相談に費用はかかりますか？',a1:'いいえ。本相談は100％無料で提供され、いかなる形でも費用は請求されません。',
+    q2:'相談はどのように進められますか？',a2:'お申し込みフォーム送信後、担当コンサルタントがご記入いただいた連絡先にご連絡し、ご都合の良い時間に電話またはメッセンジャーで相談を行います。',
+    q3:'相談内容は非公開に保たれますか？',a3:'はい。すべての相談内容は機密として扱われ、外部に共有されることはありません。ご提供いただいた個人情報も相談目的以外には使用されません。',
+    q4:'相談後、必ず何かしなければなりませんか？',a4:'まったくそんなことはありません。相談は情報提供のみを目的としており、いかなる行動も強制されません。疑問を解消してそのまま終了していただいて結構です。',
+    q5:'個人情報の削除をリクエストするにはどうすればよいですか？',a5:'相談終了後、いつでも削除リクエストが可能で、リクエスト次第ただちに関連情報を破棄いたします。',
+  }
+};
+function setLang(l){
+  document.documentElement.lang = l === 'ko' ? 'ko' : l === 'ja' ? 'ja' : 'en';
+  document.body.className = l === 'ko' ? 'lang-ko' : l === 'ja' ? 'lang-ja' : '';
+  ['lbEn','lbKo','lbJa'].forEach(id=>document.getElementById(id)?.classList.remove('active'));
+  document.getElementById(l==='en'?'lbEn':l==='ko'?'lbKo':'lbJa')?.classList.add('active');
+  const dict = LANG[l];
+  document.querySelectorAll('[data-i]').forEach(el=>{
+    const k = el.getAttribute('data-i');
+    if(dict[k]) el.innerHTML = dict[k];
+  });
+  document.querySelectorAll('[data-i-ph]').forEach(el=>{
+    const k = el.getAttribute('data-i-ph');
+    if(dict[k]) el.placeholder = dict[k];
+  });
+}
+
 function submitLead(e){
   e.preventDefault();
   const name=document.getElementById('fName').value.trim();
