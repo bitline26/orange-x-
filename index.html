@@ -135,10 +135,11 @@ ul{list-style:none}
 
 /* ── HERO ── */
 .hero{
-  padding-top:calc(var(--tb) + var(--nh));
+  padding-top:calc(var(--tb) + var(--nh) + 60px);
   background:var(--bg);min-height:100svh;
   display:flex;align-items:center;position:relative;overflow:hidden;
 }
+@media(max-width:960px){.hero{padding-top:calc(var(--tb) + var(--nh) + 70px)}}
 .hero-orb{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none}
 .orb1{width:480px;height:480px;background:radial-gradient(circle,rgba(255,165,0,0.2) 0%,transparent 70%);top:-100px;right:-60px}
 .orb2{width:320px;height:320px;background:radial-gradient(circle,rgba(255,165,0,0.13) 0%,transparent 70%);bottom:0;left:8%}
@@ -151,12 +152,16 @@ ul{list-style:none}
 @media(max-width:960px){.hero-txt{max-width:100%}}
 
 .hero-badge{
-  display:inline-flex;align-items:center;gap:7px;
+  position:absolute;top:24px;left:24px;z-index:5;
+  display:inline-flex;align-items:center;gap:6px;
   background:var(--org-l);color:var(--org);
-  font-size:11.5px;font-weight:600;padding:6px 13px;border-radius:20px;
-  margin-bottom:22px;border:1px solid rgba(255,165,0,0.2);
+  font-size:10.5px;font-weight:700;padding:5px 11px;border-radius:16px;
+  border:1px solid rgba(255,165,0,0.25);
+  letter-spacing:0.1px;
 }
-.badge-dot{width:7px;height:7px;background:var(--org);border-radius:50%;animation:blink 1.4s ease-in-out infinite}
+@media(max-width:960px){.hero-badge{top:16px;left:16px;font-size:9.5px;padding:4px 10px}}
+@media(max-width:560px){.hero-badge{top:12px;left:12px;font-size:9px;padding:4px 9px;gap:5px}}
+.badge-dot{width:6px;height:6px;background:var(--org);border-radius:50%;animation:blink 1.4s ease-in-out infinite}
 @keyframes blink{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(0.6);opacity:0.4}}
 
 .hero-h1{font-size:46px;font-weight:800;line-height:1.2;color:var(--text);margin-bottom:18px;letter-spacing:-0.8px}
@@ -605,27 +610,38 @@ footer{background:#111;color:#fff;padding:64px 0 28px}
 
 /* ── TELEGRAM BADGE ── */
 .tg-badge{
-  display:inline-flex;align-items:center;gap:10px;
+  position:absolute;top:24px;right:24px;z-index:5;
+  display:inline-flex;align-items:center;gap:12px;
   text-decoration:none;
-  padding:6px 18px 6px 6px;border-radius:999px;
+  padding:10px 20px 10px 10px;border-radius:16px;
   background:#fff;
   border:1.5px solid #E5E5EA;
-  margin-bottom:18px;
-  box-shadow:0 3px 12px rgba(34,158,217,0.12);
+  box-shadow:0 6px 20px rgba(34,158,217,0.18);
   transition:transform var(--tr),box-shadow var(--tr),border-color var(--tr);
+  min-width:200px;
 }
-.tg-badge:hover{transform:translateY(-2px);border-color:#229ED9;box-shadow:0 8px 24px rgba(34,158,217,0.22)}
-.tg-badge .tg-logo{width:44px;height:44px;flex-shrink:0}
-.tg-badge .tg-label{font-size:15px;font-weight:800;color:#229ED9;letter-spacing:-0.2px;line-height:1}
+.tg-badge:hover{transform:translateY(-2px);border-color:#229ED9;box-shadow:0 12px 32px rgba(34,158,217,0.3)}
+.tg-badge .tg-logo{width:48px;height:48px;flex-shrink:0}
+.tg-badge .tg-text{display:flex;flex-direction:column;line-height:1.15;gap:3px}
+.tg-badge .tg-label{font-size:16px;font-weight:900;color:#229ED9;letter-spacing:-0.3px;line-height:1}
+.tg-badge .tg-sub{font-size:11px;font-weight:600;color:#6E6E73;letter-spacing:-0.1px;line-height:1}
 @media(max-width:960px){
-  .tg-badge{padding:5px 16px 5px 5px;gap:9px;margin-bottom:16px;margin-top:-4px}
-  .tg-badge .tg-logo{width:40px;height:40px}
+  .tg-badge{top:16px;right:16px;padding:8px 16px 8px 8px;gap:10px;min-width:180px;border-radius:14px}
+  .tg-badge .tg-logo{width:42px;height:42px}
   .tg-badge .tg-label{font-size:14px}
+  .tg-badge .tg-sub{font-size:10.5px}
 }
-@media(max-width:480px){
-  .tg-badge{padding:4px 14px 4px 4px;gap:8px}
-  .tg-badge .tg-logo{width:36px;height:36px}
+@media(max-width:560px){
+  .tg-badge{top:12px;right:12px;padding:7px 14px 7px 7px;gap:9px;min-width:160px;border-radius:12px}
+  .tg-badge .tg-logo{width:38px;height:38px}
   .tg-badge .tg-label{font-size:13px}
+  .tg-badge .tg-sub{font-size:10px}
+}
+@media(max-width:400px){
+  .tg-badge{min-width:150px;padding:6px 12px 6px 6px}
+  .tg-badge .tg-logo{width:34px;height:34px}
+  .tg-badge .tg-label{font-size:12.5px}
+  .tg-badge .tg-sub{font-size:9.5px}
 }
 
 /* Floating sticky TG button (desktop corner) */
@@ -724,22 +740,30 @@ footer{background:#111;color:#fff;padding:64px 0 28px}
 <section class="hero" id="hero">
   <div class="hero-orb orb1"></div>
   <div class="hero-orb orb2"></div>
+
+  <!-- Top-left: Partner badge -->
+  <div class="hero-badge">
+    <span class="badge-dot"></span>
+    <span data-i="hero_badge">Official Korean Partner</span>
+  </div>
+
+  <!-- Top-right: Telegram -->
+  <a href="https://t.me/+OHeALlkK57RhZTY0" target="_blank" rel="noopener" class="tg-badge">
+    <svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" class="tg-logo">
+      <circle cx="120" cy="120" r="120" fill="#229ED9"/>
+      <path fill="#ffffff" d="M180.3 69.4 L160.5 166.8 C159 173.5 155 175.1 149.4 171.9 L120.6 150.6 L106.7 164 C105.2 165.5 103.9 166.8 101 166.8 L103 136 L157.3 86.7 C159.6 84.6 156.8 83.4 153.7 85.5 L86.5 128 L57.8 119 C51.6 117 51.5 112.7 59.2 109.6 L172.3 65.3 C177.4 63.5 181.9 66.6 180.3 69.4 Z"/>
+    </svg>
+    <div class="tg-text">
+      <span class="tg-label">Telegram</span>
+      <span class="tg-sub" data-i="tg_sub">1:1 Support</span>
+    </div>
+  </a>
+
   <div class="c">
     <div class="hero-in">
 
       <!-- Left: Text -->
       <div class="hero-txt">
-        <div class="hero-badge">
-          <span class="badge-dot"></span>
-          <span data-i="hero_badge">Official Korean Partner</span>
-        </div>
-        <a href="https://t.me/+OHeALlkK57RhZTY0" target="_blank" rel="noopener" class="tg-badge">
-          <svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" class="tg-logo">
-            <circle cx="120" cy="120" r="120" fill="#229ED9"/>
-            <path fill="#ffffff" d="M180.3 69.4 L160.5 166.8 C159 173.5 155 175.1 149.4 171.9 L120.6 150.6 L106.7 164 C105.2 165.5 103.9 166.8 101 166.8 L103 136 L157.3 86.7 C159.6 84.6 156.8 83.4 153.7 85.5 L86.5 128 L57.8 119 C51.6 117 51.5 112.7 59.2 109.6 L172.3 65.3 C177.4 63.5 181.9 66.6 180.3 69.4 Z"/>
-          </svg>
-          <span class="tg-label">Telegram</span>
-        </a>
         <h1 class="hero-h1">
           Welcome to<br><span class="hl">OrangeX Korea</span>
         </h1>
@@ -1209,6 +1233,7 @@ const LANG = {
     btn_login:'Log In',btn_reg:'Register',
     hero_badge:'Official Korean Partner',hero_sub:'Professional crypto trading platform with top-tier liquidity and institutional-grade security.',
     hero_cta:'Get Started →',hero_mkt:'View Markets',
+    tg_sub:'1:1 Support',
     stat_vol:'Daily Volume',stat_usr:'Global Users',stat_pairs:'Trading Pairs',
     ann_label:'Notice',
     mkt_lbl:'Live Markets',mkt_h:'Seize Your Opportunity',
@@ -1251,6 +1276,7 @@ const LANG = {
     nav_market:'마켓',nav_spot:'현물거래',nav_perp:'선물거래',nav_copy:'카피트레이딩',nav_earn:'수익창출',nav_support:'고객지원',
     btn_login:'로그인',btn_reg:'회원가입',
     hero_badge:'공식 한국 파트너',hero_sub:'글로벌 최고 수준의 유동성과 기관급 보안을 갖춘 전문 디지털 자산 거래 플랫폼.',
+    tg_sub:'1:1 지원',
     hero_cta:'지금 시작하기 →',hero_mkt:'마켓 보기',
     stat_vol:'일일 거래량',stat_usr:'글로벌 사용자',stat_pairs:'거래 종목',
     ann_label:'공지',
@@ -1294,6 +1320,7 @@ const LANG = {
     nav_market:'マーケット',nav_spot:'現物取引',nav_perp:'先物取引',nav_copy:'コピートレード',nav_earn:'積立',nav_support:'サポート',
     btn_login:'ログイン',btn_reg:'新規登録',
     hero_badge:'公式韓国パートナー',hero_sub:'最高水準の流動性と機関レベルのセキュリティを備えたプロ向けデジタル資産取引プラットフォーム。',
+    tg_sub:'1:1 サポート',
     hero_cta:'今すぐ始める →',hero_mkt:'マーケットを見る',
     stat_vol:'日次取引量',stat_usr:'グローバルユーザー',stat_pairs:'取引ペア数',
     ann_label:'お知らせ',
