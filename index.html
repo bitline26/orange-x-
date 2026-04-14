@@ -152,15 +152,15 @@ ul{list-style:none}
 @media(max-width:960px){.hero-txt{max-width:100%}}
 
 .hero-badge{
-  position:absolute;top:24px;left:24px;z-index:5;
+  position:absolute;top:calc(var(--tb) + var(--nh) + 20px);left:24px;z-index:50;
   display:inline-flex;align-items:center;gap:6px;
   background:var(--org-l);color:var(--org);
   font-size:10.5px;font-weight:700;padding:5px 11px;border-radius:16px;
   border:1px solid rgba(255,165,0,0.25);
   letter-spacing:0.1px;
 }
-@media(max-width:960px){.hero-badge{top:16px;left:16px;font-size:9.5px;padding:4px 10px}}
-@media(max-width:560px){.hero-badge{top:12px;left:12px;font-size:9px;padding:4px 9px;gap:5px}}
+@media(max-width:960px){.hero-badge{top:calc(var(--tb) + var(--nh) + 14px);left:16px;font-size:9.5px;padding:4px 10px}}
+@media(max-width:560px){.hero-badge{top:calc(var(--tb) + var(--nh) + 10px);left:12px;font-size:9px;padding:4px 9px;gap:5px}}
 .badge-dot{width:6px;height:6px;background:var(--org);border-radius:50%;animation:blink 1.4s ease-in-out infinite}
 @keyframes blink{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(0.6);opacity:0.4}}
 
@@ -610,38 +610,38 @@ footer{background:#111;color:#fff;padding:64px 0 28px}
 
 /* ── TELEGRAM BADGE ── */
 .tg-badge{
-  position:absolute;top:24px;right:24px;z-index:5;
-  display:inline-flex;align-items:center;gap:12px;
+  position:absolute;top:calc(var(--tb) + var(--nh) + 16px);right:24px;z-index:50;
+  display:inline-flex;align-items:center;gap:10px;
   text-decoration:none;
-  padding:10px 20px 10px 10px;border-radius:16px;
+  padding:8px 16px 8px 8px;border-radius:14px;
   background:#fff;
   border:1.5px solid #E5E5EA;
   box-shadow:0 6px 20px rgba(34,158,217,0.18);
   transition:transform var(--tr),box-shadow var(--tr),border-color var(--tr);
-  min-width:200px;
+  min-width:180px;
 }
 .tg-badge:hover{transform:translateY(-2px);border-color:#229ED9;box-shadow:0 12px 32px rgba(34,158,217,0.3)}
-.tg-badge .tg-logo{width:48px;height:48px;flex-shrink:0}
+.tg-badge .tg-logo{width:42px;height:42px;flex-shrink:0}
 .tg-badge .tg-text{display:flex;flex-direction:column;line-height:1.15;gap:3px}
-.tg-badge .tg-label{font-size:16px;font-weight:900;color:#229ED9;letter-spacing:-0.3px;line-height:1}
-.tg-badge .tg-sub{font-size:11px;font-weight:600;color:#6E6E73;letter-spacing:-0.1px;line-height:1}
+.tg-badge .tg-label{font-size:15px;font-weight:900;color:#229ED9;letter-spacing:-0.3px;line-height:1}
+.tg-badge .tg-sub{font-size:10.5px;font-weight:600;color:#6E6E73;letter-spacing:-0.1px;line-height:1}
 @media(max-width:960px){
-  .tg-badge{top:16px;right:16px;padding:8px 16px 8px 8px;gap:10px;min-width:180px;border-radius:14px}
-  .tg-badge .tg-logo{width:42px;height:42px}
-  .tg-badge .tg-label{font-size:14px}
-  .tg-badge .tg-sub{font-size:10.5px}
-}
-@media(max-width:560px){
-  .tg-badge{top:12px;right:12px;padding:7px 14px 7px 7px;gap:9px;min-width:160px;border-radius:12px}
+  .tg-badge{top:calc(var(--tb) + var(--nh) + 12px);right:16px;padding:7px 14px 7px 7px;gap:9px;min-width:160px;border-radius:12px}
   .tg-badge .tg-logo{width:38px;height:38px}
-  .tg-badge .tg-label{font-size:13px}
+  .tg-badge .tg-label{font-size:14px}
   .tg-badge .tg-sub{font-size:10px}
 }
-@media(max-width:400px){
-  .tg-badge{min-width:150px;padding:6px 12px 6px 6px}
+@media(max-width:560px){
+  .tg-badge{top:calc(var(--tb) + var(--nh) + 10px);right:12px;padding:6px 12px 6px 6px;gap:8px;min-width:148px;border-radius:11px}
   .tg-badge .tg-logo{width:34px;height:34px}
   .tg-badge .tg-label{font-size:12.5px}
   .tg-badge .tg-sub{font-size:9.5px}
+}
+@media(max-width:400px){
+  .tg-badge{min-width:140px;padding:5px 11px 5px 5px;gap:7px}
+  .tg-badge .tg-logo{width:32px;height:32px}
+  .tg-badge .tg-label{font-size:12px}
+  .tg-badge .tg-sub{font-size:9px}
 }
 
 /* Floating sticky TG button (desktop corner) */
