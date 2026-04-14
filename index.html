@@ -605,51 +605,50 @@ footer{background:#111;color:#fff;padding:64px 0 28px}
 
 /* ── TELEGRAM BADGE ── */
 .tg-badge{
-  display:inline-flex;align-items:center;gap:10px;
+  display:inline-flex;align-items:center;gap:12px;
   background:linear-gradient(135deg,#229ED9,#1e88c5);
   color:#fff;text-decoration:none;
-  padding:11px 18px 11px 14px;border-radius:999px;
-  font-size:13.5px;font-weight:700;letter-spacing:-0.1px;
+  padding:10px 20px 10px 10px;border-radius:999px;
+  letter-spacing:-0.1px;
   margin-bottom:18px;
   box-shadow:0 6px 20px rgba(34,158,217,0.35),0 2px 6px rgba(34,158,217,0.2);
   transition:transform var(--tr),box-shadow var(--tr);
   position:relative;
 }
 .tg-badge:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(34,158,217,0.45),0 2px 8px rgba(34,158,217,0.25)}
-.tg-badge svg{width:22px;height:22px;flex-shrink:0}
-.tg-badge .tg-text{display:flex;flex-direction:column;line-height:1.15}
-.tg-badge .tg-top{font-size:10px;font-weight:600;opacity:0.85;letter-spacing:0.3px;text-transform:uppercase}
-.tg-badge .tg-bot{font-size:14px;font-weight:800}
-.tg-badge .tg-arrow{font-size:14px;margin-left:2px;opacity:0.9}
+.tg-badge .tg-logo{width:36px;height:36px;flex-shrink:0;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.15))}
+.tg-badge .tg-text{display:flex;flex-direction:column;line-height:1.2;gap:1px}
+.tg-badge .tg-top{font-size:9px;font-weight:700;opacity:0.88;letter-spacing:0.6px;text-transform:uppercase}
+.tg-badge .tg-bot{font-size:12px;font-weight:700;letter-spacing:-0.1px}
 .tg-pulse{width:8px;height:8px;background:#4caf50;border-radius:50%;box-shadow:0 0 0 0 rgba(76,175,80,0.6);animation:tgPulse 1.8s ease-in-out infinite;flex-shrink:0;margin-left:2px}
 @keyframes tgPulse{0%{box-shadow:0 0 0 0 rgba(76,175,80,0.7)}70%{box-shadow:0 0 0 8px rgba(76,175,80,0)}100%{box-shadow:0 0 0 0 rgba(76,175,80,0)}}
 @media(max-width:960px){
-  .tg-badge{padding:10px 16px 10px 13px;gap:9px;margin-bottom:16px;margin-top:-4px}
-  .tg-badge svg{width:20px;height:20px}
-  .tg-badge .tg-top{font-size:9px}
-  .tg-badge .tg-bot{font-size:13px}
+  .tg-badge{padding:9px 18px 9px 9px;gap:11px;margin-bottom:16px;margin-top:-4px}
+  .tg-badge .tg-logo{width:34px;height:34px}
+  .tg-badge .tg-top{font-size:8.5px}
+  .tg-badge .tg-bot{font-size:11.5px}
 }
 @media(max-width:480px){
-  .tg-badge{padding:9px 14px 9px 12px;gap:8px}
-  .tg-badge svg{width:18px;height:18px}
-  .tg-badge .tg-top{font-size:8.5px}
-  .tg-badge .tg-bot{font-size:12px}
+  .tg-badge{padding:8px 16px 8px 8px;gap:10px}
+  .tg-badge .tg-logo{width:30px;height:30px}
+  .tg-badge .tg-top{font-size:8px;letter-spacing:0.5px}
+  .tg-badge .tg-bot{font-size:11px}
 }
 
 /* Floating sticky TG button (desktop corner) */
 .tg-float{
   position:fixed;bottom:28px;right:28px;
-  display:flex;align-items:center;gap:10px;
+  display:flex;align-items:center;gap:12px;
   background:linear-gradient(135deg,#229ED9,#1e88c5);
   color:#fff;text-decoration:none;
-  padding:14px 22px 14px 18px;border-radius:999px;
-  font-size:14px;font-weight:800;
+  padding:12px 22px 12px 12px;border-radius:999px;
+  font-size:13px;font-weight:800;letter-spacing:0.2px;
   box-shadow:0 14px 40px rgba(34,158,217,0.45),0 4px 12px rgba(0,0,0,0.15);
   z-index:750;
   transition:transform var(--tr),box-shadow var(--tr);
 }
 .tg-float:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 20px 48px rgba(34,158,217,0.55),0 6px 16px rgba(0,0,0,0.2)}
-.tg-float svg{width:24px;height:24px}
+.tg-float svg{width:34px;height:34px;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.15))}
 @media(max-width:1023px){.tg-float{display:none}}
 
 /* ── PROMO TEXT ── */
@@ -743,13 +742,13 @@ footer{background:#111;color:#fff;padding:64px 0 28px}
           <span data-i="hero_badge">Official Korean Partner</span>
         </div>
         <a href="https://t.me/+OHeALlkK57RhZTY0" target="_blank" rel="noopener" class="tg-badge">
-          <svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" class="tg-logo">
             <circle cx="120" cy="120" r="120" fill="#ffffff"/>
             <path fill="#229ED9" d="M180.3 69.4 L160.5 166.8 C159 173.5 155 175.1 149.4 171.9 L120.6 150.6 L106.7 164 C105.2 165.5 103.9 166.8 101 166.8 L103 136 L157.3 86.7 C159.6 84.6 156.8 83.4 153.7 85.5 L86.5 128 L57.8 119 C51.6 117 51.5 112.7 59.2 109.6 L172.3 65.3 C177.4 63.5 181.9 66.6 180.3 69.4 Z"/>
           </svg>
           <div class="tg-text">
-            <span class="tg-top" data-i="tg_top">Telegram 공식방</span>
-            <span class="tg-bot" data-i="tg_bot">실시간 공지 · 1:1 문의</span>
+            <span class="tg-top" data-i="tg_top">OFFICIAL TELEGRAM</span>
+            <span class="tg-bot" data-i="tg_bot">Live updates · 1:1 support</span>
           </div>
           <span class="tg-pulse"></span>
         </a>
@@ -1223,6 +1222,7 @@ const LANG = {
     btn_login:'Log In',btn_reg:'Register',
     hero_badge:'Official Korean Partner',hero_sub:'Professional crypto trading platform with top-tier liquidity and institutional-grade security.',
     hero_cta:'Get Started →',hero_mkt:'View Markets',
+    tg_top:'OFFICIAL TELEGRAM',tg_bot:'Live updates · 1:1 support',
     stat_vol:'Daily Volume',stat_usr:'Global Users',stat_pairs:'Trading Pairs',
     ann_label:'Notice',
     mkt_lbl:'Live Markets',mkt_h:'Seize Your Opportunity',
@@ -1265,6 +1265,7 @@ const LANG = {
     nav_market:'마켓',nav_spot:'현물거래',nav_perp:'선물거래',nav_copy:'카피트레이딩',nav_earn:'수익창출',nav_support:'고객지원',
     btn_login:'로그인',btn_reg:'회원가입',
     hero_badge:'공식 한국 파트너',hero_sub:'글로벌 최고 수준의 유동성과 기관급 보안을 갖춘 전문 디지털 자산 거래 플랫폼.',
+    tg_top:'공식 텔레그램',tg_bot:'실시간 공지 · 1:1 문의',
     hero_cta:'지금 시작하기 →',hero_mkt:'마켓 보기',
     stat_vol:'일일 거래량',stat_usr:'글로벌 사용자',stat_pairs:'거래 종목',
     ann_label:'공지',
@@ -1308,6 +1309,7 @@ const LANG = {
     nav_market:'マーケット',nav_spot:'現物取引',nav_perp:'先物取引',nav_copy:'コピートレード',nav_earn:'積立',nav_support:'サポート',
     btn_login:'ログイン',btn_reg:'新規登録',
     hero_badge:'公式韓国パートナー',hero_sub:'最高水準の流動性と機関レベルのセキュリティを備えたプロ向けデジタル資産取引プラットフォーム。',
+    tg_top:'公式テレグラム',tg_bot:'リアルタイム通知 · 1:1 お問い合わせ',
     hero_cta:'今すぐ始める →',hero_mkt:'マーケットを見る',
     stat_vol:'日次取引量',stat_usr:'グローバルユーザー',stat_pairs:'取引ペア数',
     ann_label:'お知らせ',
