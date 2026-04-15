@@ -671,9 +671,9 @@ footer{background:#111;color:#fff;padding:64px 0 28px}
 
 <!-- TOP BAR: Language Switcher -->
 <div class="top-bar">
-  <button class="lang-btn active" onclick="setLang('en')" id="lbEn">EN</button>
+  <button class="lang-btn" onclick="setLang('en')" id="lbEn">EN</button>
   <span class="top-bar-divider">|</span>
-  <button class="lang-btn" onclick="setLang('ko')" id="lbKo">한국어</button>
+  <button class="lang-btn active" onclick="setLang('ko')" id="lbKo">한국어</button>
   <span class="top-bar-divider">|</span>
   <button class="lang-btn" onclick="setLang('ja')" id="lbJa">日本語</button>
 </div>
@@ -1362,7 +1362,7 @@ const LANG = {
   }
 };
 
-let curLang = 'en';
+let curLang = 'ko';
 function setLang(l) {
   curLang = l;
   document.documentElement.lang = l === 'ko' ? 'ko' : l === 'ja' ? 'ja' : 'en';
@@ -1607,6 +1607,7 @@ document.querySelectorAll('.tf-btn').forEach(b=>{
 });
 
 /* ── Init ── */
+setLang('ko'); // default Korean
 renderTicker();
 filteredCoins=tabCoins('d');
 renderTable(filteredCoins);
