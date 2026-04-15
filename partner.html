@@ -650,11 +650,11 @@ document.querySelectorAll(".lang-btn").forEach(b=>{
   b.addEventListener("click", ()=>applyLang(b.getAttribute("data-lang")));
 });
 
-// Load saved lang
+// Default language: Korean. User can switch via top-right buttons; choice persists per device.
 try{
   const saved = localStorage.getItem("oxkr_lang");
-  if(saved && I18N[saved]) applyLang(saved);
-}catch(e){}
+  applyLang(saved && I18N[saved] ? saved : "ko");
+}catch(e){ applyLang("ko"); }
 </script>
 
 </body>
