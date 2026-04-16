@@ -657,7 +657,37 @@ footer{background:#111;color:#fff;padding:64px 0 28px}
 }
 .tg-float:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 18px 44px rgba(34,158,217,0.42),0 6px 16px rgba(0,0,0,0.15)}
 .tg-float svg{width:52px;height:52px}
-@media(max-width:1023px){.tg-float{display:none}}
+@media(max-width:1023px){.tg-float{bottom:76px;right:12px;width:52px;height:52px}
+.tg-float svg{width:44px;height:44px}}
+
+/* ── TG Top (navbar) ── */
+.tg-top{display:inline-flex;align-items:center;gap:8px;background:#229ED9;color:#fff;padding:9px 16px 9px 12px;border-radius:999px;font-weight:700;font-size:12.5px;border:1.5px solid #229ED9;transition:background var(--tr),transform var(--tr);flex-shrink:0;text-decoration:none}
+.tg-top:hover{background:#1b8ec4;transform:translateY(-1px)}
+.tg-top svg{width:16px;height:16px;flex-shrink:0}
+.tg-top .dot{width:6px;height:6px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 3px rgba(34,197,94,.3);animation:pulse 1.8s infinite}
+@media(max-width:1023px){.tg-top{padding:8px 12px;font-size:11.5px;gap:6px}.tg-top svg{width:14px;height:14px}.tg-top .lbl{display:none}}
+
+/* ── KYC Section ── */
+.kyc-sec{padding:80px 0;background:linear-gradient(135deg,#FFF8F0 0%,#FFF3E6 50%,#FFFBF5 100%);border-bottom:1px solid var(--bdr)}
+.kyc-hdr{text-align:center;margin-bottom:48px}
+.kyc-lbl{display:inline-block;padding:6px 14px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--org-d);background:var(--org-l);border:1px solid var(--org);margin-bottom:12px}
+.kyc-h{font-size:36px;font-weight:900;letter-spacing:-.02em;margin:0 0 8px}
+.kyc-h .hl{color:var(--org)}
+.kyc-sub{font-size:16px;color:var(--tm);margin:0}
+.kyc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:40px}
+.kyc-card{background:#fff;border-radius:var(--r16);padding:28px 24px;border:1.5px solid var(--bdr);transition:transform var(--tr),box-shadow var(--tr);position:relative;overflow:hidden}
+.kyc-card:hover{transform:translateY(-4px);box-shadow:var(--s2)}
+.kyc-step{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:var(--org);color:#fff;font-weight:900;font-size:15px;margin-bottom:14px}
+.kyc-card h3{font-size:17px;font-weight:800;margin:0 0 8px}
+.kyc-card p{font-size:13.5px;color:var(--tm);margin:0;line-height:1.6}
+.kyc-card ul{margin:10px 0 0;padding:0 0 0 18px;font-size:13px;color:var(--tm);line-height:1.8}
+.kyc-card ul li{margin-bottom:2px}
+.kyc-bottom{text-align:center}
+.kyc-time{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:#fff;border:1.5px solid var(--org);border-radius:999px;font-size:14px;font-weight:700;color:var(--org-d);margin-bottom:16px}
+.kyc-cta{display:inline-flex;align-items:center;gap:10px;background:var(--org);color:#fff;padding:16px 32px;border-radius:var(--r16);font-weight:800;font-size:16px;box-shadow:0 10px 28px rgba(255,165,0,.3);transition:transform var(--tr),box-shadow var(--tr);text-decoration:none}
+.kyc-cta:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(255,165,0,.4)}
+@media(max-width:768px){.kyc-grid{grid-template-columns:1fr}.kyc-h{font-size:26px}.kyc-sec{padding:56px 0}}
+@media(max-width:480px){.kyc-card{padding:22px 18px}.kyc-h{font-size:22px}}
 
 /* ── PROMO TEXT ── */
 .promo{margin-bottom:24px;line-height:1.7}
@@ -747,15 +777,15 @@ footer{background:#111;color:#fff;padding:64px 0 28px}
     <span data-i="hero_badge">Official Korean Partner</span>
   </div>
 
-  <!-- Top-right: Telegram -->
-  <a href="https://t.me/+OHeALlkK57RhZTY0" target="_blank" rel="noopener" class="tg-badge">
+  <!-- Top-right: KYC Bot -->
+  <a href="https://t.me/OrangeX_kr_official_bot?start=kyc" target="_blank" rel="noopener" class="tg-badge">
     <svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" class="tg-logo">
       <circle cx="120" cy="120" r="120" fill="#229ED9"/>
       <path fill="#ffffff" d="M180.3 69.4 L160.5 166.8 C159 173.5 155 175.1 149.4 171.9 L120.6 150.6 L106.7 164 C105.2 165.5 103.9 166.8 101 166.8 L103 136 L157.3 86.7 C159.6 84.6 156.8 83.4 153.7 85.5 L86.5 128 L57.8 119 C51.6 117 51.5 112.7 59.2 109.6 L172.3 65.3 C177.4 63.5 181.9 66.6 180.3 69.4 Z"/>
     </svg>
     <div class="tg-text">
-      <span class="tg-label">Telegram</span>
-      <span class="tg-sub" data-i="tg_sub">1:1 Support</span>
+      <span class="tg-label" data-i="tg_kyc_label">KYC 쉽게하기</span>
+      <span class="tg-sub" data-i="tg_kyc_sub">3분 완료 가이드 →</span>
     </div>
   </a>
 
@@ -1027,6 +1057,52 @@ footer{background:#111;color:#fff;padding:64px 0 28px}
   </div>
 </section>
 
+<!-- KYC GUIDE -->
+<section class="kyc-sec" id="kyc">
+  <div class="c">
+    <div class="kyc-hdr">
+      <div class="kyc-lbl" data-i="kyc_lbl">KYC GUIDE</div>
+      <h2 class="kyc-h" data-i="kyc_h">본인인증, <span class="hl">3분이면 끝!</span></h2>
+      <p class="kyc-sub" data-i="kyc_sub">KYC 인증을 완료해야 입출금, 거래, 이벤트 참여가 가능합니다.</p>
+    </div>
+    <div class="kyc-grid">
+      <div class="kyc-card fu">
+        <div class="kyc-step">1</div>
+        <h3 data-i="kyc_s1_h">Verify Now 클릭</h3>
+        <p data-i="kyc_s1_p">로그인 후 상단의 "Complete Identity Verification" 배너를 클릭하거나, 설정에서 KYC 인증을 시작하세요.</p>
+        <ul>
+          <li data-i="kyc_s1_l1">앱 또는 웹에서 모두 가능</li>
+          <li data-i="kyc_s1_l2">로그인 후 바로 안내 배너 표시</li>
+        </ul>
+      </div>
+      <div class="kyc-card fu">
+        <div class="kyc-step">2</div>
+        <h3 data-i="kyc_s2_h">기본 정보 입력 + 신분증 촬영</h3>
+        <p data-i="kyc_s2_p">이름, 생년월일을 입력하고 신분증(주민등록증/운전면허증/여권 중 택1)을 촬영하여 업로드하세요.</p>
+        <ul>
+          <li data-i="kyc_s2_l1">First Name / Last Name 영문 입력</li>
+          <li data-i="kyc_s2_l2">신분증 앞뒤 사진 업로드</li>
+          <li data-i="kyc_s2_l3">jpg, jpeg, png (5MB 이내)</li>
+        </ul>
+      </div>
+      <div class="kyc-card fu">
+        <div class="kyc-step">3</div>
+        <h3 data-i="kyc_s3_h">얼굴 인식 (셀피)</h3>
+        <p data-i="kyc_s3_p">카메라 앞에서 얼굴을 3~10초간 보여주면 끝! 업로드 완료 후 "NEXT"를 클릭하세요.</p>
+        <ul>
+          <li data-i="kyc_s3_l1">생체 인식으로 본인 확인</li>
+          <li data-i="kyc_s3_l2">승인 완료 시 이메일 안내 발송</li>
+          <li data-i="kyc_s3_l3">미승인 시 재검토 요청 가능</li>
+        </ul>
+      </div>
+    </div>
+    <div class="kyc-bottom">
+      <div class="kyc-time" data-i="kyc_time">&#9201; 평균 소요 시간: 약 3분</div><br>
+      <a class="kyc-cta" href="https://t.me/OrangeX_kr_official_bot?start=kyc" target="_blank" rel="noopener" data-i="kyc_cta">KYC 인증 도움받기 (텔레그램 봇) →</a>
+    </div>
+  </div>
+</section>
+
 <!-- STATS -->
 <section class="stats-sec">
   <div class="c">
@@ -1212,8 +1288,8 @@ footer{background:#111;color:#fff;padding:64px 0 28px}
 </div>
 <button class="scr-top" id="scrTop">↑</button>
 
-<!-- Floating Telegram button (desktop) -->
-<a href="https://t.me/+OHeALlkK57RhZTY0" target="_blank" rel="noopener" class="tg-float" aria-label="Telegram">
+<!-- Floating Telegram Bot button -->
+<a href="https://t.me/OrangeX_kr_official_bot?start=float" target="_blank" rel="noopener" class="tg-float" aria-label="Telegram Bot">
   <svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
     <circle cx="120" cy="120" r="120" fill="#229ED9"/>
     <path fill="#ffffff" d="M180.3 69.4 L160.5 166.8 C159 173.5 155 175.1 149.4 171.9 L120.6 150.6 L106.7 164 C105.2 165.5 103.9 166.8 101 166.8 L103 136 L157.3 86.7 C159.6 84.6 156.8 83.4 153.7 85.5 L86.5 128 L57.8 119 C51.6 117 51.5 112.7 59.2 109.6 L172.3 65.3 C177.4 63.5 181.9 66.6 180.3 69.4 Z"/>
@@ -1233,7 +1309,7 @@ const LANG = {
     btn_login:'Log In',btn_reg:'Register',
     hero_badge:'Official Korean Partner',hero_sub:'Professional crypto trading platform with top-tier liquidity and institutional-grade security.',
     hero_cta:'Get Started →',hero_mkt:'View Markets',
-    tg_sub:'1:1 Support',
+    tg_sub:'1:1 Support',tg_kyc_label:'Easy KYC',tg_kyc_sub:'3-min Guide →',
     stat_vol:'Daily Volume',stat_usr:'Global Users',stat_pairs:'Trading Pairs',
     ann_label:'Notice',
     mkt_lbl:'Live Markets',mkt_h:'Seize Your Opportunity',
@@ -1271,12 +1347,17 @@ const LANG = {
     ft_ann:'Announcements',ft_terms:'Terms of Service',ft_priv:'Privacy Policy',ft_careers:'Careers',
     ft_ref:'Referral',ft_aff:'Affiliate',ft_list:'Listing',ft_por:'Proof of Reserves',
     ft_fees:'Fee Schedule',ft_help:'Help Center',ft_chat:'Live Chat',ft_anti:'Anti-Phishing',ft_legal:'Legal',
+    kyc_lbl:'KYC GUIDE',kyc_h:'Verify Identity in <span class="hl">Just 3 Minutes!</span>',kyc_sub:'You must complete KYC to deposit, withdraw, trade, and participate in events.',
+    kyc_s1_h:'Click Verify Now',kyc_s1_p:'After logging in, click the "Complete Identity Verification" banner at the top, or start KYC from Settings.',kyc_s1_l1:'Available on app and web',kyc_s1_l2:'Guidance banner shown after login',
+    kyc_s2_h:'Enter Info + Upload ID',kyc_s2_p:'Enter your name and date of birth, then upload photos of your ID (national ID / driver\'s license / passport).',kyc_s2_l1:'Enter First Name / Last Name in English',kyc_s2_l2:'Upload front & back of ID',kyc_s2_l3:'jpg, jpeg, png (under 5MB)',
+    kyc_s3_h:'Face Recognition (Selfie)',kyc_s3_p:'Show your face to the camera for 3-10 seconds — done! Click "NEXT" after upload.',kyc_s3_l1:'Biometric identity verification',kyc_s3_l2:'Email notification upon approval',kyc_s3_l3:'Re-review available if rejected',
+    kyc_time:'&#9201; Average time: ~3 minutes',kyc_cta:'Get KYC Help (Telegram Bot) →',
   },
   ko:{
     nav_market:'마켓',nav_spot:'현물거래',nav_perp:'선물거래',nav_copy:'카피트레이딩',nav_earn:'수익창출',nav_support:'고객지원',
     btn_login:'로그인',btn_reg:'회원가입',
     hero_badge:'공식 한국 파트너',hero_sub:'글로벌 최고 수준의 유동성과 기관급 보안을 갖춘 전문 디지털 자산 거래 플랫폼.',
-    tg_sub:'1:1 지원',
+    tg_sub:'1:1 지원',tg_kyc_label:'KYC 쉽게하기',tg_kyc_sub:'3분 완료 가이드 →',
     hero_cta:'지금 시작하기 →',hero_mkt:'마켓 보기',
     stat_vol:'일일 거래량',stat_usr:'글로벌 사용자',stat_pairs:'거래 종목',
     ann_label:'공지',
@@ -1315,12 +1396,17 @@ const LANG = {
     ft_ann:'공지사항',ft_terms:'이용약관',ft_priv:'개인정보처리방침',ft_careers:'채용공고',
     ft_ref:'친구 초대',ft_aff:'제휴 프로그램',ft_list:'상장 신청',ft_por:'준비금 증명',
     ft_fees:'수수료 안내',ft_help:'도움말 센터',ft_chat:'라이브 채팅',ft_anti:'피싱 주의',ft_legal:'법적 고지',
+    kyc_lbl:'KYC 인증 가이드',kyc_h:'본인인증, <span class="hl">3분이면 끝!</span>',kyc_sub:'KYC 인증을 완료해야 입출금, 거래, 이벤트 참여가 가능합니다.',
+    kyc_s1_h:'Verify Now 클릭',kyc_s1_p:'로그인 후 상단의 "Complete Identity Verification" 배너를 클릭하거나, 설정에서 KYC 인증을 시작하세요.',kyc_s1_l1:'앱 또는 웹에서 모두 가능',kyc_s1_l2:'로그인 후 바로 안내 배너 표시',
+    kyc_s2_h:'기본 정보 입력 + 신분증 촬영',kyc_s2_p:'이름, 생년월일을 입력하고 신분증(주민등록증/운전면허증/여권 중 택1)을 촬영하여 업로드하세요.',kyc_s2_l1:'First Name / Last Name 영문 입력',kyc_s2_l2:'신분증 앞뒤 사진 업로드',kyc_s2_l3:'jpg, jpeg, png (5MB 이내)',
+    kyc_s3_h:'얼굴 인식 (셀피)',kyc_s3_p:'카메라 앞에서 얼굴을 3~10초간 보여주면 끝! 업로드 완료 후 "NEXT"를 클릭하세요.',kyc_s3_l1:'생체 인식으로 본인 확인',kyc_s3_l2:'승인 완료 시 이메일 안내 발송',kyc_s3_l3:'미승인 시 재검토 요청 가능',
+    kyc_time:'&#9201; 평균 소요 시간: 약 3분',kyc_cta:'KYC 인증 도움받기 (텔레그램 봇) →',
   },
   ja:{
     nav_market:'マーケット',nav_spot:'現物取引',nav_perp:'先物取引',nav_copy:'コピートレード',nav_earn:'積立',nav_support:'サポート',
     btn_login:'ログイン',btn_reg:'新規登録',
     hero_badge:'公式韓国パートナー',hero_sub:'最高水準の流動性と機関レベルのセキュリティを備えたプロ向けデジタル資産取引プラットフォーム。',
-    tg_sub:'1:1 サポート',
+    tg_sub:'1:1 サポート',tg_kyc_label:'KYC 簡単ガイド',tg_kyc_sub:'3分で完了 →',
     hero_cta:'今すぐ始める →',hero_mkt:'マーケットを見る',
     stat_vol:'日次取引量',stat_usr:'グローバルユーザー',stat_pairs:'取引ペア数',
     ann_label:'お知らせ',
@@ -1359,6 +1445,11 @@ const LANG = {
     ft_ann:'お知らせ',ft_terms:'利用規約',ft_priv:'プライバシーポリシー',ft_careers:'採用情報',
     ft_ref:'友達招待',ft_aff:'アフィリエイト',ft_list:'上場申請',ft_por:'準備金証明',
     ft_fees:'手数料案内',ft_help:'ヘルプセンター',ft_chat:'ライブチャット',ft_anti:'フィッシング注意',ft_legal:'法的告知',
+    kyc_lbl:'KYC ガイド',kyc_h:'本人確認、<span class="hl">たった3分で完了！</span>',kyc_sub:'KYC認証を完了すると入出金、取引、イベント参加が可能になります。',
+    kyc_s1_h:'Verify Nowをクリック',kyc_s1_p:'ログイン後、上部の「Complete Identity Verification」バナーをクリックするか、設定からKYC認証を開始してください。',kyc_s1_l1:'アプリ・ウェブどちらでも可能',kyc_s1_l2:'ログイン後すぐに案内バナーが表示',
+    kyc_s2_h:'基本情報入力 + 身分証撮影',kyc_s2_p:'氏名と生年月日を入力し、身分証（住民登録証/運転免許証/パスポートから1つ）を撮影してアップロードしてください。',kyc_s2_l1:'First Name / Last Name を英語で入力',kyc_s2_l2:'身分証の表裏を撮影してアップロード',kyc_s2_l3:'jpg, jpeg, png（5MB以内）',
+    kyc_s3_h:'顔認識（セルフィー）',kyc_s3_p:'カメラの前で顔を3〜10秒間見せるだけ！アップロード後「NEXT」をクリックしてください。',kyc_s3_l1:'生体認証で本人確認',kyc_s3_l2:'承認完了時にメールで通知',kyc_s3_l3:'未承認の場合は再審査リクエスト可能',
+    kyc_time:'&#9201; 平均所要時間：約3分',kyc_cta:'KYC認証サポート（Telegramボット）→',
   }
 };
 
