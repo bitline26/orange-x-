@@ -771,10 +771,10 @@ footer{background:#111;color:#fff;padding:64px 0 28px}
   <div class="hero-orb orb1"></div>
   <div class="hero-orb orb2"></div>
 
-  <!-- Top-left: Partner badge -->
+  <!-- Top-left: VASP badge -->
   <div class="hero-badge">
     <span class="badge-dot"></span>
-    <span data-i="hero_badge">Official Korean Partner</span>
+    <span data-i="hero_badge">VASP 인증 · 국내 입출금 허용</span>
   </div>
 
   <!-- Top-right: KYC Bot -->
@@ -794,17 +794,17 @@ footer{background:#111;color:#fff;padding:64px 0 28px}
 
       <!-- Left: Text -->
       <div class="hero-txt">
-        <h1 class="hero-h1">
-          Welcome to<br><span class="hl">OrangeX Korea</span>
+        <h1 class="hero-h1" data-i="hero_h1">
+          업비트·빗썸·코인원<br><span class="hl">3사 공식 등재</span>
         </h1>
-        <p class="hero-p" data-i="hero_sub">Professional crypto trading platform with top-tier liquidity and institutional-grade security.</p>
         <div class="promo">
-          <b>Payback 20% / Limit 0.01 , Market 0.03</b>
-          <span class="promo-dc">50% D/C EVENT</span>
+          <b data-i="hero_promo1">손실공제 100% + PAYBACK 50%</b>
+          <span class="promo-dc" data-i="hero_promo2">수수료 0.01% · 즉시 리베이트</span>
         </div>
+        <p class="hero-p" data-i="hero_sub">가입 후 KYC 인증 3분이면 모든 혜택 즉시 적용</p>
         <div class="hero-btns">
-          <a href="https://www.orangex.com/login" class="btn-hpri" data-i="hero_cta">Get Started →</a>
-          <a href="https://www.orangex.com/arbitrage" class="btn-hsec" data-i="hero_mkt">View Markets</a>
+          <a href="https://www.orangex.com/register?i=krno1" class="btn-hpri" data-i="hero_cta">가입하기 →</a>
+          <a href="#kyc" class="btn-hsec" data-i="hero_kyc">KYC 인증 가이드 →</a>
         </div>
         <div class="hero-stats">
           <div>
@@ -1197,10 +1197,10 @@ footer{background:#111;color:#fff;padding:64px 0 28px}
   <div class="c">
     <div class="cta-in">
       <div>
-        <h2 class="cta-h" data-i="cta_h">Start Today &amp; Get<br>30-Day Zero Fees!</h2>
-        <p class="cta-p" data-i="cta_p">Sign up now — zero trading fees for 30 days + welcome bonus for new members</p>
+        <h2 class="cta-h" data-i="cta_h">가입 + KYC 인증하고\n혜택 받으세요</h2>
+        <p class="cta-p" data-i="cta_p">손실공제 100% · PAYBACK 50% — KYC 완료 후 즉시 적용</p>
       </div>
-      <a href="https://www.orangex.com/register?i=krno1" class="btn-wht" data-i="cta_btn">Create Free Account →</a>
+      <a href="https://www.orangex.com/register?i=krno1" class="btn-wht" data-i="cta_btn">가입하고 인증하기 →</a>
     </div>
   </div>
 </section>
@@ -1307,8 +1307,8 @@ const LANG = {
   en:{
     nav_market:'Markets',nav_spot:'Spot',nav_perp:'Perpetual',nav_copy:'Copy Trading',nav_earn:'Earn',nav_support:'Support',
     btn_login:'Log In',btn_reg:'Register',
-    hero_badge:'Official Korean Partner',hero_sub:'Professional crypto trading platform with top-tier liquidity and institutional-grade security.',
-    hero_cta:'Get Started →',hero_mkt:'View Markets',
+    hero_badge:'VASP Verified · KRW Deposit Available',hero_h1:'Upbit · Bithumb · Coinone<br><span class="hl">Listed on All 3</span>',hero_promo1:'Loss Coverage 100% + PAYBACK 50%',hero_promo2:'Fees 0.01% · Instant Rebate',hero_sub:'Complete KYC in 3 min after sign-up to activate all benefits',
+    hero_cta:'Sign Up →',hero_kyc:'KYC Guide →',
     tg_sub:'1:1 Support',tg_kyc_label:'Easy KYC',tg_kyc_sub:'3-min Guide →',
     stat_vol:'Daily Volume',stat_usr:'Global Users',stat_pairs:'Trading Pairs',
     ann_label:'Notice',
@@ -1341,7 +1341,7 @@ const LANG = {
     sp1_h:'Live Chat Support',sp1_p:'24/7 real-time chat in Korean and English. Average response under 2 minutes.',sp1_lnk:'Start Chat →',
     sp2_h:'Help Center',sp2_p:'FAQs, trading guides, account setup — everything in one place.',sp2_lnk:'View Help →',
     sp3_h:'Community',sp3_p:'Join global traders on Telegram and KakaoTalk. Share insights and stay updated.',sp3_lnk:'Join Community →',
-    cta_h:'Start Today & Get\n30-Day Zero Fees!',cta_p:'Sign up now — zero trading fees for 30 days + welcome bonus',cta_btn:'Create Free Account →',
+    cta_h:'Sign Up + KYC\nand Claim Your Benefits',cta_p:'Loss Coverage 100% · PAYBACK 50% — activated after KYC',cta_btn:'Sign Up & Verify →',
     ft_desc:'OrangeX Korea is the official Korean partner of global digital asset exchange OrangeX — delivering best-in-class technology, security, and trading experience.',
     ft1_h:'About',ft2_h:'Products',ft3_h:'Programs',ft4_h:'Support',
     ft_ann:'Announcements',ft_terms:'Terms of Service',ft_priv:'Privacy Policy',ft_careers:'Careers',
@@ -1356,9 +1356,9 @@ const LANG = {
   ko:{
     nav_market:'마켓',nav_spot:'현물거래',nav_perp:'선물거래',nav_copy:'카피트레이딩',nav_earn:'수익창출',nav_support:'고객지원',
     btn_login:'로그인',btn_reg:'회원가입',
-    hero_badge:'공식 한국 파트너',hero_sub:'글로벌 최고 수준의 유동성과 기관급 보안을 갖춘 전문 디지털 자산 거래 플랫폼.',
+    hero_badge:'VASP 인증 · 국내 입출금 허용',hero_h1:'업비트·빗썸·코인원<br><span class="hl">3사 공식 등재</span>',hero_promo1:'손실공제 100% + PAYBACK 50%',hero_promo2:'수수료 0.01% · 즉시 리베이트',hero_sub:'가입 후 KYC 인증 3분이면 모든 혜택 즉시 적용',
     tg_sub:'1:1 지원',tg_kyc_label:'KYC 쉽게하기',tg_kyc_sub:'3분 완료 가이드 →',
-    hero_cta:'지금 시작하기 →',hero_mkt:'마켓 보기',
+    hero_cta:'가입하기 →',hero_kyc:'KYC 인증 가이드 →',
     stat_vol:'일일 거래량',stat_usr:'글로벌 사용자',stat_pairs:'거래 종목',
     ann_label:'공지',
     mkt_lbl:'실시간 마켓',mkt_h:'지금 바로 기회를 잡으세요',
@@ -1390,7 +1390,7 @@ const LANG = {
     sp1_h:'실시간 채팅 지원',sp1_p:'24시간 365일 한국어 실시간 채팅 상담. 평균 응답 시간 2분 이내.',sp1_lnk:'채팅 시작 →',
     sp2_h:'도움말 센터',sp2_p:'자주 묻는 질문, 거래 가이드, 계정 설정 등 모든 정보를 한곳에서.',sp2_lnk:'도움말 보기 →',
     sp3_h:'커뮤니티',sp3_p:'텔레그램, 카카오톡 오픈채팅에서 글로벌 트레이더들과 소통하세요.',sp3_lnk:'커뮤니티 가입 →',
-    cta_h:'지금 바로 시작하고\n첫 달 수수료 무료!',cta_p:'신규 회원 가입 시 30일 무료 거래 + 신규 가입 보너스 제공',cta_btn:'무료 회원가입 →',
+    cta_h:'가입 + KYC 인증하고\n혜택 받으세요',cta_p:'손실공제 100% · PAYBACK 50% — KYC 완료 후 즉시 적용',cta_btn:'가입하고 인증하기 →',
     ft_desc:'OrangeX Korea는 글로벌 디지털 자산 거래소 OrangeX의 공식 한국 파트너로, 최고의 기술력과 보안으로 안전한 거래 환경을 제공합니다.',
     ft1_h:'회사소개',ft2_h:'서비스',ft3_h:'프로그램',ft4_h:'지원',
     ft_ann:'공지사항',ft_terms:'이용약관',ft_priv:'개인정보처리방침',ft_careers:'채용공고',
@@ -1405,9 +1405,9 @@ const LANG = {
   ja:{
     nav_market:'マーケット',nav_spot:'現物取引',nav_perp:'先物取引',nav_copy:'コピートレード',nav_earn:'積立',nav_support:'サポート',
     btn_login:'ログイン',btn_reg:'新規登録',
-    hero_badge:'公式韓国パートナー',hero_sub:'最高水準の流動性と機関レベルのセキュリティを備えたプロ向けデジタル資産取引プラットフォーム。',
+    hero_badge:'VASP認証 · KRW入出金対応',hero_h1:'Upbit·Bithumb·Coinone<br><span class="hl">3社公式登録</span>',hero_promo1:'損失補填100% + PAYBACK 50%',hero_promo2:'手数料0.01% · 即時リベート',hero_sub:'登録後KYC認証3分で全特典即時適用',
     tg_sub:'1:1 サポート',tg_kyc_label:'KYC 簡単ガイド',tg_kyc_sub:'3分で完了 →',
-    hero_cta:'今すぐ始める →',hero_mkt:'マーケットを見る',
+    hero_cta:'新規登録 →',hero_kyc:'KYCガイド →',
     stat_vol:'日次取引量',stat_usr:'グローバルユーザー',stat_pairs:'取引ペア数',
     ann_label:'お知らせ',
     mkt_lbl:'リアルタイムマーケット',mkt_h:'チャンスを掴もう',
@@ -1439,7 +1439,7 @@ const LANG = {
     sp1_h:'ライブチャットサポート',sp1_p:'24時間365日のリアルタイムチャット対応。平均応答時間2分以内。',sp1_lnk:'チャット開始 →',
     sp2_h:'ヘルプセンター',sp2_p:'よくある質問、取引ガイド、アカウント設定など全ての情報を一か所に。',sp2_lnk:'ヘルプを見る →',
     sp3_h:'コミュニティ',sp3_p:'TelegramやKakaoTalkでグローバルトレーダーと情報交換しましょう。',sp3_lnk:'コミュニティに参加 →',
-    cta_h:'今すぐ始めて\n30日間手数料無料！',cta_p:'新規登録で30日間手数料無料＋ウェルカムボーナス進呈',cta_btn:'無料で新規登録 →',
+    cta_h:'登録+KYC認証で\n特典を受け取ろう',cta_p:'損失補填100% · PAYBACK 50% — KYC完了後すぐ適用',cta_btn:'登録して認証する →',
     ft_desc:'OrangeX Koreaはグローバルデジタル資産取引所OrangeXの公式韓国パートナーです。最高の技術と安全性で最良の取引環境を提供します。',
     ft1_h:'会社概要',ft2_h:'サービス',ft3_h:'プログラム',ft4_h:'サポート',
     ft_ann:'お知らせ',ft_terms:'利用規約',ft_priv:'プライバシーポリシー',ft_careers:'採用情報',
