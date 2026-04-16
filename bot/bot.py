@@ -20,7 +20,7 @@ logging.basicConfig(
 
 BOT_TOKEN = os.environ.get("BOT_TOKEN", "PUT-YOUR-BOT-TOKEN-HERE")
 LANDING_URL = "https://orange-x.co.kr/"
-SIGNUP_URL = "https://www.orangex.com/login"
+SIGNUP_URL = "https://www.orangex.com/register"
 KYC_URL = "https://www.orangex.com/login"
 
 KYC_TEXT = (
