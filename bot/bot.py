@@ -49,29 +49,29 @@ KYC_TEXT = (
 )
 
 WELCOME_TEXT = (
-    "💎 <b>매일 3.3조원이 움직이는 거래소</b>\n"
+    "✅ <b>KYC 본인인증 — 3분이면 끝!</b>\n"
     "━━━━━━━━━━━━━━━━━━━\n"
-    "🇰🇷 <b>한국 공식 등재 VASP</b>\n"
-    "업비트 · 빗썸 · 코인원 3사 동시 등재\n"
-    "<i>(2025.08.27 빗썸 트래블룰 CODE 연동)</i>\n"
+    "가입만 하면 끝이 아닙니다!\n"
+    "<b>KYC 인증을 완료해야</b> 아래 혜택을 받을 수 있어요.\n\n"
+    "🎁 손실공제 100% · PAYBACK 50%\n"
+    "💰 입출금 · 거래 · 이벤트 참여\n"
+    "━━━━━━━━━━━━━━━━━━━\n\n"
+    "📌 <b>STEP 1 — 로그인 후 인증 시작</b>\n"
+    '앱/웹 로그인 → 상단 배너\n'
+    '<i>"Complete Identity Verification"</i> 클릭\n\n'
+    "📌 <b>STEP 2 — 기본 정보 + 신분증</b>\n"
+    "• 이름(영문) · 생년월일 입력\n"
+    "• 신분증 택1: 주민등록증 / 운전면허증 / 여권\n"
+    "• 앞·뒤 사진 업로드 (jpg/png, 5MB 이내)\n\n"
+    "📌 <b>STEP 3 — 얼굴 인식 (셀피)</b>\n"
+    "• 카메라 앞에서 3~10초 촬영\n"
+    '• <b>"NEXT"</b> 클릭하면 끝!\n\n'
     "━━━━━━━━━━━━━━━━━━━\n"
-    "🎁 <b>지금 진행 중 EVENT</b>\n"
-    "💰 <b>손실공제 100%</b> — 잃은 만큼 전액 복구\n"
-    "💵 <b>PAYBACK 50%</b> — 수수료 절반 환급\n"
-    "⚡ <b>매매 직후 즉시 지급</b> (리베이트 · 실시간)\n"
+    "⏱ 평균 소요 시간: <b>약 3분</b>\n"
+    "📧 승인 완료 → 이메일 안내 발송\n"
+    "❌ 미승인 → 재검토 요청 가능\n"
     "━━━━━━━━━━━━━━━━━━━\n"
-    "📊 <b>수수료 — 업계 최저</b>\n"
-    "• 지정가 (Maker) <b>0.01%</b>\n"
-    "• 시장가 (Taker) <b>0.03%</b>\n"
-    "━━━━━━━━━━━━━━━━━━━\n"
-    "📈 <b>OrangeX 글로벌 지표</b>\n"
-    "💎 일 거래량 <b>$2.4B+ (약 3.3조원)</b>\n"
-    "👥 글로벌 사용자 <b>500만+</b>\n"
-    "🪙 트레이딩 종목 <b>200+</b>\n"
-    "⚙️ 시스템 가동률 <b>99.9%</b>\n"
-    "🇰🇷 24시간 한국어 전담 상담\n"
-    "━━━━━━━━━━━━━━━━━━━\n"
-    "👇 <b>지금 바로 시작하세요</b> 👇"
+    "👇 <b>지금 바로 KYC 인증하세요</b> 👇"
 )
 
 
@@ -98,13 +98,13 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         )
         return
 
-    # 기본 환영 메시지
+    # 기본 메시지 — KYC 중심
     keyboard = InlineKeyboardMarkup(
         [
-            [InlineKeyboardButton("🚀   지금 바로 가입하기   🚀", url=SIGNUP_URL)],
-            [InlineKeyboardButton("💰  손실공제 100% 받기", url=LANDING_URL)],
-            [InlineKeyboardButton("🎁  PAYBACK 50% 혜택받기", url=LANDING_URL)],
-            [InlineKeyboardButton("✅  KYC 본인인증 가이드", url="https://t.me/OrangeX_kr_official_bot?start=kyc")],
+            [InlineKeyboardButton("✅  지금 KYC 인증하기", url=KYC_URL)],
+            [InlineKeyboardButton("📖  KYC 상세 안내 보기", url=LANDING_URL + "#kyc")],
+            [InlineKeyboardButton("🚀  아직 가입 안 했다면 →", url=SIGNUP_URL)],
+            [InlineKeyboardButton("🎁  손실공제 100% + PAYBACK 50%", url=LANDING_URL)],
         ]
     )
 
