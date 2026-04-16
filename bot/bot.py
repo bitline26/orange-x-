@@ -88,7 +88,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
                 [InlineKeyboardButton("✅  지금 KYC 인증하기", url=KYC_URL)],
                 [InlineKeyboardButton("📖  KYC 상세 안내 보기", url=LANDING_URL + "#kyc")],
                 [InlineKeyboardButton("🚀  가입 아직 안 했다면 →", url=SIGNUP_URL)],
-                [InlineKeyboardButton("💬  그래도 어렵다면? 1:1 문의", url="https://t.me/OrangeX_KR_Support")],
+                [InlineKeyboardButton("💬  그래도 어렵다면? 1:1 문의", url="https://t.me/bit_coin_line")],
             ]
         )
         await update.message.reply_text(
@@ -105,7 +105,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
             [InlineKeyboardButton("✅  지금 KYC 인증하기", url=KYC_URL)],
             [InlineKeyboardButton("📖  KYC 상세 안내 보기", url=LANDING_URL + "#kyc")],
             [InlineKeyboardButton("🚀  아직 가입 안 했다면 →", url=SIGNUP_URL)],
-            [InlineKeyboardButton("💬  그래도 어렵다면? 1:1 문의", url="https://t.me/OrangeX_KR_Support")],
+            [InlineKeyboardButton("💬  그래도 어렵다면? 1:1 문의", url="https://t.me/bit_coin_line")],
         ]
     )
 
@@ -124,7 +124,7 @@ async def kyc_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
             [InlineKeyboardButton("✅  지금 KYC 인증하기", url=KYC_URL)],
             [InlineKeyboardButton("📖  KYC 상세 안내 보기", url=LANDING_URL + "#kyc")],
             [InlineKeyboardButton("🚀  가입 아직 안 했다면 →", url=SIGNUP_URL)],
-            [InlineKeyboardButton("💬  그래도 어렵다면? 1:1 문의", url="https://t.me/OrangeX_KR_Support")],
+            [InlineKeyboardButton("💬  그래도 어렵다면? 1:1 문의", url="https://t.me/bit_coin_line")],
         ]
     )
     await update.message.reply_text(
