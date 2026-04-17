@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="robots" content="noindex,nofollow"/>
+<title>OrangeX Korea — Admin</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans KR','Inter',sans-serif;background:#f5f5f7;color:#1d1d1f;min-height:100vh}
+.lock{display:flex;align-items:center;justify-content:center;min-height:100vh;padding:20px}
+.lock-box{background:#fff;border-radius:16px;padding:40px;max-width:360px;width:100%;box-shadow:0 8px 24px rgba(0,0,0,.06);text-align:center}
+.lock-box h2{font-size:22px;font-weight:900;margin-bottom:8px}
+.lock-box p{font-size:13px;color:#6e6e73;margin-bottom:24px}
+.lock-box input{width:100%;padding:14px 16px;border:1.5px solid #e5e5ea;border-radius:8px;font-size:15px;font-family:inherit;outline:none;text-align:center;letter-spacing:4px}
+.lock-box input:focus{border-color:#FFA500}
+.lock-box button{width:100%;margin-top:12px;padding:14px;background:#FFA500;color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:800;cursor:pointer;font-family:inherit}
+.lock-box .err{color:#f2495e;font-size:12px;margin-top:8px;display:none}
+
+.dash{display:none;padding:20px}
+.dash-header{display:flex;align-items:center;justify-content:space-between;padding:20px 28px;background:#fff;border-radius:14px;margin-bottom:20px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.dash-header h1{font-size:20px;font-weight:900}
+.dash-header .cnt{background:#FFA500;color:#fff;padding:6px 14px;border-radius:999px;font-size:13px;font-weight:800}
+.dash-actions{display:flex;gap:8px}
+.dash-actions button{padding:8px 16px;border-radius:8px;border:1.5px solid #e5e5ea;background:#fff;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit}
+.dash-actions button:hover{border-color:#FFA500;color:#FFA500}
+.dash-actions button.danger{color:#f2495e;border-color:#f2495e}
+.dash-actions button.danger:hover{background:#f2495e;color:#fff}
+
+.table-wrap{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+table{width:100%;border-collapse:collapse}
+th{background:#f9f9fb;padding:14px 18px;font-size:12px;font-weight:800;color:#6e6e73;text-align:left;letter-spacing:.04em;border-bottom:1.5px solid #e5e5ea}
+td{padding:14px 18px;font-size:14px;border-bottom:1px solid #f2f2f7;vertical-align:top}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:#fffbf5}
+.empty{text-align:center;padding:60px 20px;color:#6e6e73;font-size:15px}
+.msg-cell{max-width:300px;white-space:pre-wrap;word-break:break-word;color:#6e6e73;font-size:13px}
+.date-cell{font-size:12px;color:#9999a1;white-space:nowrap}
+.contact-cell{font-weight:700;color:#1d1d1f}
+.name-cell{font-weight:800}
+.badge-new{display:inline-block;background:#FFA500;color:#fff;font-size:9px;font-weight:800;padding:2px 6px;border-radius:4px;margin-left:6px}
+
+@media(max-width:640px){
+  .dash{padding:12px}
+  .dash-header{padding:16px;flex-wrap:wrap;gap:12px}
+  th,td{padding:10px 12px;font-size:12px}
+  .msg-cell{max-width:160px}
+}
+</style>
+</head>
+<body>
+
+<div class="lock" id="lockScreen">
+  <div class="lock-box">
+    <h2>Admin</h2>
+    <p>관리자 비밀번호를 입력하세요</p>
+    <input type="password" id="pwInput" placeholder="••••••" autofocus onkeydown="if(event.key==='Enter')doLogin()">
+    <button onclick="doLogin()">로그인</button>
+    <div class="err" id="pwErr">비밀번호가 틀렸습니다</div>
+  </div>
+</div>
+
+<div class="dash" id="dashboard">
+  <div class="dash-header">
+    <div>
+      <h1>상담 신청 관리</h1>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <span class="cnt" id="totalCnt">0건</span>
+      <div class="dash-actions">
+        <button onclick="exportCSV()">CSV 다운로드</button>
+        <button onclick="refreshData()">새로고침</button>
+        <button class="danger" onclick="clearAll()">전체 삭제</button>
+      </div>
+    </div>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>이름</th>
+          <th>연락처</th>
+          <th>문의사항</th>
+          <th>접수 시간</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+    <div class="empty" id="emptyMsg">접수된 상담 신청이 없습니다</div>
+  </div>
+</div>
+
+<script>
+const ADMIN_PW = 'orangex2026';
+
+function doLogin(){
+  const pw = document.getElementById('pwInput').value;
+  if(pw === ADMIN_PW){
+    document.getElementById('lockScreen').style.display='none';
+    document.getElementById('dashboard').style.display='block';
+    refreshData();
+  } else {
+    document.getElementById('pwErr').style.display='block';
+    document.getElementById('pwInput').value='';
+    document.getElementById('pwInput').focus();
+  }
+}
+
+function getInquiries(){
+  try{ return JSON.parse(localStorage.getItem('oxkr_inquiries')||'[]'); }
+  catch(e){ return []; }
+}
+
+function refreshData(){
+  const data = getInquiries();
+  const tbody = document.getElementById('tbody');
+  const empty = document.getElementById('emptyMsg');
+  document.getElementById('totalCnt').textContent = data.length + '건';
+
+  if(!data.length){
+    tbody.innerHTML='';
+    empty.style.display='block';
+    return;
+  }
+  empty.style.display='none';
+
+  // newest first
+  const sorted = [...data].reverse();
+  const now = Date.now();
+
+  tbody.innerHTML = sorted.map((d,i)=>{
+    const dt = new Date(d.date);
+    const diff = now - dt.getTime();
+    const isNew = diff < 3600000; // 1시간 이내
+    const dateStr = dt.getFullYear()+'-'+
+      String(dt.getMonth()+1).padStart(2,'0')+'-'+
+      String(dt.getDate()).padStart(2,'0')+' '+
+      String(dt.getHours()).padStart(2,'0')+':'+
+      String(dt.getMinutes()).padStart(2,'0');
+    return '<tr>'+
+      '<td>'+(data.length - i)+'</td>'+
+      '<td class="name-cell">'+esc(d.name)+(isNew?'<span class="badge-new">NEW</span>':'')+'</td>'+
+      '<td class="contact-cell">'+esc(d.contact)+'</td>'+
+      '<td class="msg-cell">'+(d.msg?esc(d.msg):'-')+'</td>'+
+      '<td class="date-cell">'+dateStr+'</td>'+
+      '</tr>';
+  }).join('');
+}
+
+function esc(s){
+  const d=document.createElement('div');d.textContent=s||'';return d.innerHTML;
+}
+
+function exportCSV(){
+  const data = getInquiries();
+  if(!data.length){alert('데이터가 없습니다');return;}
+  let csv = '\uFEFF번호,이름,연락처,문의사항,접수시간\n';
+  data.forEach((d,i)=>{
+    csv += (i+1)+',"'+esc2(d.name)+'","'+esc2(d.contact)+'","'+esc2(d.msg||'')+'","'+d.date+'"\n';
+  });
+  const blob = new Blob([csv],{type:'text/csv;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href=url;a.download='inquiries_'+new Date().toISOString().slice(0,10)+'.csv';
+  a.click();URL.revokeObjectURL(url);
+}
+function esc2(s){return (s||'').replace(/"/g,'""');}
+
+function clearAll(){
+  if(!confirm('전체 삭제하시겠습니까? 복구할 수 없습니다.')) return;
+  localStorage.removeItem('oxkr_inquiries');
+  refreshData();
+}
+</script>
+</body>
+</html>
