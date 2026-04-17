@@ -210,6 +210,15 @@ header{position:sticky;top:var(--tb);z-index:30;background:rgba(255,255,255,.97)
 .inq-success .sub2{font-size:14px;color:var(--tm)}
 @media(max-width:720px){.inquiry{padding:56px 0}.inquiry h2{font-size:24px}.inq-form{padding:0 8px}}
 
+/* FAQ */
+.faq-item{background:#fff;border:1.5px solid var(--bdr);border-radius:14px;overflow:hidden;cursor:pointer;transition:border-color var(--tr)}
+.faq-item:hover{border-color:var(--org)}
+.faq-q{padding:18px 24px;font-size:15px;font-weight:800;color:var(--text);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.faq-q::after{content:"+";font-size:20px;font-weight:800;color:var(--org);flex-shrink:0;transition:transform var(--tr)}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease;padding:0 24px;font-size:14px;color:var(--tm);line-height:1.7}
+.faq-item.open .faq-a{max-height:200px;padding:0 24px 18px}
+
 .partners{padding:60px 0;background:var(--bg)}
 .partners h3{text-align:center;font-size:12px;color:var(--tm);letter-spacing:.14em;text-transform:uppercase;margin:0 0 24px;font-weight:700}
 .badges{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
@@ -463,17 +472,42 @@ footer a:hover{color:#fff}
   </div>
 </section>
 
-<section class="midcta" id="support">
+<section class="midcta" id="support" style="text-align:left;padding:72px 0">
   <div class="c">
-    <h2><span data-i="mid_h1">궁금한 게 있다면</span> <span class="hl" data-i="mid_h2">바로 물어보세요</span></h2>
-    <p data-i="mid_p">연락처만 남기면 전담 상담팀이 직접 연락드립니다.</p>
-    <a class="tg-big" href="#inquiry" style="margin-top:10px;background:var(--org);border-color:var(--org)">
-      <span class="txt">
-        <small data-i="tg_small2">무료 · 24시간 · 한국어</small>
-        <span data-i="mid_btn">지금 바로 상담 신청</span>
-      </span>
-      <span class="arr">↓</span>
-    </a>
+    <div style="text-align:center;margin-bottom:40px">
+      <h2 style="margin:0 0 8px"><span data-i="mid_h1">자주 묻는 질문</span></h2>
+      <p data-i="mid_p" style="color:var(--tm);margin:0;font-size:15px">궁금한 점이 있으시면 아래를 확인하세요.</p>
+    </div>
+    <div style="max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:12px" id="faqList">
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">OrangeX Korea는 어떤 서비스인가요?</div>
+        <div class="faq-a">OrangeX Korea는 글로벌 플랫폼 OrangeX의 공식 한국 파트너 안내 페이지입니다. 회사 소개, 고객지원 안내, 공식 공지 확인 등을 제공합니다. 24시간 한국어 전담 상담팀이 운영되고 있습니다.</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">국내 주요 3사 공식 공지 반영이란 무엇인가요?</div>
+        <div class="faq-a">국내 주요 기관 3사가 공식 공지사항을 통해 OrangeX를 파트너 리스트에 반영한 것을 의미합니다. 이는 신뢰할 수 있는 공식 경로가 확보되었다는 뜻이며, 주요 언론에서도 동시 보도되었습니다.</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">상담 신청은 어떻게 하나요?</div>
+        <div class="faq-a">아래 상담 신청 폼에서 이름과 연락처(휴대폰 또는 이메일)를 남겨주시면, 전담 상담팀이 빠르게 연락드립니다. 평균 응답 시간은 2분 이내이며, 24시간 운영됩니다.</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">상담 비용이 있나요?</div>
+        <div class="faq-a">아니요. 모든 상담은 무료입니다. 부담 없이 궁금한 점을 문의해 주세요.</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">개인정보는 안전하게 보호되나요?</div>
+        <div class="faq-a">네. 입력하신 개인정보는 상담 목적으로만 사용되며, 제3자에게 제공되지 않습니다. 자세한 내용은 페이지 하단의 개인정보처리방침을 확인해 주세요.</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:32px">
+      <a class="tg-big" href="#inquiry" style="background:var(--org);border-color:var(--org)">
+        <span class="txt">
+          <small data-i="tg_small2">무료 · 24시간 · 한국어</small>
+          <span data-i="mid_btn">그래도 궁금하다면? 상담 신청</span>
+        </span>
+      </a>
+    </div>
   </div>
 </section>
 
