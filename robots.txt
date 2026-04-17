@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /
+Allow: /partner.html
+Allow: /orangex-guide.pdf
+Allow: /robots.txt
